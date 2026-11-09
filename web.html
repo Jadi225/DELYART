@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Web | DELYART</title>
+<meta name="description" content="DELYART, web designer à Abidjan : sites et applications simples, pensés pour le téléphone. Projets : Mon Maquis et une invitation de mariage.">
+<meta name="theme-color" content="#06061a">
+<link rel="canonical" href="https://delyart.pages.dev/web.html">
+<meta property="og:url" content="https://delyart.pages.dev/web.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Web | DELYART">
+<meta property="og:description" content="Sites et applications simples, pensés pour le téléphone. Projets : Mon Maquis et une invitation de mariage.">
+<meta property="og:image" content="https://delyart.pages.dev/images/og-delyart.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='72 19 125 178'%3E%3Cpath d='M102.07,73.11c12.36,13.34,24.79,26.56,36.85,40.17,3.7,4.18,8.59,7.4,8.88,13.95.49,10.96-11.99,16.38-19.38,9.33-13.54-16.47-30.19-31.14-43.66-47.47-2.96-3.59-4.96-6.02-5.36-11.09-1.07-13.63.85-28.84,0-42.63.72-6.32,5.83-9.79,11.35-10.4,16.41.7,33.51-.96,49.84-.03,24.06,1.37,47.76,30.69,50.43,55.71-.77,17.91,1.03,36.8.02,54.59-1.56,27.35-20.86,43.92-43.16,52.45-8.4,3.21-12.7,4.06-19.68-2.54-12.37-11.68-24.84-26.94-36.43-39.73-3.64-4.02-11.79-10.46-12.68-16.07-1.78-11.22,10.56-18.16,18.74-11.79,13.24,14.41,26.76,28.51,40.07,42.93.82.89,2.07,3.17,2.88,3.57,1.63.8,6.78-2.28,8.5-3.25,9.05-5.08,18.07-13.41,19.07-25.15,1.47-17.24-.99-36.95-.11-54.45-.77-10.3-17.38-31.85-26.86-31.85h-39.33v23.74Z' fill='%23F59A06'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{
+  --bg:#06061a; --surface:#0d0d26; --surface-hi:#14143a; --line:#25254a;
+  --text:#f2f0f5; --muted:#a3a1b8;
+  --amber:#F59E0B; --orange:#F7931E; --mauve:#8B5A7C; --indigo:#3B3490; --indigo-hi:#8c85f0;
+  --grad:linear-gradient(100deg,var(--amber),var(--orange) 40%,var(--mauve) 75%,var(--indigo));
+  --grad-web:linear-gradient(100deg,#5a50d8,var(--indigo));
+  --display:"Space Grotesk","Segoe UI",system-ui,sans-serif;
+  --body:"Inter","Segoe UI",system-ui,sans-serif;
+  --pad:clamp(1.25rem,5vw,4rem);
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0}
+html{font-size:16px;scroll-behavior:smooth;scroll-padding-top:5rem;background:var(--bg)}
+body{background:var(--bg);color:var(--text);font:400 1rem/1.7 var(--body);-webkit-font-smoothing:antialiased;overflow-x:clip}
+body::after{content:"";position:fixed;inset:0;z-index:90;pointer-events:none;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--amber);outline-offset:4px;border-radius:4px}
+::selection{background:var(--amber);color:#120a02}
+.wrap{max-width:74rem;margin-inline:auto;padding-inline:var(--pad)}
+h1,h2,h3{font-family:var(--display);line-height:1.08;letter-spacing:-.025em}
+h2{font-size:clamp(1.9rem,4vw,3rem);font-weight:700;max-width:22ch}
+section{padding-block:clamp(4rem,9vw,7rem)}
+.kicker{font:500 .8rem var(--display);letter-spacing:.18em;text-transform:uppercase;color:var(--indigo-hi)}
+
+/* Barre du haut */
+.top{position:fixed;inset:0 0 auto 0;z-index:60;display:flex;justify-content:space-between;align-items:center;padding:clamp(14px,2.5vw,26px) var(--pad);background:linear-gradient(var(--bg),transparent)}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;font:700 1.05rem var(--display);letter-spacing:.06em}
+.brand svg{width:1.6rem;height:1.6rem}
+.nav{display:flex;align-items:center;gap:.4rem;font-size:.92rem}
+.nav a{text-decoration:none;color:var(--muted);padding:.45rem .8rem;border-radius:999px;transition:color .2s,background .2s}
+.nav a:hover{color:var(--text);background:var(--surface-hi)}
+.nav .sw{border:1px solid var(--line);color:var(--text)}
+#prog{position:fixed;top:0;left:0;right:0;height:2px;z-index:80;background:var(--grad);transform:scaleX(0);transform-origin:left;pointer-events:none}
+
+/* Hero */
+.hero{min-height:88svh;display:flex;align-items:center;padding-top:7rem;position:relative;overflow:hidden;background:radial-gradient(90% 80% at 100% 100%,rgba(59,52,144,.65),rgba(139,90,124,.12) 48%,transparent 75%)}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(140,133,240,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(140,133,240,.07) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(80% 80% at 100% 100%,#000,transparent 75%);mask-image:radial-gradient(80% 80% at 100% 100%,#000,transparent 75%)}
+.hero .wrap{width:100%;position:relative;display:flex;flex-direction:column;gap:1.4rem}
+.hero h1{font-size:clamp(2.6rem,7vw,5.6rem);font-weight:700;max-width:14ch}
+.hero .lead{max-width:34rem;color:var(--muted);font-size:1.1rem}
+.cta{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:.6rem}
+.btn{display:inline-block;padding:.85rem 1.6rem;border-radius:999px;text-decoration:none;font-weight:500;font-size:.95rem;border:1px solid transparent;transition:box-shadow .25s,border-color .25s,background .25s}
+.btn-main{background:var(--grad-web);color:#fff}
+.btn-main:hover{box-shadow:0 10px 30px rgba(90,80,216,.45)}
+.btn-line{border-color:var(--line)}
+.btn-line:hover{border-color:var(--indigo-hi);background:var(--surface-hi)}
+.btn-amber{background:var(--grad);color:#120a02}
+.btn-amber:hover{box-shadow:0 10px 30px rgba(245,158,11,.28)}
+
+/* Étude de cas */
+.case{border-top:1px solid var(--line)}
+.case-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:1.5rem;margin-bottom:3rem}
+.case-head .meta{display:flex;flex-wrap:wrap;gap:.5rem}
+.tag{font-size:.8rem;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:.15rem .8rem;white-space:nowrap}
+.tag.live{color:var(--amber);border-color:rgba(245,158,11,.4)}
+.fact{padding:1.4rem 1.5rem;border-radius:.9rem;background:var(--surface);border:1px solid var(--line);transition:background .3s,border-color .3s}
+.fact:hover{background:var(--surface-hi);border-color:#3a3a6e}
+.fact h3{font-size:1.05rem;margin-bottom:.4rem;color:var(--indigo-hi)}
+.fact p{color:var(--muted);font-size:.97rem}
+.stack{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.7rem}
+.gallery{display:flex;gap:clamp(.8rem,1.6vw,1.2rem);overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--pad);padding:.5rem var(--pad) 1.2rem;margin:0 calc(var(--pad)*-1) 3rem;scrollbar-width:thin;scrollbar-color:#3a3a6e transparent}
+.ph{flex:1 0 170px;max-width:240px;scroll-snap-align:start;display:flex;flex-direction:column;gap:.8rem}
+.phone{aspect-ratio:520/886;border-radius:24px;border:1.5px solid rgba(140,133,240,.5);background:#120e0a;padding:6px;box-shadow:0 24px 60px rgba(59,52,144,.3);transition:transform .5s var(--ease),box-shadow .5s}
+.ph:hover .phone{transform:translateY(-6px);box-shadow:0 30px 70px rgba(90,80,216,.5)}
+.phone img{display:block;width:100%;height:100%;object-fit:cover;border-radius:18px}
+.ph figcaption{text-align:center;font-size:.85rem;color:var(--muted);line-height:1.35}
+.ph figcaption b{display:block;color:var(--text);font:500 .95rem var(--display)}
+.hero-shot{border-radius:.9rem;overflow:hidden;border:1px solid var(--line);margin-bottom:2.5rem;background:#2a1814;box-shadow:0 24px 60px rgba(181,83,60,.18)}
+.hero-shot img{display:block;width:100%;height:auto}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1rem}
+.case-cta{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:.9rem;margin-top:1rem}
+
+/* À venir */
+.next{border-top:1px solid var(--line)}
+.next-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:1.5rem;margin-bottom:2.2rem}
+.next-head p{color:var(--muted);max-width:26rem}
+.slots{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
+.slot{min-height:14rem;border-radius:.9rem;border:1px dashed #4a4a80;display:flex;flex-direction:column;justify-content:flex-end;gap:.5rem;padding:1.4rem;transition:background .3s,border-color .3s}
+.slot:hover{background:var(--surface);border-color:var(--indigo-hi)}
+.slot h3{font-size:1.15rem}
+.slot span{color:var(--muted);font-size:.92rem}
+
+/* Contact */
+.end{border-top:1px solid var(--line);text-align:center;background:radial-gradient(70% 90% at 50% 100%,rgba(59,52,144,.45),transparent 70%)}
+.end .wrap{display:flex;flex-direction:column;align-items:center;gap:1.5rem}
+.end h2{max-width:18ch;font-size:clamp(2rem,6vw,4.4rem);line-height:1}
+.end p{color:var(--muted);max-width:38ch}
+.mail{font:700 clamp(1.3rem,4.6vw,3rem)/1 var(--display);letter-spacing:-.03em;text-decoration:none;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;word-break:break-word}
+.mail:hover{filter:brightness(1.25)}
+.links{display:flex;flex-wrap:wrap;justify-content:center;gap:.9rem}
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-block:1.5rem 2rem;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.foot a{text-decoration:none}.foot a:hover{color:var(--amber)}
+
+/* Apparition au défilement */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+@keyframes lineUp{from{transform:translateY(112%)}to{transform:none}}
+.ln{display:block;overflow:hidden;padding-bottom:.08em}
+.ln>span{display:block;animation:lineUp .95s var(--ease) both}
+.ln:nth-child(2)>span{animation-delay:.12s}
+
+@media (max-width:52rem){
+  .slots{grid-template-columns:1fr}
+  .nav .hide-s{display:none}
+  .ph figcaption{font-size:.75rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .js .rv{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="g" gradientUnits="userSpaceOnUse" x1="185" y1="45" x2="100" y2="185">
+      <stop offset="0" stop-color="#f59a06"/><stop offset=".5" stop-color="#8a5560"/><stop offset="1" stop-color="#342b78"/>
+    </linearGradient>
+    <path id="pD" fill="url(#g)" d="M102.07,73.11c12.36,13.34,24.79,26.56,36.85,40.17,3.7,4.18,8.59,7.4,8.88,13.95.49,10.96-11.99,16.38-19.38,9.33-13.54-16.47-30.19-31.14-43.66-47.47-2.96-3.59-4.96-6.02-5.36-11.09-1.07-13.63.85-28.84,0-42.63.72-6.32,5.83-9.79,11.35-10.4,16.41.7,33.51-.96,49.84-.03,24.06,1.37,47.76,30.69,50.43,55.71-.77,17.91,1.03,36.8.02,54.59-1.56,27.35-20.86,43.92-43.16,52.45-8.4,3.21-12.7,4.06-19.68-2.54-12.37-11.68-24.84-26.94-36.43-39.73-3.64-4.02-11.79-10.46-12.68-16.07-1.78-11.22,10.56-18.16,18.74-11.79,13.24,14.41,26.76,28.51,40.07,42.93.82.89,2.07,3.17,2.88,3.57,1.63.8,6.78-2.28,8.5-3.25,9.05-5.08,18.07-13.41,19.07-25.15,1.47-17.24-.99-36.95-.11-54.45-.77-10.3-17.38-31.85-26.86-31.85h-39.33v23.74Z"/>
+  </defs>
+</svg>
+
+<div id="prog"></div>
+
+<header class="top">
+  <a class="brand" href="index.html" aria-label="DELYART, retour à l'accueil"><svg viewBox="72 19 125 178" aria-hidden="true"><use href="#pD"/></svg><span>DELYART</span></a>
+  <nav class="nav" aria-label="Navigation">
+    <a class="hide-s" href="#projet">Mon Maquis</a>
+    <a class="hide-s" href="#mariage">Mariage</a>
+    <a class="hide-s" href="#contact">Contact</a>
+    <a class="sw" href="graphisme.html">Graphisme →</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="accueil">
+    <div class="wrap">
+      <span class="kicker">Univers Web</span>
+      <h1><span class="ln"><span>Des applications</span></span><span class="ln"><span>simples, faites pour</span></span><span class="ln"><span>le terrain.</span></span></h1>
+      <p class="lead">Web designer à Abidjan. Je conçois des sites et des applications faciles à utiliser, rapides, pensés d'abord pour le téléphone.</p>
+      <div class="cta">
+        <a class="btn btn-main" href="#projet">Voir les projets</a>
+        <a class="btn btn-line" href="#contact">Me contacter</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="case" id="projet">
+    <div class="wrap">
+      <div class="case-head rv">
+        <div>
+          <span class="kicker">Étude de cas</span>
+          <h2>Mon Maquis</h2>
+        </div>
+        <div class="meta">
+          <span class="tag live">En cours</span>
+          <span class="tag">Projet personnel</span>
+          <span class="tag">Application mobile</span>
+        </div>
+      </div>
+
+      <!-- Pour changer une capture : remplace le fichier dans images/ (même nom) -->
+      <div class="gallery rv" role="group" aria-label="Captures d'écran de Mon Maquis">
+        <figure class="ph"><div class="phone"><img src="images/mon-maquis-1.webp" width="520" height="886" alt="Mon Maquis : écran de bienvenue où le gérant touche les boissons qu'il vend" loading="lazy"></div><figcaption><b>Choisir</b>ses boissons</figcaption></figure>
+        <figure class="ph"><div class="phone"><img src="images/mon-maquis-2.webp" width="520" height="886" alt="Mon Maquis : écran Vendre avec la recette du jour et un bouton par boisson" loading="lazy"></div><figcaption><b>Vendre</b>un appui = une vente</figcaption></figure>
+        <figure class="ph"><div class="phone"><img src="images/mon-maquis-3.webp" width="520" height="886" alt="Mon Maquis : écran Arrivage pour noter les casiers reçus et rendus" loading="lazy"></div><figcaption><b>Arrivage</b>casiers reçus et rendus</figcaption></figure>
+        <figure class="ph"><div class="phone"><img src="images/mon-maquis-4.webp" width="520" height="886" alt="Mon Maquis : écran Pertes pour noter la casse et les offerts" loading="lazy"></div><figcaption><b>Pertes</b>casse et offerts</figcaption></figure>
+        <figure class="ph"><div class="phone"><img src="images/mon-maquis-5.webp" width="520" height="886" alt="Mon Maquis : écran Bilan avec le bénéfice du jour et le stock à commander" loading="lazy"></div><figcaption><b>Bilan</b>bénéfice et stock à commander</figcaption></figure>
+      </div>
+
+      <div class="facts">
+          <article class="fact rv">
+            <h3>Le problème</h3>
+            <p>Pour beaucoup de gérants de maquis et de bars, un fichier Excel est trop compliqué. Le stock, la caisse et les pertes se suivent mal, et le bénéfice reste flou.</p>
+          </article>
+          <article class="fact rv">
+            <h3>Ma solution</h3>
+            <p>Une application très simple, pensée pour des utilisateurs peu à l'aise avec l'écrit. Au premier lancement, le gérant donne le nom de son maquis et choisit ses boissons. Ensuite, tout tient en cinq écrans : vendre (un appui = une vente), les arrivages de casiers, les pertes (casse, offerts), les crédits des clients et le bilan du jour.</p>
+            <div class="stack"><span class="tag">Vendre</span><span class="tag">Arrivage</span><span class="tag">Pertes</span><span class="tag">Crédits</span><span class="tag">Bilan</span></div>
+          </article>
+          <article class="fact rv">
+            <h3>Le design</h3>
+            <p>Des stickers de boissons dessinés par moi servent d'icônes : on reconnaît une boisson au premier coup d'œil, sans lire.</p>
+          </article>
+          <article class="fact rv">
+            <h3>Sous le capot</h3>
+            <p>Un seul fichier HTML, installable sur l'écran d'accueil du téléphone, qui fonctionne sans connexion. Chaque achat est protégé par un code d'activation (2 téléphones par code), vérifié par un petit serveur de licences.</p>
+            <div class="stack"><span class="tag">HTML · CSS · JS</span><span class="tag">PWA</span><span class="tag">Hors connexion</span><span class="tag">Cloudflare</span></div>
+          </article>
+          <article class="fact rv">
+            <h3>Où j'en suis</h3>
+            <p>L'application est en ligne et le produit est créé sur Chariow. Les tests auprès de vrais gérants sont la prochaine étape.</p>
+          </article>
+          <div class="case-cta rv">
+            <a class="btn btn-main" href="https://xlzrpfoi.mychariow.store/mon-maquis" target="_blank" rel="noopener">Voir Mon Maquis</a>
+            <a class="btn btn-line" href="#contact">Une idée d'application ?</a>
+          </div>
+        </div>
+
+    </div>
+  </section>
+
+  <section class="case" id="mariage">
+    <div class="wrap">
+      <div class="case-head rv">
+        <div>
+          <span class="kicker">Étude de cas</span>
+          <h2>Invitation de mariage</h2>
+        </div>
+        <div class="meta">
+          <span class="tag live">Démo en ligne</span>
+          <span class="tag">Projet personnel</span>
+          <span class="tag">Site web</span>
+        </div>
+      </div>
+
+      <figure class="hero-shot rv"><img src="images/invitation-apercu.webp" width="1200" height="630" alt="Invitation de mariage DELYART : une enveloppe terracotta fermée par un sceau, avec le message « Vous êtes invité(e) »" loading="lazy"></figure>
+
+      <div class="facts">
+        <article class="fact rv">
+          <h3>Le besoin</h3>
+          <p>Les faire-part papier coûtent cher et se perdent, et les cartes envoyées en photo sur WhatsApp ne donnent aucune information pratique. Les mariés veulent une invitation qui se partage d'un clic.</p>
+        </article>
+        <article class="fact rv">
+          <h3>Ma solution</h3>
+          <p>Une invitation animée : l'invité ouvre l'enveloppe et découvre l'histoire du couple, le programme, le lieu sur la carte, la tenue conseillée et un bouton « Je serai là » qui ouvre WhatsApp avec un message prêt à envoyer.</p>
+          <div class="stack"><span class="tag">Enveloppe animée</span><span class="tag">Programme</span><span class="tag">RSVP WhatsApp</span><span class="tag">Musique</span></div>
+        </article>
+        <article class="fact rv">
+          <h3>Un lien par invité</h3>
+          <p>En ajoutant le nom de l'invité à la fin du lien, son nom s'affiche au-dessus de l'enveloppe. Sur un vieux téléphone, le site passe tout seul en mode léger, sans animation.</p>
+        </article>
+        <article class="fact rv">
+          <h3>Sous le capot</h3>
+          <p>Du HTML, du CSS et du JavaScript simples, sans framework. Tout se personnalise dans un seul fichier : prénoms, date, lieu, couleurs et numéro WhatsApp.</p>
+          <div class="stack"><span class="tag">HTML · CSS · JS</span><span class="tag">Vercel</span><span class="tag">Un seul fichier de réglages</span></div>
+        </article>
+        <article class="fact rv">
+          <h3>Le formulaire client</h3>
+          <p>Pour une invitation sur mesure, le client remplit un formulaire de 10 questions. Ses réponses m'arrivent directement sur WhatsApp, prêtes à servir pour créer son invitation.</p>
+        </article>
+        <article class="fact rv">
+          <h3>Où j'en suis</h3>
+          <p>Le modèle est terminé et la démo est en ligne. Son bouton « Je serai là » m'envoie un message : les prochains tests seront de vrais futurs mariés.</p>
+        </article>
+        <div class="case-cta rv">
+          <a class="btn btn-main" href="https://invitation-mariage-demo.vercel.app/" target="_blank" rel="noopener">Voir la démo</a>
+          <a class="btn btn-line" href="#contact">Je veux la mienne</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="next">
+    <div class="wrap">
+      <div class="next-head rv">
+        <h2>Prochains projets</h2>
+        <p>Les emplacements vides se remplissent au fil de mes créations.</p>
+      </div>
+      <div class="slots">
+        <div class="slot rv"><h3>Site vitrine</h3><span>Projet à venir</span></div>
+        <div class="slot rv"><h3>Page de vente</h3><span>Projet à venir</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="end" id="contact">
+    <div class="wrap">
+      <h2 class="rv">Une application ou un site à créer ?</h2>
+      <p class="rv">Écrivez-moi, je réponds vite.</p>
+      <a class="mail rv" href="mailto:jardelehouman5@gmail.com">jardelehouman5@gmail.com</a>
+      <div class="links rv">
+        <a class="btn btn-amber" href="https://wa.me/2250757887372" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+        <a class="btn btn-line" href="https://instagram.com/delyart" target="_blank" rel="noopener">Instagram</a>
+        <a class="btn btn-line" href="https://behance.net/delyart" target="_blank" rel="noopener">Behance</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="wrap"><div class="foot">
+  <span>© <span id="year">2026</span> DELYART</span>
+  <span><a href="index.html">Accueil</a> · Abidjan, Côte d'Ivoire</span>
+</div></div>
+
+<script>
+(()=>{
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+$('#year').textContent=new Date().getFullYear();
+const prog=$('#prog');
+const upd=()=>{const d=document.documentElement.scrollHeight-innerHeight;prog.style.transform='scaleX('+(d>0?Math.min(1,scrollY/d):0)+')'};
+addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+$$('.rv').forEach(el=>io.observe(el));
+})();
+</script>
+</body>
+</html>
