@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://delyart.pages.dev/sitemap.xml
+Sitemap: https://delyart.jardelehouman.workers.dev/sitemap.xml

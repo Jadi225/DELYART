@@ -6,12 +6,12 @@
 <title>Graphisme | DELYART</title>
 <meta name="description" content="DELYART, graphiste indépendant à Abidjan : logos, identités visuelles et flyers. Étude de cas : le logo DELYART.">
 <meta name="theme-color" content="#050507">
-<link rel="canonical" href="https://delyart.pages.dev/graphisme.html">
-<meta property="og:url" content="https://delyart.pages.dev/graphisme.html">
+<link rel="canonical" href="https://delyart.jardelehouman.workers.dev/graphisme.html">
+<meta property="og:url" content="https://delyart.jardelehouman.workers.dev/graphisme.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Graphisme | DELYART">
 <meta property="og:description" content="DELYART, graphiste indépendant à Abidjan : logos, identités visuelles et flyers. Étude de cas : le logo DELYART.">
-<meta property="og:image" content="https://delyart.pages.dev/images/og-delyart.png">
+<meta property="og:image" content="https://delyart.jardelehouman.workers.dev/images/og-delyart.png">
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='72 19 125 178'%3E%3Cpath d='M102.07,73.11c12.36,13.34,24.79,26.56,36.85,40.17,3.7,4.18,8.59,7.4,8.88,13.95.49,10.96-11.99,16.38-19.38,9.33-13.54-16.47-30.19-31.14-43.66-47.47-2.96-3.59-4.96-6.02-5.36-11.09-1.07-13.63.85-28.84,0-42.63.72-6.32,5.83-9.79,11.35-10.4,16.41.7,33.51-.96,49.84-.03,24.06,1.37,47.76,30.69,50.43,55.71-.77,17.91,1.03,36.8.02,54.59-1.56,27.35-20.86,43.92-43.16,52.45-8.4,3.21-12.7,4.06-19.68-2.54-12.37-11.68-24.84-26.94-36.43-39.73-3.64-4.02-11.79-10.46-12.68-16.07-1.78-11.22,10.56-18.16,18.74-11.79,13.24,14.41,26.76,28.51,40.07,42.93.82.89,2.07,3.17,2.88,3.57,1.63.8,6.78-2.28,8.5-3.25,9.05-5.08,18.07-13.41,19.07-25.15,1.47-17.24-.99-36.95-.11-54.45-.77-10.3-17.38-31.85-26.86-31.85h-39.33v23.74Z' fill='%23F59A06'/%3E%3C/svg%3E">
@@ -138,6 +138,17 @@ section{padding-block:clamp(4rem,9vw,7rem)}
 .read p+p{margin-top:.6rem}
 .note{margin-top:1.8rem;color:var(--muted);font-size:.92rem;border-left:2px solid var(--amber);padding-left:1rem;max-width:44rem}
 
+/* Affiches Mon Maquis */
+.ads{display:grid;grid-template-columns:1fr 1.25fr;gap:1.25rem;align-items:start}
+.ads .col{display:flex;flex-direction:column;gap:1.25rem}
+.ads figure{display:flex;flex-direction:column;gap:.7rem;transition:transform .35s var(--ease)}
+.ads figure:hover{transform:translateY(-4px)}
+.ads img{display:block;width:100%;height:auto;border-radius:.9rem;border:1px solid var(--line)}
+.ads figcaption{display:flex;justify-content:space-between;gap:1rem;align-items:baseline;flex-wrap:wrap}
+.ads h3{font-size:1.05rem}
+.ads-note{margin-top:2rem;color:var(--muted);max-width:44rem}
+@media (max-width:52rem){.ads{grid-template-columns:1fr}}
+
 /* À venir */
 .next-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:1.5rem;margin-bottom:2.2rem}
 .next-head p{color:var(--muted);max-width:26rem}
@@ -209,7 +220,8 @@ section{padding-block:clamp(4rem,9vw,7rem)}
   <a class="brand" href="index.html" aria-label="DELYART, retour à l'accueil"><svg viewBox="72 19 125 178" aria-hidden="true"><use href="#pD"/></svg><span>DELYART</span></a>
   <nav class="nav" aria-label="Navigation">
     <a class="hide-s" href="#services">Services</a>
-    <a class="hide-s" href="#projet">Projet</a>
+    <a class="hide-s" href="#projet">Logo</a>
+    <a class="hide-s" href="#affiches">Affiches</a>
     <a class="hide-s" href="#contact">Contact</a>
     <a class="sw" href="web.html">Web →</a>
   </nav>
@@ -323,6 +335,42 @@ section{padding-block:clamp(4rem,9vw,7rem)}
       </div>
 
       <p class="note rv">C'est le seul projet que je montre pour l'instant, et c'est le mien : aucune commande client, juste ma propre marque. Les prochains arrivent ci-dessous.</p>
+    </div>
+  </section>
+
+  <section class="line-top" id="affiches">
+    <div class="wrap">
+      <div class="case-head rv">
+        <div>
+          <span class="kicker">Affiches</span>
+          <h2>Mon Maquis, visuels de lancement</h2>
+        </div>
+        <div class="meta">
+          <span class="tag live">Projet personnel</span>
+          <span class="tag">Affiche</span>
+          <span class="tag">Réseaux sociaux</span>
+        </div>
+      </div>
+      <p class="case-intro rv">Trois formats pour présenter mon application de gestion de maquis : une affiche carrée, une bannière pour les réseaux et une bannière large pour la boutique.</p>
+
+      <div class="ads">
+        <figure class="rv">
+          <img src="images/affiche-mon-maquis-carre.webp" width="1000" height="1000" alt="Affiche Mon Maquis : « Sache chaque soir si ton maquis a gagné ou perdu », trois écrans de l'application et le bouton Ventes, Pertes, Bilan" loading="lazy">
+          <figcaption><h3>Affiche carrée</h3><span class="tag">1200 × 1200</span></figcaption>
+        </figure>
+        <div class="col">
+          <figure class="rv">
+            <img src="images/banniere-mon-maquis-reseaux.webp" width="1200" height="627" alt="Bannière Mon Maquis pour les réseaux sociaux : le message, deux écrans du bilan et le bouton Paiement unique" loading="lazy">
+            <figcaption><h3>Bannière réseaux</h3><span class="tag">1200 × 627</span></figcaption>
+          </figure>
+          <figure class="rv">
+            <img src="images/banniere-mon-maquis-large.webp" width="1404" height="520" alt="Bannière large Mon Maquis : le message, deux écrans du bilan et le bouton Mon Maquis, paiement unique" loading="lazy">
+            <figcaption><h3>Bannière large</h3><span class="tag">1404 × 520</span></figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <p class="ads-note rv">Le message tient en une phrase : savoir chaque soir si le maquis a gagné ou perdu. Les couleurs chaudes (brun, orange, crème) reprennent celles de l'application, et la mention « fonctionne sans internet » répond à un vrai besoin du terrain. Voir le projet côté <a href="web.html#projet">Web</a>.</p>
     </div>
   </section>
 
