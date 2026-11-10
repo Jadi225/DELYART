@@ -15,9 +15,8 @@
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='72 19 125 178'%3E%3Cpath d='M102.07,73.11c12.36,13.34,24.79,26.56,36.85,40.17,3.7,4.18,8.59,7.4,8.88,13.95.49,10.96-11.99,16.38-19.38,9.33-13.54-16.47-30.19-31.14-43.66-47.47-2.96-3.59-4.96-6.02-5.36-11.09-1.07-13.63.85-28.84,0-42.63.72-6.32,5.83-9.79,11.35-10.4,16.41.7,33.51-.96,49.84-.03,24.06,1.37,47.76,30.69,50.43,55.71-.77,17.91,1.03,36.8.02,54.59-1.56,27.35-20.86,43.92-43.16,52.45-8.4,3.21-12.7,4.06-19.68-2.54-12.37-11.68-24.84-26.94-36.43-39.73-3.64-4.02-11.79-10.46-12.68-16.07-1.78-11.22,10.56-18.16,18.74-11.79,13.24,14.41,26.76,28.51,40.07,42.93.82.89,2.07,3.17,2.88,3.57,1.63.8,6.78-2.28,8.5-3.25,9.05-5.08,18.07-13.41,19.07-25.15,1.47-17.24-.99-36.95-.11-54.45-.77-10.3-17.38-31.85-26.86-31.85h-39.33v23.74Z' fill='%23F59A06'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/site.css">
 <script>document.documentElement.classList.add('js')</script>
 <style>
 :root{
@@ -59,6 +58,7 @@ section{padding-block:clamp(4rem,9vw,7rem)}
 .hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(140,133,240,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(140,133,240,.07) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(80% 80% at 100% 100%,#000,transparent 75%);mask-image:radial-gradient(80% 80% at 100% 100%,#000,transparent 75%)}
 .hero .wrap{width:100%;position:relative;display:flex;flex-direction:column;gap:1.4rem}
 .hero h1{font-size:clamp(2.6rem,7vw,5.6rem);font-weight:700;max-width:14ch}
+@media (max-width:30rem){.hero h1{font-size:min(2.6rem,9.5vw)}} /* petit écran : « simples, faites pour » tient sur une ligne */
 .hero .lead{max-width:34rem;color:var(--muted);font-size:1.1rem}
 .cta{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:.6rem}
 .btn{display:inline-block;padding:.85rem 1.6rem;border-radius:999px;text-decoration:none;font-weight:500;font-size:.95rem;border:1px solid transparent;transition:box-shadow .25s,border-color .25s,background .25s}
@@ -89,7 +89,7 @@ section{padding-block:clamp(4rem,9vw,7rem)}
 .ph figcaption b{display:block;color:var(--text);font:500 .95rem var(--display)}
 .hero-shot{border-radius:.9rem;overflow:hidden;border:1px solid var(--line);margin-bottom:2.5rem;background:#2a1814;box-shadow:0 24px 60px rgba(181,83,60,.18)}
 .hero-shot img{display:block;width:100%;height:auto}
-.ads{display:grid;grid-template-columns:1fr 1.25fr;gap:1.25rem;align-items:start;margin-bottom:3rem}
+.ads{display:grid;grid-template-columns:.93fr 1fr;gap:1.25rem;align-items:start;margin-bottom:3rem}
 .ads .col{display:flex;flex-direction:column;gap:1.25rem}
 .ads figure{display:flex;flex-direction:column;gap:.7rem;transition:transform .5s var(--ease)}
 .ads figure:hover{transform:translateY(-4px)}
@@ -101,14 +101,6 @@ section{padding-block:clamp(4rem,9vw,7rem)}
 .case-cta{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:.9rem;margin-top:1rem}
 
 /* À venir */
-.next{border-top:1px solid var(--line)}
-.next-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:1.5rem;margin-bottom:2.2rem}
-.next-head p{color:var(--muted);max-width:26rem}
-.slots{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
-.slot{min-height:14rem;border-radius:.9rem;border:1px dashed #4a4a80;display:flex;flex-direction:column;justify-content:flex-end;gap:.5rem;padding:1.4rem;transition:background .3s,border-color .3s}
-.slot:hover{background:var(--surface);border-color:var(--indigo-hi)}
-.slot h3{font-size:1.15rem}
-.slot span{color:var(--muted);font-size:.92rem}
 
 /* Contact */
 .end{border-top:1px solid var(--line);text-align:center;background:radial-gradient(70% 90% at 50% 100%,rgba(59,52,144,.45),transparent 70%)}
@@ -130,7 +122,6 @@ section{padding-block:clamp(4rem,9vw,7rem)}
 .ln:nth-child(2)>span{animation-delay:.12s}
 
 @media (max-width:52rem){
-  .slots{grid-template-columns:1fr}
   .nav .hide-s{display:none}
   .ph figcaption{font-size:.75rem}
 }
@@ -140,8 +131,11 @@ section{padding-block:clamp(4rem,9vw,7rem)}
   html{scroll-behavior:auto}
 }
 </style>
+<link rel="stylesheet" href="motion/motion.css">
+<style>.svc-list,.about,.price-note{--price-c:var(--indigo-hi)}</style>
 </head>
 <body>
+<a class="skip" href="#contenu" style="--skip-bg:#5a50d8;--skip-fg:#fff">Aller au contenu</a>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
@@ -157,14 +151,16 @@ section{padding-block:clamp(4rem,9vw,7rem)}
 <header class="top">
   <a class="brand" href="index.html" aria-label="DELYART, retour à l'accueil"><svg viewBox="72 19 125 178" aria-hidden="true"><use href="#pD"/></svg><span>DELYART</span></a>
   <nav class="nav" aria-label="Navigation">
+    <a class="hide-s" href="#services">Services</a>
     <a class="hide-s" href="#projet">Mon Maquis</a>
     <a class="hide-s" href="#mariage">Mariage</a>
+    <a class="hide-s" href="#apropos">À propos</a>
     <a class="hide-s" href="#contact">Contact</a>
     <a class="sw" href="graphisme.html">Graphisme →</a>
   </nav>
 </header>
 
-<main>
+<main id="contenu" tabindex="-1">
   <section class="hero" id="accueil">
     <div class="wrap">
       <span class="kicker">Univers Web</span>
@@ -174,6 +170,18 @@ section{padding-block:clamp(4rem,9vw,7rem)}
         <a class="btn btn-main" href="#projet">Voir les projets</a>
         <a class="btn btn-line" href="#contact">Me contacter</a>
       </div>
+    </div>
+  </section>
+
+  <section class="svc-sec" id="services">
+    <div class="wrap">
+      <h2 class="rv">Ce que je crée</h2>
+      <ul class="svc-list rv">
+        <li><h3>Page vitrine</h3><div><p>Une page claire pour présenter votre activité, avec un bouton WhatsApp. Rapide sur téléphone.</p><span class="price">À partir de 70 000 FCFA</span></div></li>
+        <li><h3>Site vitrine</h3><div><p>Plusieurs pages (activités, réalisations, contact), claires et rapides sur téléphone.</p><span class="price">À partir de 150 000 FCFA</span></div></li>
+        <li><h3>Application sur mesure</h3><div><p>Un outil simple pour gérer votre activité, comme Mon Maquis pour les maquis.</p><span class="price">Sur devis</span></div></li>
+      </ul>
+      <p class="price-note rv">Prix de départ en FCFA, selon le besoin. Pour un devis précis, écrivez-moi sur WhatsApp.</p>
     </div>
   </section>
 
@@ -195,16 +203,13 @@ section{padding-block:clamp(4rem,9vw,7rem)}
       <div class="ads rv" role="group" aria-label="Visuels de lancement de Mon Maquis">
         <figure>
           <img src="images/affiche-mon-maquis-carre.webp" width="1000" height="1000" alt="Affiche Mon Maquis : « Sache chaque soir si ton maquis a gagné ou perdu », trois écrans de l'application et le bouton Ventes, Pertes, Bilan" loading="lazy">
-          <figcaption><b>Affiche carrée</b>1200 × 1200</figcaption>
         </figure>
         <div class="col">
           <figure>
             <img src="images/banniere-mon-maquis-reseaux.webp" width="1200" height="627" alt="Bannière Mon Maquis pour les réseaux sociaux : le message, deux écrans du bilan et le bouton Paiement unique" loading="lazy">
-            <figcaption><b>Bannière réseaux</b>1200 × 627</figcaption>
           </figure>
           <figure>
             <img src="images/banniere-mon-maquis-large.webp" width="1404" height="520" alt="Bannière large Mon Maquis : le message, deux écrans du bilan et le bouton Mon Maquis, paiement unique" loading="lazy">
-            <figcaption><b>Bannière large</b>1404 × 520</figcaption>
           </figure>
         </div>
       </div>
@@ -292,15 +297,20 @@ section{padding-block:clamp(4rem,9vw,7rem)}
     </div>
   </section>
 
-  <section class="next">
+
+  <section class="about-sec" id="apropos">
     <div class="wrap">
-      <div class="next-head rv">
-        <h2>Prochains projets</h2>
-        <p>Les emplacements vides se remplissent au fil de mes créations.</p>
-      </div>
-      <div class="slots">
-        <div class="slot rv"><h3>Site vitrine</h3><span>Projet à venir</span></div>
-        <div class="slot rv"><h3>Page de vente</h3><span>Projet à venir</span></div>
+      <div class="about">
+        <!-- PHOTO : mets ta photo dans images/jardel.webp (carrée, 600×600) puis remplace le <svg> ci-dessous par :
+             <img src="images/jardel.webp" width="600" height="600" alt="Jardel, fondateur de DELYART" loading="lazy"> -->
+        <div class="about-mark rv"><svg viewBox="72 19 125 178" aria-hidden="true"><use href="#pD"/></svg></div>
+        <div class="rv">
+          <span class="kicker">À propos</span>
+          <h2>Derrière DELYART, Jardel.</h2>
+          <p>Je suis graphiste et web designer indépendant à Abidjan. Je dessine des logos, des identités visuelles et des flyers, et je crée des applications simples, pensées d'abord pour le téléphone.</p>
+          <p>Mon fil rouge : un travail propre, lisible, fait pour l'usage réel, celui d'un commerçant, d'un maquis ou d'un mariage.</p>
+          <a class="btn btn-line" href="#contact">Me parler de votre projet</a>
+        </div>
       </div>
     </div>
   </section>
@@ -309,9 +319,9 @@ section{padding-block:clamp(4rem,9vw,7rem)}
     <div class="wrap">
       <h2 class="rv">Une application ou un site à créer ?</h2>
       <p class="rv">Écrivez-moi, je réponds vite.</p>
-      <a class="mail rv" href="mailto:jardelehouman5@gmail.com">jardelehouman5@gmail.com</a>
+      <a class="mail rv" href="mailto:contact.delyart@gmail.com">contact.delyart@gmail.com</a>
       <div class="links rv">
-        <a class="btn btn-amber" href="https://wa.me/2250757887372" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+        <a class="btn btn-amber" href="https://wa.me/2250757887372?text=Bonjour%2C%20j%27ai%20vu%20votre%20portfolio%20DELYART%20%28Web%29.%20J%27aimerais%20discuter%20d%27un%20projet%20d%27application%20ou%20de%20site.%20Voici%20mon%20besoin%20%3A%20" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
         <a class="btn btn-line" href="https://instagram.com/delyart" target="_blank" rel="noopener">Instagram</a>
         <a class="btn btn-line" href="https://behance.net/delyart" target="_blank" rel="noopener">Behance</a>
       </div>
@@ -324,6 +334,10 @@ section{padding-block:clamp(4rem,9vw,7rem)}
   <span><a href="index.html">Accueil</a> · Abidjan, Côte d'Ivoire</span>
 </div></div>
 
+<a class="wa-float" href="https://wa.me/2250757887372?text=Bonjour%2C%20j%27ai%20vu%20votre%20portfolio%20DELYART%20%28Web%29.%20J%27aimerais%20discuter%20d%27un%20projet%20d%27application%20ou%20de%20site.%20Voici%20mon%20besoin%20%3A%20" target="_blank" rel="noopener" style="--wa-bg:#5a50d8;--wa-fg:#fff"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5C6.8 2.5 2.6 6.2 2.6 10.8c0 2.4 1.1 4.5 2.9 6L4.8 21.5l4.6-2c.8.2 1.7.3 2.6.3 5.2 0 9.4-3.7 9.4-8.3S17.2 2.5 12 2.5z"/></svg><span>WhatsApp</span></a>
+
+<script src="motion/motion.js"></script>
+<script src="assets/site.js" defer></script>
 <script>
 (()=>{
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
