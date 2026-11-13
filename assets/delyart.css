@@ -1,0 +1,448 @@
+/* =====================================================================
+   DELYART V12 · « Le Bon à Tirer »
+   Une seule feuille de style pour tout le site.
+   Le site se lit comme une épreuve d'imprimeur : papier ivoire (Graphisme),
+   encre (Web), et l'orange uni réservé au travail fini (les boutons d'action).
+   Le dégradé n'existe que dans le logo.
+
+   Sommaire
+   1. Polices            7. Accueil coupé en deux
+   2. Variables          8. Sections et composants
+   3. Base               9. Scène signature : le logo qui se démonte
+   4. Grille            10. Scène Mon Maquis : le téléphone fixe
+   5. En-tête et pied   11. Micro-interactions (masques, repères de coupe)
+   6. Boutons           12. Transitions entre pages, mouvement réduit
+   ===================================================================== */
+
+/* ---------- 1. Polices (auto-hébergées, sous-ensemble latin, licence SIL OFL) ---------- */
+@font-face{font-family:"Bricolage Grotesque";src:url("fonts/bricolage-grotesque-latin.woff2") format("woff2");font-weight:600 800;font-display:swap}
+@font-face{font-family:"Atkinson Hyperlegible Next";src:url("fonts/atkinson-hyperlegible-next-latin.woff2") format("woff2");font-weight:400 700;font-display:swap}
+/* Polices de secours calibrées : le texte ne « saute » pas quand la vraie police arrive (CLS 0) */
+@font-face{font-family:"Bricolage secours";src:local("Arial"),local("Liberation Sans"),local("Roboto");size-adjust:84.5%;ascent-override:110%;descent-override:32%;line-gap-override:0%}
+@font-face{font-family:"Atkinson secours";src:local("Arial"),local("Liberation Sans"),local("Roboto");size-adjust:99%;ascent-override:99%;descent-override:32%;line-gap-override:0%}
+
+/* ---------- 2. Variables : tout le réglage du site est ici ---------- */
+:root{
+  /* Couleurs (5 au maximum) */
+  --papier:#F2EEE5;   /* ivoire : le papier de l'épreuve */
+  --encre:#1A1833;    /* encre indigo profond, tirée du #3B3490 du logo */
+  --orange:#F7931E;   /* orange uni : le travail fini, réservé aux actions */
+  --mauve:#7E5170;    /* mauve du logo, assombri pour le contraste : annotations */
+  --indigo:#3B3490;   /* indigo du logo : liens visités, détails de l'univers Web */
+
+  /* Typographie : 2 familles, 6 tailles fluides */
+  --f-titre:"Bricolage Grotesque","Bricolage secours",Arial,sans-serif;
+  --f-texte:"Atkinson Hyperlegible Next","Atkinson secours",Arial,sans-serif;
+  --t1:.875rem;                                             /* étiquettes, mentions */
+  --t2:clamp(1rem,.97rem + .15vw,1.0625rem);                 /* texte courant */
+  --t3:clamp(1.1875rem,1.05rem + .6vw,1.5rem);               /* chapô, sous-titres */
+  --t4:clamp(1.5rem,1.15rem + 1.6vw,2.5rem);                 /* titres de bloc, courriel */
+  --t5:clamp(2rem,min(1.3rem + 4.2vw,.5rem + 8svh),5rem);    /* titres de section, h1 Graphisme */
+  --t6:clamp(2.5rem,min(1.2rem + 6.6vw,.5rem + 11svh),8.5rem); /* très grands titres */
+
+  /* Espacements : une seule échelle, base 8 px */
+  --e1:.5rem; --e2:1rem; --e3:1.5rem; --e4:2rem; --e5:3rem; --e6:4rem; --e7:6rem; --e8:8rem;
+
+  /* Grille : 12 colonnes, gouttière constante */
+  --colonnes:12; --goutt:1.5rem; --marge:clamp(1.25rem,4vw,4rem); --largeur:90rem;
+  --h-entete:4rem;
+
+  /* Mouvement : 3 durées, 2 courbes. Pour tout ralentir, augmente les durées. */
+  --d-1:200ms; --d-2:400ms; --d-3:800ms;
+  --c-trace:cubic-bezier(.65,0,.35,1);  /* « le trait de plume » : part doucement, finit doucement */
+  --c-pose:cubic-bezier(.2,.8,.2,1);    /* « la pièce se pose » : rapide puis amortie */
+
+  /* Empilement */
+  --z-scene:1; --z-entete:20; --z-evitement:50;
+}
+/* Thèmes : le papier (Graphisme) et l'encre (Web) */
+.theme-papier{--fond:var(--papier);--texte:var(--encre);--doux:color-mix(in srgb,var(--encre) 78%,var(--papier));--trait:color-mix(in srgb,var(--encre) 28%,var(--papier));--note:var(--mauve);color-scheme:light}
+.theme-encre{--fond:var(--encre);--texte:var(--papier);--doux:color-mix(in srgb,var(--papier) 78%,var(--encre));--trait:color-mix(in srgb,var(--papier) 30%,var(--encre));--note:color-mix(in srgb,var(--papier) 78%,var(--encre));color-scheme:dark}
+
+/* ---------- 3. Base ---------- */
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:var(--e3)}
+body{background:var(--fond);color:var(--texte);font:400 var(--t2)/1.5rem var(--f-texte);overflow-x:clip;padding-top:var(--h-entete);min-height:100svh;display:flex;flex-direction:column}
+main{flex:1;overflow-x:clip}
+img,svg{display:block;max-width:100%}
+img{height:auto}
+a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:1px}
+h1,h2,h3{font-family:var(--f-titre);font-weight:700;line-height:.98;letter-spacing:-.02em;text-wrap:balance;overflow-wrap:break-word}
+h3{font-size:var(--t3);line-height:1.15;letter-spacing:-.01em}
+p,li,dd,dt,figcaption{overflow-wrap:break-word;text-wrap:pretty}
+p{max-width:62ch}
+ul,ol{padding:0;list-style:none}
+:focus-visible{outline:3px solid var(--texte);outline-offset:3px}
+.sr-only{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.evitement{position:absolute;left:var(--marge);top:var(--e1);z-index:var(--z-evitement);min-height:44px;display:inline-flex;align-items:center;padding:0 var(--e2);background:var(--texte);color:var(--fond);font-weight:700;transform:translateY(-200%)}
+.evitement:focus{transform:none}
+main:focus{outline:none}
+.sprite{position:absolute;width:0;height:0;overflow:hidden}
+.ico{width:1.5rem;height:1.5rem;flex:none;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- 4. Grille ---------- */
+.cadre{width:100%;max-width:var(--largeur);margin-inline:auto;padding-inline:var(--marge)}
+.grille{display:grid;grid-template-columns:repeat(var(--colonnes),minmax(0,1fr));column-gap:var(--goutt)}
+.grille>*{grid-column:1/-1}
+
+/* ---------- 5. En-tête et pied ---------- */
+.entete{position:absolute;inset:0 0 auto;z-index:var(--z-entete);height:var(--h-entete)}
+.entete-in{height:100%;display:flex;align-items:center;justify-content:space-between;gap:var(--e2)}
+.marque{display:inline-flex;align-items:center;gap:var(--e1);min-height:44px;min-width:44px;text-decoration:none;font:700 var(--t2)/1 var(--f-titre);letter-spacing:.08em;view-transition-name:marque}
+.marque svg{width:1.75rem;height:2.5rem}
+.nav{display:flex;align-items:center;gap:var(--e1)}
+.nav a{display:inline-flex;align-items:center;gap:var(--e1);min-height:44px;padding:0 var(--e1);text-decoration:none;font-size:var(--t1);font-weight:700;letter-spacing:.04em}
+.nav a:hover{text-decoration:underline}
+.nav .nav-sec{display:none}
+.nav .nav-wa{min-width:44px;justify-content:center}
+.nav .nav-wa span{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.nav .bascule{border:1.5px solid currentColor;padding:0 var(--e2)}
+.nav .bascule .ico{width:1.125rem;height:1.125rem}
+@media (min-width:64rem){.nav .nav-sec{display:inline-flex}.nav .nav-wa span{position:static;width:auto;height:auto;overflow:visible;clip-path:none}}
+@media (max-width:23.74rem){.marque span{display:none}}
+.pied{border-top:1px solid var(--trait);margin-top:var(--e7)}
+.pied-in{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:var(--e2);padding-block:var(--e3)}
+.pied p{font-size:var(--t1);color:var(--doux)}
+.pied ul{display:flex;flex-wrap:wrap;gap:0 var(--e2)}
+.pied a{display:inline-flex;align-items:center;min-height:44px;font-size:var(--t1)}
+
+
+/* ---------- 6. Boutons : rectangles d'imprimeur, jamais de pilule ---------- */
+.actions{display:flex;flex-wrap:wrap;gap:var(--e1);max-width:none}
+.btn{position:relative;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;gap:var(--e1);min-height:48px;padding:0 var(--e3);border:1.5px solid var(--texte);font:700 var(--t2)/1.2 var(--f-texte);text-decoration:none;overflow:hidden}
+.btn .ico{width:1.25rem;height:1.25rem;transition:transform var(--d-1) var(--c-pose)}
+.btn-plein{background:var(--orange);color:var(--encre);border-color:var(--encre)}
+.theme-encre .btn-plein{border-color:var(--orange)}
+/* Micro-interaction : au survol, le trait se remplit d'orange uni, de gauche à droite (le travail se finit) */
+.btn-trait::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform var(--d-1) var(--c-trace)}
+.btn-trait:hover,.btn-trait:focus-visible{color:var(--encre)}
+.btn-trait:hover::before,.btn-trait:focus-visible::before{transform:scaleX(1)}
+.btn:hover .ico,.btn:focus-visible .ico{transform:translateX(4px)}
+
+/* ---------- 7. Accueil coupé en deux ---------- */
+.accueil{padding-top:0}
+.accueil .entete-in{color:var(--encre)}
+.accueil .indice-univers{display:none;font-size:var(--t1);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--papier)}
+.accueil h1{font:700 var(--t1)/1.2 var(--f-texte);letter-spacing:.04em;max-width:16rem}
+.univers{display:grid;grid-template-columns:1fr;min-height:100svh}
+.cote{position:relative;display:grid;grid-template-rows:1fr auto;gap:var(--e3);min-height:50svh;padding:calc(var(--h-entete) + var(--e3)) var(--marge) var(--e5);text-decoration:none;background:var(--fond);color:var(--texte)}
+.cote+.cote{padding-top:var(--e5)}
+.cote:focus-visible{outline-offset:-6px}
+.cote-visuel{display:none;align-self:center}
+.cote-texte{display:grid;gap:var(--e2);align-content:end;justify-items:start}
+.cote .etiquette{margin:0}
+.cote-titre{font:700 var(--t6)/.9 var(--f-titre);letter-spacing:-.035em}
+.cote-desc{color:var(--doux);max-width:30ch}
+.cote .btn{pointer-events:none}
+.cote:hover .btn-trait::before,.cote:focus-visible .btn-trait::before{transform:scaleX(1)}
+.cote:hover .btn,.cote:focus-visible .btn{color:var(--encre)}
+.cote:hover .btn .ico,.cote:focus-visible .btn .ico{transform:translateX(4px)}
+/* La couture entre les deux univers : une règle graduée (tous les 8 px, un grand trait tous les 40 px) */
+.cote-g::after{content:"";position:absolute;left:0;right:0;bottom:0;height:12px;background:repeating-linear-gradient(90deg,var(--encre) 0 1px,transparent 1px 8px) bottom/100% 6px no-repeat,repeating-linear-gradient(90deg,var(--encre) 0 1px,transparent 1px 40px) bottom/100% 12px no-repeat;pointer-events:none}
+.bez-index{width:min(100%,26rem);height:auto;overflow:visible;color:var(--encre)}
+.bez-index .courbe{fill:none;stroke:var(--encre);stroke-width:2.5;stroke-linecap:round}
+.bez-index .poignee{stroke:var(--mauve);stroke-width:1.25}
+.bez-index .ancre{fill:var(--papier);stroke:var(--encre);stroke-width:1.5}
+.bez-index .bout{fill:var(--mauve)}
+.mini-tel{display:block;width:clamp(8rem,22vw,13rem);aspect-ratio:520/886;border:2px solid var(--papier);border-radius:1.75rem;padding:6px;margin-inline:auto 0}
+.mini-tel img{width:100%;height:100%;object-fit:cover;border-radius:1.375rem}
+@media (min-width:48rem){
+  .univers{grid-template-columns:1fr 1fr}
+  .cote,.cote+.cote{min-height:100svh;padding:calc(var(--h-entete) + var(--e4)) var(--marge) var(--e6)}
+  .cote-g::after{left:auto;top:0;width:12px;height:auto;background:repeating-linear-gradient(180deg,var(--encre) 0 1px,transparent 1px 8px) right/6px 100% no-repeat,repeating-linear-gradient(180deg,var(--encre) 0 1px,transparent 1px 40px) right/12px 100% no-repeat}
+  .accueil .indice-univers{display:block}
+}
+@media (min-width:48rem) and (min-height:34rem){.cote-visuel{display:block}}
+
+/* ---------- 8. Sections et composants ---------- */
+.section{padding-block:var(--e7)}
+.section+.section{border-top:1px solid var(--trait)}
+@media (min-width:64rem){.section{padding-block:var(--e8)}}
+.etiquette{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 var(--e1);margin-bottom:var(--e3);font:700 var(--t1)/1.5rem var(--f-texte);letter-spacing:.08em;text-transform:uppercase;color:var(--note)}
+.planche{font-variant-numeric:tabular-nums;color:var(--texte);padding-right:var(--e1);border-right:1.5px solid var(--trait)}
+.titre{font-size:var(--t5)}
+.titre-h1{font-size:var(--t5)}
+.web .titre-h1{font-size:var(--t6)}
+.chapo{font-size:var(--t3);line-height:2rem;color:var(--doux);max-width:36ch}
+.texte-doux{color:var(--doux)}
+.bloc-texte>*+*{margin-top:var(--e2)}
+.sous-titre{margin-top:var(--e5);margin-bottom:var(--e3)}
+
+/* Mentions d'honnêteté (projet personnel, démo, étude) */
+.mentions{display:flex;flex-wrap:wrap;gap:var(--e1);margin-top:var(--e3)}
+.mention{display:inline-flex;align-items:center;min-height:2rem;padding:0 var(--e1);border:1px solid var(--trait);font-size:var(--t1);font-weight:700;letter-spacing:.02em;color:var(--doux)}
+.mention-forte{border-color:var(--texte);color:var(--texte)}
+
+/* Tarifs : une liste de prix d'imprimeur, alignée sur la grille */
+.tarifs{margin-top:var(--e5);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-columns:subgrid;border-top:1.5px solid var(--texte)}
+.tarifs li{grid-column:1/-1;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-columns:subgrid;row-gap:var(--e1);padding-block:var(--e3);border-bottom:1px solid var(--trait)}
+.tarifs li>*{grid-column:1/-1}
+.tarifs p{color:var(--doux)}
+.prix{font:700 var(--t2)/1.5rem var(--f-titre);font-variant-numeric:tabular-nums}
+.note-prix{margin-top:var(--e3);font-size:var(--t1);color:var(--doux)}
+@media (min-width:48rem){
+  .tarifs h3{grid-column:1/5}.tarifs p{grid-column:5/10}.tarifs .prix{grid-column:10/13;text-align:right}
+}
+
+/* Fiche technique (projets) : intitulé à gauche, texte à droite */
+.fiche{margin-top:var(--e5);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-columns:subgrid}
+.fiche>div{grid-column:1/-1;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-columns:subgrid;row-gap:var(--e1);padding-block:var(--e3);border-top:1px solid var(--trait)}
+.fiche dt{grid-column:1/-1;font:700 var(--t3)/1.15 var(--f-titre)}
+.fiche dd{grid-column:1/-1;color:var(--doux);max-width:62ch}
+.fiche dd p+p,.fiche dd p+.mentions{margin-top:var(--e2)}
+@media (min-width:48rem){.fiche dt{grid-column:1/5}.fiche dd{grid-column:5/12}}
+
+/* Planches d'images avec repères de coupe */
+.repere{position:relative;margin:var(--e3) 0}
+.repere::before{content:"";position:absolute;inset:-14px;pointer-events:none;
+  --l:12px;--c:var(--texte);
+  background:
+   linear-gradient(var(--c),var(--c)) 0 13px/var(--l) 1px,
+   linear-gradient(var(--c),var(--c)) 13px 0/1px var(--l),
+   linear-gradient(var(--c),var(--c)) 100% 13px/var(--l) 1px,
+   linear-gradient(var(--c),var(--c)) calc(100% - 13px) 0/1px var(--l),
+   linear-gradient(var(--c),var(--c)) 0 calc(100% - 13px)/var(--l) 1px,
+   linear-gradient(var(--c),var(--c)) 13px 100%/1px var(--l),
+   linear-gradient(var(--c),var(--c)) 100% calc(100% - 13px)/var(--l) 1px,
+   linear-gradient(var(--c),var(--c)) calc(100% - 13px) 100%/1px var(--l);
+  background-repeat:no-repeat}
+.repere img,.repere picture{width:100%}
+.legende{display:flex;flex-wrap:wrap;justify-content:space-between;gap:0 var(--e2);margin-top:var(--e3);font-size:var(--t1);color:var(--doux)}
+.legende b{color:var(--texte)}
+
+/* Livrables du logo */
+.livrables{row-gap:var(--e5);margin-top:var(--e5)}
+.livre-plat{display:grid;place-items:center;aspect-ratio:1;background:var(--encre)}
+.livre-plat svg{width:56%;height:auto}
+.nuances{display:grid;gap:var(--e1)}
+.nuances li{display:grid;grid-template-columns:3rem 1fr;align-items:center;gap:var(--e2);min-height:3rem}
+.nuances i{display:block;width:3rem;height:3rem;border:1px solid var(--trait)}
+.nuances b{display:block;font-family:var(--f-titre);font-size:var(--t3);line-height:1.15}
+.nuances small{font-size:var(--t1);color:var(--doux);font-variant-numeric:tabular-nums}
+@media (min-width:64rem){
+  .livre-3d{grid-column:1/8;grid-row:1/3}
+  .livre-plat-fig{grid-column:9/13}
+  .livre-nuances{grid-column:9/13}
+}
+@media (min-width:48rem) and (max-width:63.99rem){.livre-plat-fig{grid-column:1/7}.livre-nuances{grid-column:7/13;align-self:center}}
+
+/* Affiches : asymétrie assumée, le carré à gauche, les bannières décalées à droite */
+.affiches{row-gap:var(--e4);margin-top:var(--e5);align-items:start}
+@media (min-width:64rem){
+  .aff-carre{grid-column:1/7;grid-row:1/3}
+  .aff-reseaux{grid-column:8/13}
+  .aff-large{grid-column:7/13}
+}
+
+/* À propos */
+.apropos-texte>*+*{margin-top:var(--e2)}
+.demarche{margin-top:var(--e5)}
+@media (min-width:64rem){.apropos-titre{grid-column:1/8}.apropos-texte{grid-column:1/7}.demarche{grid-column:8/13;margin-top:0;grid-row:2/4}}
+.demarche div{padding-block:var(--e2);border-top:1px solid var(--trait)}
+.demarche dt{font:700 var(--t3)/1.15 var(--f-titre);margin-bottom:var(--e1)}
+.demarche dd{color:var(--doux)}
+
+/* Contact */
+.contact .titre{max-width:16ch}
+.contact .chapo{margin-top:var(--e3)}
+.courriel{display:inline-block;margin-block:var(--e4);font:700 var(--t4)/1.15 var(--f-titre);letter-spacing:-.01em;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.15em;overflow-wrap:anywhere;min-height:44px}
+.contact .actions{margin-top:var(--e2)}
+
+/* Hero Web (pas de scène : le titre seul, très grand) */
+.hero-web{padding-block:var(--e6) var(--e7)}
+.hero-web .chapo{margin-top:var(--e4)}
+.hero-web .actions{margin-top:var(--e4)}
+@media (min-width:64rem){.hero-web .titre-h1{grid-column:1/11}.hero-web .chapo,.hero-web .actions{grid-column:6/12}}
+
+/* ---------- 9. Scène signature : le logo qui se démonte ----------
+   Sans JavaScript ou en mouvement réduit : une page statique (logo + 5 lectures).
+   Avec mouvement : la section fait 360vh (220vh sur téléphone), l'image reste collée
+   et le défilement écrit --p (0 → 1). Les seuils sont dans data-seuils (HTML). */
+.scene-logo{position:relative;z-index:var(--z-scene)}
+.scene-stage{padding-block:var(--e4) var(--e6);row-gap:var(--e4);align-items:center}
+.intro>*+*{margin-top:var(--e3)}
+.intro .etiquette{margin-bottom:0}
+.indice{display:none}
+.etapes{margin-top:var(--e5);display:grid;gap:0}
+.etapes li{padding-block:var(--e3);border-top:1px solid var(--trait)}
+.etapes li p+p{margin-top:var(--e1)}
+.etapes li p:not(.etiquette):not(.texte-doux){font-size:var(--t3);line-height:2rem}
+.etapes .etiquette{margin-bottom:var(--e1)}
+.scene-visuel{max-width:34rem;width:100%;justify-self:center}
+.logo-svg{width:100%;height:auto;overflow:visible}
+.logo-svg .coupes{fill:none;stroke:var(--encre);stroke-width:.6;opacity:0}
+.logo-svg .trace{fill:none;stroke:var(--encre);stroke-width:1.5;vector-effect:non-scaling-stroke;stroke-dasharray:1;stroke-dashoffset:1;opacity:0}
+.logo-svg .constr,.logo-svg .nuancier,.logo-svg .courbe-fantome{opacity:0}
+.logo-svg .constr line{stroke:var(--mauve);stroke-width:1;vector-effect:non-scaling-stroke}
+.logo-svg .constr rect{fill:var(--papier);stroke:var(--encre);stroke-width:1.25;vector-effect:non-scaling-stroke}
+.logo-svg .constr circle{fill:var(--mauve)}
+.logo-svg .piece{transform-box:fill-box;transform-origin:center}
+.scene-visuel figcaption{margin-top:var(--e2);display:flex;justify-content:center}
+@media (max-width:63.99rem){.scene-visuel{order:-1;max-width:22rem}}
+@media (min-width:64rem),(min-width:40rem) and (orientation:landscape){
+  .scene-texte{grid-column:1/7}
+  .scene-visuel{grid-column:7/13;max-width:none}
+}
+
+@media (prefers-reduced-motion:no-preference){
+  .anim .scene-logo{height:360vh;margin-top:calc(-1 * var(--h-entete))}
+  .anim .scene-logo .scene-stage{position:sticky;top:0;height:100svh;padding-block:calc(var(--h-entete) + var(--e2)) var(--e3);grid-template-rows:minmax(0,1fr) auto;row-gap:var(--e3)}
+  .anim .scene-texte{display:grid;grid-row:2}
+  .anim .scene-visuel{grid-row:1;height:100%;min-height:0;display:grid;grid-template-rows:minmax(0,1fr) auto;justify-items:center}
+  .anim .logo-svg{height:100%;width:auto;max-width:100%}
+  .anim .intro,.anim .etapes{grid-area:1/1}
+  .anim .etapes{margin:0;display:grid;align-content:end}
+  .anim .etapes li{grid-area:1/1;border:0;padding:0;opacity:0;transform:translateY(var(--e2));transition:opacity var(--d-2) var(--c-pose),transform var(--d-2) var(--c-pose)}
+  .anim .intro{transition:opacity var(--d-2) var(--c-pose),transform var(--d-2) var(--c-pose),visibility 0s}
+  .anim .indice{display:flex;align-items:center;gap:var(--e1);font-size:var(--t1);font-weight:700;color:var(--doux)}
+  .anim .scene-logo:not([data-etape="0"]) .intro{opacity:0;transform:translateY(calc(-1 * var(--e2)));visibility:hidden;transition:opacity var(--d-2) var(--c-pose),transform var(--d-2) var(--c-pose),visibility 0s var(--d-2)}
+  .anim .scene-logo[data-etape="1"] .etapes li[data-n="1"],
+  .anim .scene-logo[data-etape="2"] .etapes li[data-n="2"],
+  .anim .scene-logo[data-etape="3"] .etapes li[data-n="3"],
+  .anim .scene-logo[data-etape="4"] .etapes li[data-n="4"],
+  .anim .scene-logo[data-etape="5"] .etapes li[data-n="5"],
+  .anim .scene-logo[data-etape="6"] .etapes li[data-n="6"]{opacity:1;transform:none}
+  @media (min-width:64rem),(min-width:40rem) and (orientation:landscape){
+    .anim .scene-logo .scene-stage{grid-template-rows:minmax(0,1fr)}
+    .anim .scene-texte{grid-row:1;align-self:center}
+    .anim .scene-visuel{grid-row:1}
+    .anim .etapes{align-content:center}
+  }
+  @media (max-width:47.99rem){.anim .scene-logo{height:220vh}}
+  /* Écrans courts (petits Android, paysage, zoom 200 %) : l'intro se resserre pour laisser la place au logo.
+     Le même texte de présentation reste lisible plus bas, dans « À propos ». */
+  @media (max-width:47.99rem) and (max-height:45.99rem),(max-height:30rem){
+    .anim .scene-logo .intro .chapo,.anim .scene-logo .intro .btn-trait,.anim .scene-visuel figcaption,.anim .indice{display:none}
+    .anim .scene-logo .intro>*+*{margin-top:var(--e2)}
+  }
+
+  /* La chorégraphie, écrite à partir de --p */
+  .anim .scene-logo{
+    --ex:min(clamp(0,(var(--p,0) - .06) / .14,1),clamp(0,(.97 - var(--p,0)) / .07,1)); /* écartement des pièces */
+    --td:clamp(0,(var(--p,0) - .28) / .14,1);  /* tracé du contour du D */
+    --tc:clamp(0,(var(--p,0) - .63) / .12,1);  /* tracé de la courbe de Bézier */
+    --rp:max(clamp(0,(.62 - var(--p,0)) / .04,1),clamp(0,(var(--p,0) - .78) / .09,1)); /* l'orange uni se pose */
+  }
+  .anim .scene-logo .piece-d{transform:translate(calc(var(--ex) * 22px),calc(var(--ex) * -6px))}
+  .anim .scene-logo .piece-plume{transform:translate(calc(var(--ex) * -8px),calc(var(--ex) * -18px)) rotate(calc(var(--ex) * -8deg))}
+  .anim .scene-logo .piece-courbe{transform:translate(calc(var(--ex) * -26px),calc(var(--ex) * 16px))}
+  .anim .scene-logo .coupes{opacity:var(--ex)}
+  .anim .scene-logo .trace-d{stroke-dashoffset:calc(1 - var(--td))}
+  .anim .scene-logo .trace-c{stroke-dashoffset:calc(1 - var(--tc))}
+  .anim .scene-logo .courbe-pleine{clip-path:inset(0 0 calc((1 - var(--rp)) * 100%) 0)}
+  .anim .scene-logo .piece>use,.anim .scene-logo .piece>g:not(.coupes),.anim .scene-logo .trace,.anim .scene-logo .nuancier rect{transition:opacity var(--d-2) var(--c-pose),transform var(--d-2) var(--c-pose)}
+  .anim .scene-logo.active .piece{will-change:transform}
+  /* Étape 2 : l'éléphant caché (on ne regarde que le D) */
+  .anim [data-etape="2"] .piece-plume>use,.anim [data-etape="2"] .piece-courbe>use,
+  .anim [data-etape="3"] .piece-plume>use,.anim [data-etape="3"] .piece-courbe>use{opacity:.12}
+  .anim [data-etape="2"] .trace-d{opacity:1}
+  /* Étape 3 : les couleurs mélangées sortent du D */
+  .anim [data-etape="3"] .nuancier{opacity:1}
+  .anim .nuancier rect{opacity:0;transform:translateX(-24px)}
+  .anim [data-etape="3"] .nuancier rect{opacity:1;transform:none}
+  .anim [data-etape="3"] .nuancier rect:nth-child(2){transition-delay:80ms}
+  .anim [data-etape="3"] .nuancier rect:nth-child(3){transition-delay:160ms}
+  .anim [data-etape="3"] .nuancier rect:nth-child(4){transition-delay:240ms}
+  /* Étape 4 : la plume et la courbe, tracée point par point */
+  .anim [data-etape="4"] .piece-d>use,.anim [data-etape="5"] .piece-d>use{opacity:.12}
+  .anim [data-etape="4"] .constr,.anim [data-etape="4"] .trace-c{opacity:1}
+  .anim [data-etape="4"] .courbe-fantome{opacity:.18}
+  /* Étape 5 : l'orange uni se pose, le travail est fini */
+  .anim [data-etape="5"] .piece-plume>use{opacity:.35}
+  .anim [data-etape="5"] .courbe-fantome{opacity:.18}
+}
+
+/* ---------- 10. Scène Mon Maquis : le téléphone reste fixe, les écrans défilent ---------- */
+.ecrans-texte{display:none}
+.bande{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,9.5rem),1fr));gap:var(--e3)}
+.bande figure{display:grid;gap:var(--e1)}
+.bande img{width:100%;aspect-ratio:520/886;object-fit:cover;border:1.5px solid var(--trait)}
+.bande figcaption{font-size:var(--t1);color:var(--doux)}
+.bande figcaption b{display:block;color:var(--texte);font-size:var(--t2)}
+.demo-note{margin-top:var(--e3);font-size:var(--t1);color:var(--doux)}
+.scene-ecrans .scene-stage{padding-block:var(--e4)}
+@media (prefers-reduced-motion:no-preference){
+  .anim .scene-ecrans{height:300vh}
+  @media (max-width:47.99rem){.anim .scene-ecrans{height:200vh}}
+  .anim .scene-ecrans .scene-stage{position:sticky;top:0;height:100svh;padding-block:var(--e3);grid-template-rows:minmax(0,1fr) auto;row-gap:var(--e3);align-items:center}
+  .anim .ecrans-texte{display:grid;grid-row:2;align-self:start}
+  .anim .ecrans-texte li{grid-area:1/1;opacity:0;transform:translateX(var(--e2));transition:opacity var(--d-2) var(--c-pose),transform var(--d-2) var(--c-pose)}
+  .anim .ecrans-texte li>*+*{margin-top:var(--e1)}
+  .anim .ecrans-texte h3{font-size:var(--t4)}
+  .anim .ecrans-texte .texte-doux{font-size:var(--t3);line-height:2rem}
+  .anim .ecrans-texte ol{display:grid}
+  .anim .scene-ecrans[data-etape="0"] li[data-n="0"],.anim .scene-ecrans[data-etape="1"] li[data-n="1"],.anim .scene-ecrans[data-etape="2"] li[data-n="2"],.anim .scene-ecrans[data-etape="3"] li[data-n="3"],.anim .scene-ecrans[data-etape="4"] li[data-n="4"]{opacity:1;transform:none}
+  .anim .telephone{grid-row:1;height:100%;min-height:0;display:grid;grid-template-rows:minmax(0,1fr);justify-items:center;align-items:center}
+  .anim .vitre{height:100%;width:auto;max-height:44rem;aspect-ratio:520/886;contain:size layout;border:2px solid var(--texte);border-radius:2rem;padding:6px;overflow:hidden;position:relative}
+  .anim .vitre-in{width:100%;height:100%;overflow:hidden;border-radius:1.625rem}
+  .anim .bande{display:flex;gap:0;width:500%;height:100%;transform:translateX(calc(var(--x,0) * -80%))}
+  .anim .scene-ecrans.active .bande{will-change:transform}
+  .anim .bande li{flex:0 0 20%;height:100%}
+  .anim .bande figure{display:block;height:100%}
+  .anim .bande img{height:100%;border:0}
+  .anim .bande figcaption{position:absolute!important;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+  .anim .compteur{font-variant-numeric:tabular-nums}
+  @media (min-width:64rem),(min-width:40rem) and (orientation:landscape){
+    .anim .scene-ecrans .scene-stage{grid-template-rows:minmax(0,1fr)}
+    .anim .ecrans-texte{grid-row:1;grid-column:1/7;align-self:center}
+    .anim .telephone{grid-row:1;grid-column:7/13}
+  }
+}
+
+/* ---------- 11. Micro-interactions au défilement ----------
+   Titres : révélés par un masque qui avance comme un trait de plume.
+   Images : les repères de coupe se resserrent, l'image est « rognée », prête.
+   CSS natif (animation-timeline) quand le navigateur sait faire ; sinon repli JS (classe .vu). */
+@media (prefers-reduced-motion:no-preference){
+  @supports (animation-timeline:view()){
+    .anim .masque{animation:revele linear both;animation-timeline:view();animation-range:entry 0% entry 90%}
+    .anim .repere::before{animation:resserre linear both;animation-timeline:view();animation-range:entry 10% cover 40%}
+  }
+  .anim.repli-js .masque{clip-path:inset(0 100% 0 0);transition:clip-path var(--d-3) var(--c-trace)}
+  .anim.repli-js .repere::before{opacity:0;transform:scale(1.04);transition:opacity var(--d-3) var(--c-pose),transform var(--d-3) var(--c-pose)}
+  .anim.repli-js .masque.vu{clip-path:inset(0 0 0 0)}
+  .anim.repli-js .repere.vu::before{opacity:1;transform:none}
+}
+@keyframes revele{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes resserre{from{opacity:0;transform:scale(1.04)}to{opacity:1;transform:none}}
+@keyframes trace{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+.anim .bez-index .courbe{stroke-dasharray:1;stroke-dashoffset:1;animation:trace var(--d-3) var(--c-trace) 200ms forwards}
+
+/* ---------- 11 bis. Mouvement ajouté en V13 (sans bibliothèque) ----------
+   a. Champ de points qui pulse depuis le bouton du héros Web
+   b. Le logo à démonter dans « À propos » (Web) : on attrape les pièces, elles reviennent avec un ressort
+   c. Boutons légèrement attirés par la souris (voir assets/delyart.js) */
+.hero-web{position:relative;overflow:hidden}
+.hero-web .cadre{position:relative;z-index:1}
+.champ-points{position:absolute;inset:0;z-index:0;display:grid;grid-template-columns:repeat(var(--nc,16),1fr);grid-template-rows:repeat(var(--nr,7),1fr);place-items:center;pointer-events:none;-webkit-mask-image:radial-gradient(ellipse 85% 95% at 72% 72%,#000 15%,transparent 85%);mask-image:radial-gradient(ellipse 85% 95% at 72% 72%,#000 15%,transparent 85%)}
+.champ-points i{width:.5rem;height:.5rem;border-radius:50%;background:var(--texte);opacity:.16;transform:scale(.6)}
+@media (prefers-reduced-motion:no-preference){
+  .anim .champ-points i{animation:onde 3.2s var(--c-pose) infinite;animation-delay:calc(var(--d,0) * 70ms)}
+  .anim .champ-points.en-pause i{animation-play-state:paused}
+}
+@keyframes onde{0%{transform:scale(.6);opacity:.16}10%{transform:scale(1.9);opacity:.55}32%,100%{transform:scale(.6);opacity:.16}}
+@media (max-width:40rem){.champ-points{-webkit-mask-image:radial-gradient(ellipse 95% 38% at 50% 96%,#000 20%,transparent 90%);mask-image:radial-gradient(ellipse 95% 38% at 50% 96%,#000 20%,transparent 90%)}}
+
+.logo-jeu{margin:var(--e4) 0 0;max-width:20rem}
+.logo-jeu svg{display:block;width:100%;height:auto;overflow:visible}
+.logo-jeu figcaption{display:none;margin-top:var(--e1);font:700 var(--t1)/1.5rem var(--f-texte);letter-spacing:.08em;text-transform:uppercase;color:var(--note);transition:opacity var(--d-2)}
+.js.anim .logo-jeu figcaption{display:block}
+.logo-jeu.touche figcaption{opacity:0}
+.js.anim .logo-jeu .glisse{cursor:grab;touch-action:none}
+.js.anim .logo-jeu .glisse.saisi{cursor:grabbing}
+@media (min-width:64rem){.logo-jeu{grid-column:8/13;grid-row:2/4;margin-top:0;max-width:none;justify-self:start;width:min(100%,20rem)}}
+
+/* ---------- 12. Transitions entre pages, mouvement réduit ---------- */
+@view-transition{navigation:auto}
+::view-transition-old(root),::view-transition-new(root){animation-duration:var(--d-2);animation-timing-function:var(--c-pose)}
+::view-transition-group(marque){animation-duration:var(--d-2);animation-timing-function:var(--c-trace)}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  ::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}
+}
+
+/* Page 404 */
+.page-404 main{display:grid;align-content:center;padding-block:var(--e7)}
+.page-404 .titre-h1{font-size:var(--t6)}
+.page-404 .actions{margin-top:var(--e4)}

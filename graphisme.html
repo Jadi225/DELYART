@@ -2,10 +2,10 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Graphisme | DELYART</title>
 <meta name="description" content="DELYART, graphiste indépendant à Abidjan : logos, identités visuelles et flyers. Étude de cas : le logo DELYART.">
-<meta name="theme-color" content="#050507">
+<meta name="theme-color" content="#F2EEE5">
 <link rel="canonical" href="https://delyart.jardelehouman.workers.dev/graphisme.html">
 <meta property="og:url" content="https://delyart.jardelehouman.workers.dev/graphisme.html">
 <meta property="og:type" content="website">
@@ -15,181 +15,17 @@
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='72 19 125 178'%3E%3Cpath d='M102.07,73.11c12.36,13.34,24.79,26.56,36.85,40.17,3.7,4.18,8.59,7.4,8.88,13.95.49,10.96-11.99,16.38-19.38,9.33-13.54-16.47-30.19-31.14-43.66-47.47-2.96-3.59-4.96-6.02-5.36-11.09-1.07-13.63.85-28.84,0-42.63.72-6.32,5.83-9.79,11.35-10.4,16.41.7,33.51-.96,49.84-.03,24.06,1.37,47.76,30.69,50.43,55.71-.77,17.91,1.03,36.8.02,54.59-1.56,27.35-20.86,43.92-43.16,52.45-8.4,3.21-12.7,4.06-19.68-2.54-12.37-11.68-24.84-26.94-36.43-39.73-3.64-4.02-11.79-10.46-12.68-16.07-1.78-11.22,10.56-18.16,18.74-11.79,13.24,14.41,26.76,28.51,40.07,42.93.82.89,2.07,3.17,2.88,3.57,1.63.8,6.78-2.28,8.5-3.25,9.05-5.08,18.07-13.41,19.07-25.15,1.47-17.24-.99-36.95-.11-54.45-.77-10.3-17.38-31.85-26.86-31.85h-39.33v23.74Z' fill='%23F59A06'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="assets/fonts.css">
-<link rel="stylesheet" href="assets/site.css">
-<script>document.documentElement.classList.add('js')</script>
-<style>
-:root{
-  --bg:#050507; --surface:#0e0e14; --surface-hi:#161622; --line:#26242f;
-  --text:#f2f0f5; --muted:#a09dad;
-  --amber:#F59E0B; --orange:#F7931E; --mauve:#8B5A7C; --indigo:#3B3490; --indigo-hi:#8c85f0;
-  --grad:linear-gradient(100deg,var(--amber),var(--orange) 40%,var(--mauve) 75%,var(--indigo));
-  --display:"Space Grotesk","Segoe UI",system-ui,sans-serif;
-  --body:"Inter","Segoe UI",system-ui,sans-serif;
-  --pad:clamp(1.25rem,5vw,4rem);
-  --ease:cubic-bezier(.16,1,.3,1);
-}
-*{box-sizing:border-box;margin:0}
-html{font-size:16px;scroll-behavior:smooth;scroll-padding-top:5rem;background:var(--bg)}
-body{background:var(--bg);color:var(--text);font:400 1rem/1.7 var(--body);-webkit-font-smoothing:antialiased;overflow-x:clip}
-body::after{content:"";position:fixed;inset:0;z-index:90;pointer-events:none;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
-a{color:inherit}
-:focus-visible{outline:2px solid var(--amber);outline-offset:4px;border-radius:4px}
-::selection{background:var(--amber);color:#120a02}
-.wrap{max-width:74rem;margin-inline:auto;padding-inline:var(--pad)}
-h1,h2,h3{font-family:var(--display);line-height:1.08;letter-spacing:-.025em}
-h2{font-size:clamp(1.9rem,4vw,3rem);font-weight:700;max-width:22ch}
-section{padding-block:clamp(4rem,9vw,7rem)}
-.kicker{font:500 .8rem var(--display);letter-spacing:.18em;text-transform:uppercase;color:var(--amber)}
-.line-top{border-top:1px solid var(--line)}
-#prog{position:fixed;top:0;left:0;right:0;height:2px;z-index:80;background:var(--grad);transform:scaleX(0);transform-origin:left;pointer-events:none}
-
-/* Barre du haut (la même que sur la page Web) */
-.top{position:fixed;inset:0 0 auto 0;z-index:60;display:flex;justify-content:space-between;align-items:center;padding:clamp(14px,2.5vw,26px) var(--pad);background:linear-gradient(var(--bg),transparent)}
-.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;font:700 1.05rem var(--display);letter-spacing:.06em}
-.brand svg{width:1.6rem;height:1.6rem}
-.nav{display:flex;align-items:center;gap:.4rem;font-size:.92rem}
-.nav a{text-decoration:none;color:var(--muted);padding:.45rem .8rem;border-radius:999px;transition:color .2s,background .2s}
-.nav a:hover{color:var(--text);background:var(--surface-hi)}
-.nav .sw{border:1px solid var(--line);color:var(--text)}
-.nav .sw:hover{border-color:var(--indigo-hi)}
-
-/* Boutons */
-.btn{display:inline-block;padding:.85rem 1.6rem;border-radius:999px;text-decoration:none;font-weight:500;font-size:.95rem;border:1px solid transparent;transition:box-shadow .25s,border-color .25s,background .25s}
-.btn-main{background:var(--grad);background-size:140% 100%;color:#120a02}
-.btn-main:hover{box-shadow:0 10px 30px rgba(245,158,11,.28);background-position:100% 0}
-.btn-line{border-color:var(--line)}
-.btn-line:hover{border-color:var(--amber);background:var(--surface-hi)}
-
-/* Hero */
-.hero{min-height:100svh;display:flex;align-items:center;padding-block:7rem 3rem;position:relative;overflow:hidden;background:radial-gradient(90% 80% at 0% 100%,rgba(245,158,11,.34),rgba(247,147,30,.1) 45%,transparent 74%)}
-.hero .wrap{width:100%;position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center}
-.bgD{position:absolute;left:-8vw;bottom:-14%;width:clamp(280px,46vw,620px);opacity:.05;pointer-events:none}
-.hero h1{font-size:clamp(2.5rem,6.6vw,5.4rem);font-weight:700;position:relative;margin-top:1rem}
-.ln{display:block;overflow:hidden;padding-bottom:.08em}
-.ln>span{display:block;animation:lineUp .95s var(--ease) both}
-.ln:nth-child(2)>span{animation-delay:.14s}
-.hero .sub{margin-top:1.5rem;font:500 clamp(1.15rem,2vw,1.4rem)/1.35 var(--display);letter-spacing:-.01em;animation:rise .9s .5s var(--ease) both}
-.hero .lead{margin-top:.9rem;max-width:30rem;color:var(--muted);animation:rise .9s .6s var(--ease) both}
-.cta{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.25rem;animation:rise .9s .7s var(--ease) both}
-.logo-zone{position:relative;display:grid;place-items:center;justify-self:center;width:100%;max-width:26rem}
-.logo-zone::before{content:"";position:absolute;inset:-25%;background:radial-gradient(closest-side,rgba(245,158,11,.22),rgba(139,90,124,.2) 55%,transparent);pointer-events:none;animation:halo 7s ease-in-out infinite}
-.hero-logo{position:relative;width:100%;overflow:visible}
-.hero-logo .d{animation:rise 1s .3s var(--ease) both}
-.hero-logo .nib{transform-box:fill-box;transform-origin:center;animation:pop .6s 1.2s both}
-.hero-logo .curve{animation:slide .8s 1.6s ease-out both}
-@keyframes halo{50%{transform:scale(1.12);opacity:.75}}
-@keyframes lineUp{from{transform:translateY(112%)}to{transform:none}}
-@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-@keyframes slide{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:none}}
-@keyframes pop{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:none}}
-
-/* Ma démarche */
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-.mc{padding:1.5rem;border-radius:.9rem;background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column;gap:.6rem;min-height:11rem;transition:background .3s,border-color .3s}
-.mc:hover{background:var(--surface-hi);border-color:#3a3648}
-.mc h3{font-size:1.2rem}
-.mc p{color:var(--muted);font-size:.95rem}
-.mc.hot{background:var(--grad);border-color:transparent;color:#120a02}
-.mc.hot p{color:#2b1606}
-
-/* Services */
-.svc-list{list-style:none;padding:0;margin-top:2.5rem}
-.svc-list li{display:grid;grid-template-columns:minmax(10rem,1fr) 2fr;gap:1.5rem;padding:1.5rem .75rem;border-bottom:1px solid var(--line);transition:background .3s,padding .3s var(--ease)}
-.svc-list li:first-child{border-top:1px solid var(--line)}
-.svc-list li:hover{background:var(--surface);padding-left:1.5rem}
-.svc-list h3{font-size:1.3rem}
-.svc-list p{color:var(--muted);max-width:46ch}
-
-/* Étude de cas */
-.case-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:1.5rem;margin-bottom:1.2rem}
-.meta{display:flex;flex-wrap:wrap;gap:.5rem}
-.tag{font-size:.8rem;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:.15rem .8rem;white-space:nowrap}
-.tag.live{color:var(--amber);border-color:rgba(245,158,11,.4)}
-.case-intro{color:var(--muted);max-width:40rem;font-size:1.08rem;margin-bottom:2.5rem}
-.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1.25rem}
-.tile{grid-column:span 2;display:flex;flex-direction:column;gap:.75rem;transition:transform .35s var(--ease)}
-.tile:hover{transform:translateY(-4px)}
-.tile.big{grid-column:span 4;grid-row:span 2}
-.media{flex:1;min-height:14rem;border-radius:.9rem;background:var(--surface);border:1px solid var(--line);position:relative;display:grid;place-items:center;overflow:hidden;transition:background .3s,border-color .3s,box-shadow .35s}
-.tile:hover .media{background:var(--surface-hi);border-color:#3a3648;box-shadow:0 18px 40px rgba(0,0,0,.45)}
-.media.photo{background:#000;min-height:20rem}
-.tile:hover .media.photo{background:#000}
-.media img{width:100%;height:100%;object-fit:contain;position:absolute;inset:0;padding:1.2rem}
-.media.logo-stage{background:radial-gradient(closest-side,rgba(245,158,11,.2),transparent 75%),var(--surface)}
-.media.logo-stage svg{width:min(60%,14rem);transition:transform .6s var(--ease)}
-.tile:hover .logo-stage svg{transform:scale(1.04) rotate(-1.5deg)}
-.tile figcaption{display:flex;justify-content:space-between;gap:1rem;align-items:baseline;flex-wrap:wrap}
-.tile h3{font-size:1.1rem}
-.palette{display:flex;flex-direction:column;justify-content:center;gap:.7rem;padding:1.4rem;width:100%}
-.palette div{display:flex;align-items:center;gap:.8rem;font-size:.9rem}
-.palette i{flex:0 0 2.2rem;height:2.2rem;border-radius:.6rem;border:1px solid rgba(255,255,255,.12)}
-.palette b{display:block;font:500 .95rem var(--display)}
-.palette small{color:var(--muted);font-size:.8rem}
-
-/* Les quatre lectures */
-.reads{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1rem;margin-top:3rem}
-.read{padding:1.5rem;border-radius:.9rem;background:var(--surface);border:1px solid var(--line);transition:background .3s,border-color .3s}
-.read:hover{background:var(--surface-hi);border-color:#3a3648}
-.read .n{font:500 .8rem var(--display);letter-spacing:.18em;color:var(--amber)}
-.read h3{font-size:1.15rem;margin:.35rem 0 .5rem}
-.read p{color:var(--muted);font-size:.97rem}
-.read p+p{margin-top:.6rem}
-.note{margin-top:1.8rem;color:var(--muted);font-size:.92rem;border-left:2px solid var(--amber);padding-left:1rem;max-width:44rem}
-
-/* Affiches Mon Maquis */
-.ads{display:grid;grid-template-columns:.93fr 1fr;gap:1.25rem;align-items:start}
-.ads .col{display:flex;flex-direction:column;gap:1.25rem}
-.ads figure{display:flex;flex-direction:column;gap:.7rem;transition:transform .35s var(--ease)}
-.ads figure:hover{transform:translateY(-4px)}
-.ads img{display:block;width:100%;height:auto;border-radius:.9rem;border:1px solid var(--line)}
-.ads figcaption{display:flex;justify-content:space-between;gap:1rem;align-items:baseline;flex-wrap:wrap}
-.ads h3{font-size:1.05rem}
-.ads-note{margin-top:2rem;color:var(--muted);max-width:44rem}
-@media (max-width:52rem){.ads{grid-template-columns:1fr}}
-
-/* À venir */
-
-/* Contact */
-.end{border-top:1px solid var(--line);text-align:center;position:relative;overflow:hidden;background:radial-gradient(70% 90% at 50% 100%,rgba(245,158,11,.22),transparent 70%)}
-.end .wrap{display:flex;flex-direction:column;align-items:center;gap:1.5rem;position:relative}
-.end h2{max-width:18ch;font-size:clamp(2rem,6vw,4.4rem);line-height:1}
-.end p{color:var(--muted);max-width:38ch}
-.mail{font:700 clamp(1.3rem,4.6vw,3rem)/1 var(--display);letter-spacing:-.03em;text-decoration:none;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;word-break:break-word}
-.mail:hover{filter:brightness(1.25)}
-.links{display:flex;flex-wrap:wrap;justify-content:center;gap:.9rem}
-.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-block:1.5rem 2rem;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
-.foot a{text-decoration:none;transition:color .2s}.foot a:hover{color:var(--amber)}
-
-/* Apparition au défilement */
-.js .rv{opacity:0;transform:translateY(22px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
-.js .rv.in{opacity:1;transform:none}
-
-@media (max-width:52rem){
-  .hero{align-items:flex-start;min-height:auto}
-  .hero .wrap{grid-template-columns:1fr}
-  .logo-zone{order:-1;max-width:11rem;justify-self:start}
-  .cards{grid-template-columns:1fr}
-  .svc-list li{grid-template-columns:1fr;gap:.4rem}
-  .grid{grid-template-columns:1fr}
-  .tile,.tile.big{grid-column:auto;grid-row:auto}
-  .media.photo{min-height:16rem}
-  .nav .hide-s{display:none}
-}
-@media (max-width:480px){.brand span{display:none}}
-@media (prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important}
-  .js .rv{opacity:1;transform:none}
-  html{scroll-behavior:auto}
-}
-</style>
-<link rel="stylesheet" href="motion/motion.css">
+<link rel="preload" href="assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/atkinson-hyperlegible-next-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/delyart.css">
+<!-- « js » = JavaScript actif ; « anim » = le visiteur accepte le mouvement. Sans eux, tout reste visible et statique. -->
+<script>document.documentElement.classList.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('anim')</script>
+<script src="assets/delyart.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Graphisme", "url": "https://delyart.jardelehouman.workers.dev/graphisme.html", "inLanguage": "fr", "isPartOf": {"@type": "WebSite", "name": "DELYART", "url": "https://delyart.jardelehouman.workers.dev/"}, "about": {"@type": "ProfessionalService", "name": "DELYART", "email": "jardelehouman5@gmail.com", "address": {"@type": "PostalAddress", "addressLocality": "Abidjan", "addressCountry": "CI"}}, "breadcrumb": {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://delyart.jardelehouman.workers.dev/"}, {"@type": "ListItem", "position": 2, "name": "Graphisme", "item": "https://delyart.jardelehouman.workers.dev/graphisme.html"}]}}</script>
 </head>
-<body>
-<a class="skip" href="#contenu">Aller au contenu</a>
-
-<!-- Tracés du logo déclarés une seule fois -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<body class="theme-papier graphisme">
+<a class="evitement" href="#contenu">Aller au contenu</a>
+<svg class="sprite" aria-hidden="true" focusable="false">
   <defs>
     <linearGradient id="g" gradientUnits="userSpaceOnUse" x1="185" y1="45" x2="100" y2="185">
       <stop offset="0" stop-color="#f59a06"/><stop offset=".5" stop-color="#8a5560"/><stop offset="1" stop-color="#342b78"/>
@@ -201,219 +37,175 @@ section{padding-block:clamp(4rem,9vw,7rem)}
       <path fill="#f59a06" d="M51.71,75.86c-3.41,2.97-6.85-3.26-3.82-5.22,3.44-2.22,6.36,3.01,3.82,5.22Z"/>
     </g>
     <path id="pCurve" fill="#f29100" d="M39.99,134.46c1.19,1.22,5.12.07,5.65,4.36.75,6.1-7.19,6.86-8.45,1.97-.67-2.59,1.18-3.73,1-5.01-.11-.8-2.11-3.66-2.63-4.75-6.12-12.86-8.64-26.35-2.41-39.89l4.27-7.6-25.03,20.28-.77,4.16c-3.2,2.03-6.36-2.65-3.43-5.13,1.41-1.19,1.95-.17,3.1-.2,1.76-.05,24.54-19.58,28.22-22.39.83-.64,5.51-4.25,5.94-4.26,3.6,1.6-.81,3.64-2.28,5.1-12.31,12.27-14.33,27.85-7.76,44.31.68,1.7,3.57,8.03,4.57,9.05Z"/>
+    <symbol id="i-fleche" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol>
+    <symbol id="i-bas" viewBox="0 0 24 24"><path d="M12 4.5v15M6 13.5l6 6 6-6"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M20.25 11.75a8.25 8.25 0 0 1-12.2 7.24L3.75 20.25l1.3-4.1a8.25 8.25 0 1 1 15.2-4.4z"/><path d="M9 8.25c.2 3.4 3.35 6.55 6.75 6.75l.9-1.8-2.1-1.05-.9.9a3.9 3.9 0 0 1-2.7-2.7l.9-.9L10.8 7.35z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3.75 6h16.5v12H3.75z"/><path d="M3.75 6.75 12 12.75l8.25-6"/></symbol>
+    <symbol id="i-insta" viewBox="0 0 24 24"><path d="M8.25 3.75h7.5a4.5 4.5 0 0 1 4.5 4.5v7.5a4.5 4.5 0 0 1-4.5 4.5h-7.5a4.5 4.5 0 0 1-4.5-4.5v-7.5a4.5 4.5 0 0 1 4.5-4.5z"/><path d="M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0zM17.25 6.75v0"/></symbol>
+    <symbol id="i-be" viewBox="0 0 24 24"><path d="M3.75 6.75h4.5a2.63 2.63 0 0 1 0 5.25h-4.5zM3.75 12h5.25a2.63 2.63 0 0 1 0 5.25H3.75zM14.25 14.25h6a3 3 0 1 0-.9 2.15M15 8.25h4.5"/></symbol>
   </defs>
 </svg>
-
-<div id="prog"></div>
-
-<header class="top">
-  <a class="brand" href="index.html" aria-label="DELYART, retour à l'accueil"><svg viewBox="72 19 125 178" aria-hidden="true"><use href="#pD"/></svg><span>DELYART</span></a>
-  <nav class="nav" aria-label="Navigation">
-    <a class="hide-s" href="#services">Services</a>
-    <a class="hide-s" href="#projet">Logo</a>
-    <a class="hide-s" href="#affiches">Affiches</a>
-    <a class="hide-s" href="#apropos">À propos</a>
-    <a class="hide-s" href="#contact">Contact</a>
-    <a class="sw" href="web.html">Web →</a>
-  </nav>
-</header>
-
-<main id="contenu" tabindex="-1">
-  <section class="hero" id="accueil">
-    <svg class="bgD" viewBox="72 19 125 178" aria-hidden="true"><use href="#pD"/></svg>
-    <div class="wrap">
-      <div>
-        <span class="kicker">Univers Graphisme</span>
-        <h1><span class="ln"><span>Votre marque,</span></span><span class="ln"><span>tracée au point près.</span></span></h1>
-        <p class="sub">Chaque courbe a une raison d'être.</p>
-        <p class="lead">Graphiste indépendant à Abidjan. Je dessine des logos, des identités visuelles et des flyers qu'on reconnaît en une seconde.</p>
-        <div class="cta">
-          <a class="btn btn-main" href="#projet">Voir le projet</a>
-          <a class="btn btn-line" href="#contact">Me contacter</a>
-        </div>
-      </div>
-      <div class="logo-zone">
-        <svg class="hero-logo" viewBox="0 18 198 180" role="img" aria-label="Logo DELYART : un D accompagné de l'outil Plume">
-          <use class="d" href="#pD"/>
-          <g class="nib"><use href="#pNib"/></g>
-          <use class="curve" href="#pCurve"/>
-        </svg>
-      </div>
-    </div>
-  </section>
-
-  <section class="line-top" id="demarche">
-    <div class="wrap">
-      <div class="cards">
-        <article class="mc rv"><h3>Ma démarche</h3><p>Je pars d'une idée simple, je la croque à la main, puis je la redessine à la plume. Chaque courbe est choisie.</p></article>
-        <article class="mc rv"><h3>Mes outils</h3><p>Illustrator et Photoshop pour l'image, Premiere Pro pour le mouvement, Canva pour livrer vite quand il le faut.</p></article>
-        <article class="mc hot rv"><h3>Où j'en suis</h3><p>Je débute, et je l'assume : projets personnels, marques fictives et études, tous étiquetés honnêtement.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="line-top" id="services">
-    <div class="wrap">
-      <h2 class="rv">Ce que je fais pour vous</h2>
-      <ul class="svc-list rv">
-        <li><h3>Logos</h3><div><p>Un symbole simple, lisible en grand comme en petit, livré en vectoriel pour tous vos supports.</p><span class="price">À partir de 25 000 FCFA</span></div></li>
-        <li><h3>Identités visuelles</h3><div><p>Couleurs, typographies et déclinaisons réunies dans un système cohérent, du profil Instagram à l'enseigne.</p><span class="price">À partir de 75 000 FCFA</span></div></li>
-        <li><h3>Flyers et affiches</h3><div><p>Des visuels qui se lisent vite et donnent envie d'agir : événements, restauration, sport, gaming.</p><span class="price">À partir de 10 000 FCFA</span></div></li>
+<header class="entete">
+  <div class="cadre entete-in">
+    <a class="marque" href="index.html" aria-label="DELYART, retour à l'accueil"><svg viewBox="72 19 125 178" aria-hidden="true" focusable="false"><use href="#pD"/></svg><span>DELYART</span></a>
+    <nav aria-label="Navigation principale">
+      <ul class="nav">
+        <li><a class="nav-sec" href="#services">Services</a></li><li><a class="nav-sec" href="#affiches">Affiches</a></li><li><a class="nav-sec" href="#apropos">À propos</a></li><li><a class="nav-sec" href="#contact">Contact</a></li>
+        <li><a class="nav-wa" href="https://wa.me/2250757887372?text=Bonjour%2C%20j%27ai%20vu%20votre%20portfolio%20DELYART%20%28Graphisme%29.%20J%27aimerais%20discuter%20d%27un%20projet%20%3A%20logo%2C%20identit%C3%A9%20visuelle%20ou%20flyer.%20Voici%20mon%20besoin%20%3A%20" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg><span>WhatsApp</span></a></li>
+        <li><a class="bascule" href="web.html">Web<svg class="ico" aria-hidden="true" focusable="false"><use href="#i-fleche"/></svg></a></li>
       </ul>
-      <p class="price-note rv">Prix de départ en FCFA, selon le besoin. Pour un devis précis, écrivez-moi sur WhatsApp.</p>
+    </nav>
+  </div>
+</header>
+<main id="contenu" tabindex="-1">
+
+  <!-- SCÈNE SIGNATURE : « le logo qui se démonte ».
+       Les seuils des étapes (en part de défilement, de 0 à 1) sont dans data-seuils.
+       Pour changer un texte, modifie simplement les <li> ci-dessous. -->
+  <section class="scene scene-logo" id="logo" data-scene data-seuils="0.08,0.27,0.45,0.62,0.78,0.9" aria-labelledby="t-h1">
+    <div class="scene-stage cadre grille">
+      <div class="scene-texte">
+        <div class="intro">
+          <p class="etiquette"><span class="planche">Pl. 1</span> Graphisme · Abidjan</p>
+          <h1 class="titre-h1" id="t-h1">Votre marque, tracée au point près.</h1>
+          <p class="chapo">Graphiste indépendant à Abidjan. Je dessine des logos, des identités visuelles et des flyers qu'on reconnaît en une seconde.</p>
+          <p class="actions"><a class="btn btn-plein" href="#contact">Me contacter</a><a class="btn btn-trait" href="#services">Voir les services</a></p>
+          <p class="indice" aria-hidden="true"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-bas"/></svg>Faites défiler : le logo se démonte</p>
+        </div>
+        <ol class="etapes" aria-label="Le logo DELYART, pièce par pièce">
+          <li data-n="1"><p class="etiquette"><span class="planche">1/5</span> Au premier regard</p><p>Un D stylisé, simple, lisible même tout petit sur un profil Instagram. C'est le signe qu'on retient en une seconde.</p></li>
+          <li data-n="2"><p class="etiquette"><span class="planche">2/5</span> L'éléphant caché</p><p>L'intérieur du D évoque une tête d'éléphant. C'est mon ivoirité, cachée dans la lettre.</p><p class="texte-doux">La Côte d'Ivoire doit son nom à l'ivoire, les défenses d'éléphant. Force, mémoire, patience : ce que je veux mettre dans chaque tracé.</p></li>
+          <li data-n="3"><p class="etiquette"><span class="planche">3/5</span> Se salir les mains</p><p>Les couleurs sont mélangées et nuancées, comme une palette passée entre les doigts : un artiste se salit les mains pour un rendu impeccable.</p></li>
+          <li data-n="4"><p class="etiquette"><span class="planche">4/5</span> La plume</p><p>Une plume à encre et une courbe avec ses poignées : l'outil Plume d'Illustrator, celui qui trace point par point.</p><p class="texte-doux">La tradition de l'encre et la précision du vectoriel, dans le même signe.</p></li>
+          <li data-n="5"><p class="etiquette"><span class="planche">5/5</span> Le travail fini</p><p>Une seule partie reste en orange uni : le travail fini, net, sans tache. Cet orange rappelle aussi celui du drapeau ivoirien.</p></li>
+          <li data-n="6"><p class="etiquette">Recomposé</p><p>Simple en apparence, avec plusieurs lectures pour qui prend le temps de regarder.</p></li>
+        </ol>
+      </div>
+      <figure class="scene-visuel">
+        <svg class="logo-svg" viewBox="-36 2 272 210" role="img" aria-labelledby="t-logo" focusable="false">
+          <title id="t-logo">Logo DELYART : un D aux couleurs mélangées, une plume à encre et une courbe de Bézier en orange uni</title>
+          <g class="piece piece-d"><path class="coupes" d="M61 15h7M68 8v7M208 15h-7M201 8v7M61 201h7M68 208v-7M208 201h-7M201 208v-7"/><use href="#pD"/><path class="trace trace-d" pathLength="1" d="M102.07,73.11c12.36,13.34,24.79,26.56,36.85,40.17,3.7,4.18,8.59,7.4,8.88,13.95.49,10.96-11.99,16.38-19.38,9.33-13.54-16.47-30.19-31.14-43.66-47.47-2.96-3.59-4.96-6.02-5.36-11.09-1.07-13.63.85-28.84,0-42.63.72-6.32,5.83-9.79,11.35-10.4,16.41.7,33.51-.96,49.84-.03,24.06,1.37,47.76,30.69,50.43,55.71-.77,17.91,1.03,36.8.02,54.59-1.56,27.35-20.86,43.92-43.16,52.45-8.4,3.21-12.7,4.06-19.68-2.54-12.37-11.68-24.84-26.94-36.43-39.73-3.64-4.02-11.79-10.46-12.68-16.07-1.78-11.22,10.56-18.16,18.74-11.79,13.24,14.41,26.76,28.51,40.07,42.93.82.89,2.07,3.17,2.88,3.57,1.63.8,6.78-2.28,8.5-3.25,9.05-5.08,18.07-13.41,19.07-25.15,1.47-17.24-.99-36.95-.11-54.45-.77-10.3-17.38-31.85-26.86-31.85h-39.33v23.74Z"/></g>
+          <g class="piece piece-plume"><path class="coupes" d="M35 65h7M42 58v7M101 65h-7M94 58v7M35 128h7M42 135v-7M101 128h-7M94 135v-7"/><use href="#pNib"/></g>
+          <g class="piece piece-courbe"><path class="coupes" d="M-1 74h7M6 67v7M67 74h-7M60 67v7M-1 150h7M6 157v-7M67 150h-7M60 157v-7"/>
+            <use class="courbe-fantome" href="#pCurve"/>
+            <use class="courbe-pleine" href="#pCurve"/>
+            <g class="constr">
+              <line x1="43" y1="84" x2="13" y2="105"/><line x1="40" y1="139" x2="27" y2="124"/>
+              <path class="trace trace-c" pathLength="1" d="M43 84C24 98 22 123 40 139"/>
+              <circle cx="13" cy="105" r="2.2"/><circle cx="27" cy="124" r="2.2"/>
+              <rect x="40.5" y="81.5" width="5" height="5"/><rect x="37.5" y="136.5" width="5" height="5"/>
+            </g>
+          </g>
+          <g class="nuancier">
+            <rect x="214" y="44" width="16" height="16" fill="#F59E0B"/><rect x="214" y="70" width="16" height="16" fill="#F7931E"/>
+            <rect x="214" y="96" width="16" height="16" fill="#8B5A7C"/><rect x="214" y="122" width="16" height="16" fill="#3B3490"/>
+          </g>
+        </svg>
+        <figcaption><span class="mention mention-forte">Étude de cas · Projet personnel</span></figcaption>
+      </figure>
     </div>
   </section>
 
-  <section class="line-top" id="projet">
-    <div class="wrap">
-      <div class="case-head rv">
-        <div>
-          <span class="kicker">Étude de cas</span>
-          <h2>DELYART, mon propre logo</h2>
+  <section class="section" id="projet" aria-labelledby="t-projet">
+    <div class="cadre grille">
+      <p class="etiquette"><span class="planche">Pl. 2</span> Étude de cas · Livrables</p>
+      <h2 class="titre masque" id="t-projet">DELYART, mon propre logo</h2>
+      <div class="mentions"><span class="mention mention-forte">Projet personnel</span><span class="mention">Logo</span><span class="mention">Identité</span></div>
+      <div class="grille livrables" style="padding:0">
+        <!-- Pour changer l'image 3D : remplace images/delyart-logo-3d.* (mêmes noms) -->
+        <figure class="livre-3d">
+          <div class="repere"><picture><source type="image/avif" srcset="images/delyart-logo-3d-550.avif 550w, images/delyart-logo-3d.avif 1100w" sizes="(min-width: 64rem) 55vw, 100vw"><img src="images/delyart-logo-3d.webp" srcset="images/delyart-logo-3d-550.webp 550w, images/delyart-logo-3d.webp 1100w" sizes="(min-width: 64rem) 55vw, 100vw" width="1100" height="886" alt="Logo DELYART en version 3D : un D aux dégradés d'ambre, de mauve et d'indigo, avec une plume à encre et une courbe de Bézier" loading="lazy" decoding="async"></picture></div>
+          <figcaption class="legende"><b>Version volume</b><span>Rendu 3D</span></figcaption>
+        </figure>
+        <figure class="livre-plat-fig">
+          <div class="repere livre-plat"><svg viewBox="0 18 198 180" aria-hidden="true" focusable="false"><use href="#pD"/><use href="#pNib"/><use href="#pCurve"/></svg></div>
+          <figcaption class="legende"><b>Version plate</b><span>Vectoriel</span></figcaption>
+        </figure>
+        <div class="livre-nuances">
+          <h3 class="sous-titre" style="margin-top:0">Palette</h3>
+          <ul class="nuances">
+            <li><i style="background:#F59E0B"></i><span><b>Ambre</b><small>#F59E0B</small></span></li>
+            <li><i style="background:#F7931E"></i><span><b>Orange</b><small>#F7931E</small></span></li>
+            <li><i style="background:#8B5A7C"></i><span><b>Mauve</b><small>#8B5A7C</small></span></li>
+            <li><i style="background:#3B3490"></i><span><b>Indigo</b><small>#3B3490</small></span></li>
+          </ul>
         </div>
-        <div class="meta">
-          <span class="tag live">Projet personnel</span>
-          <span class="tag">Logo</span>
-          <span class="tag">Identité</span>
-        </div>
       </div>
-      <p class="case-intro rv">Simple en apparence, avec plusieurs lectures pour qui prend le temps de regarder. Voici comment je l'ai pensé.</p>
-
-      <div class="grid">
-        <!-- Pour changer l'image 3D : remplace images/delyart-logo-3d.webp (même nom) -->
-        <figure class="tile big rv">
-          <div class="media photo"><img src="images/delyart-logo-3d.webp" width="1100" height="886" alt="Logo DELYART en version 3D : un D aux dégradés d'ambre, de mauve et d'indigo, avec une plume à encre et une courbe de Bézier" loading="lazy"></div>
-          <figcaption><h3>Version volume</h3><span class="tag">Rendu 3D</span></figcaption>
-        </figure>
-        <figure class="tile rv">
-          <div class="media logo-stage"><svg viewBox="0 18 198 180" aria-hidden="true"><use href="#pD"/><use href="#pNib"/><use href="#pCurve"/></svg></div>
-          <figcaption><h3>Version plate</h3><span class="tag">Vectoriel</span></figcaption>
-        </figure>
-        <figure class="tile rv">
-          <div class="media"><div class="palette">
-            <div><i style="background:#F59E0B"></i><span><b>Ambre</b><small>#F59E0B</small></span></div>
-            <div><i style="background:#F7931E"></i><span><b>Orange</b><small>#F7931E</small></span></div>
-            <div><i style="background:#8B5A7C"></i><span><b>Mauve</b><small>#8B5A7C</small></span></div>
-            <div><i style="background:#3B3490"></i><span><b>Indigo</b><small>#3B3490</small></span></div>
-          </div></div>
-          <figcaption><h3>Palette</h3><span class="tag">Couleurs</span></figcaption>
-        </figure>
-      </div>
-
-      <div class="reads">
-        <article class="read rv">
-          <span class="n">01</span>
-          <h3>Au premier regard</h3>
-          <p>Un D stylisé, simple, lisible même tout petit sur un profil Instagram. C'est le signe qu'on retient en une seconde.</p>
-        </article>
-        <article class="read rv">
-          <span class="n">02</span>
-          <h3>Si on y prête attention</h3>
-          <p>L'intérieur du D évoque une tête d'éléphant. C'est mon ivoirité, cachée dans la lettre.</p>
-          <p>L'éléphant est un emblème de la Côte d'Ivoire, et le pays doit son nom à l'ivoire, c'est-à-dire aux défenses d'éléphant. Force, mémoire, patience : ce que je veux mettre dans chaque tracé.</p>
-        </article>
-        <article class="read rv">
-          <span class="n">03</span>
-          <h3>Se salir les mains</h3>
-          <p>Les couleurs sont mélangées et nuancées, comme une palette passée entre les doigts : un artiste se salit les mains pour un rendu impeccable.</p>
-          <p>Une seule partie reste en orange uni : le travail fini, net, sans tache. Cet orange rappelle aussi celui du drapeau ivoirien.</p>
-        </article>
-        <article class="read rv">
-          <span class="n">04</span>
-          <h3>La plume</h3>
-          <p>Une plume à encre et une courbe avec ses poignées : l'outil Plume d'Illustrator, celui qui trace point par point.</p>
-          <p>La tradition de l'encre et la précision du vectoriel, réunies dans le même signe.</p>
-        </article>
-      </div>
-
-      <p class="note rv">C'est le seul projet que je montre pour l'instant, et c'est le mien : aucune commande client, juste ma propre marque. Les prochains arrivent ci-dessous.</p>
+      <p class="demo-note">C'est le seul projet de logo que je montre pour l'instant, et c'est le mien : aucune commande client, juste ma propre marque.</p>
     </div>
   </section>
 
-  <section class="line-top" id="affiches">
-    <div class="wrap">
-      <div class="case-head rv">
-        <div>
-          <span class="kicker">Affiches</span>
-          <h2>Mon Maquis, visuels de lancement</h2>
-        </div>
-        <div class="meta">
-          <span class="tag live">Projet personnel</span>
-          <span class="tag">Affiche</span>
-          <span class="tag">Réseaux sociaux</span>
-        </div>
-      </div>
-      <p class="case-intro rv">Trois formats pour présenter mon application de gestion de maquis : une affiche carrée, une bannière pour les réseaux et une bannière large pour la boutique.</p>
-
-      <div class="ads">
-        <figure class="rv">
-          <img src="images/affiche-mon-maquis-carre.webp" width="1000" height="1000" alt="Affiche Mon Maquis : « Sache chaque soir si ton maquis a gagné ou perdu », trois écrans de l'application et le bouton Ventes, Pertes, Bilan" loading="lazy">
-        </figure>
-        <div class="col">
-          <figure class="rv">
-            <img src="images/banniere-mon-maquis-reseaux.webp" width="1200" height="627" alt="Bannière Mon Maquis pour les réseaux sociaux : le message, deux écrans du bilan et le bouton Paiement unique" loading="lazy">
-          </figure>
-          <figure class="rv">
-            <img src="images/banniere-mon-maquis-large.webp" width="1404" height="520" alt="Bannière large Mon Maquis : le message, deux écrans du bilan et le bouton Mon Maquis, paiement unique" loading="lazy">
-          </figure>
-        </div>
-      </div>
-
-      <p class="ads-note rv">Le message tient en une phrase : savoir chaque soir si le maquis a gagné ou perdu. Les couleurs chaudes (brun, orange, crème) reprennent celles de l'application, et la mention « fonctionne sans internet » répond à un vrai besoin du terrain. Voir le projet côté <a href="web.html#projet">Web</a>.</p>
+  <section class="section" id="services" aria-labelledby="t-services">
+    <div class="cadre grille">
+      <p class="etiquette"><span class="planche">Pl. 3</span> Services</p>
+      <h2 class="titre masque" id="t-services">Ce que je fais pour vous</h2>
+      <ul class="tarifs">
+        <li><h3>Logos</h3><p>Un symbole simple, lisible en grand comme en petit, livré en vectoriel pour tous vos supports.</p><span class="prix">À partir de 25 000 FCFA</span></li>
+        <li><h3>Identités visuelles</h3><p>Couleurs, typographies et déclinaisons réunies dans un système cohérent, du profil Instagram à l'enseigne.</p><span class="prix">À partir de 75 000 FCFA</span></li>
+        <li><h3>Flyers et affiches</h3><p>Des visuels qui se lisent vite et donnent envie d'agir : événements, restauration, sport, gaming.</p><span class="prix">À partir de 10 000 FCFA</span></li>
+      </ul>
+      <p class="note-prix">Prix de départ en FCFA, selon le besoin. Pour un devis précis, <a href="https://wa.me/2250757887372?text=Bonjour%2C%20j%27ai%20vu%20votre%20portfolio%20DELYART%20%28Graphisme%29.%20J%27aimerais%20discuter%20d%27un%20projet%20%3A%20logo%2C%20identit%C3%A9%20visuelle%20ou%20flyer.%20Voici%20mon%20besoin%20%3A%20" target="_blank" rel="noopener">écrivez-moi sur WhatsApp</a>.</p>
     </div>
   </section>
 
+  <section class="section" id="affiches" aria-labelledby="t-affiches">
+    <div class="cadre grille">
+      <p class="etiquette"><span class="planche">Pl. 4</span> Affiches</p>
+      <h2 class="titre masque" id="t-affiches">Mon Maquis, visuels de lancement</h2>
+      <div class="mentions"><span class="mention mention-forte">Projet personnel</span><span class="mention">Affiche</span><span class="mention">Réseaux sociaux</span></div>
+      <p class="chapo" style="margin-top:var(--e3)">Trois formats pour présenter mon application de gestion de maquis : une affiche carrée, une bannière pour les réseaux et une bannière large pour la boutique.</p>
+      <div class="grille affiches" style="padding:0">
+        <figure class="aff-carre"><div class="repere"><picture><source type="image/avif" srcset="images/affiche-mon-maquis-carre-500.avif 500w, images/affiche-mon-maquis-carre.avif 1000w" sizes="(min-width: 64rem) 45vw, 100vw"><img src="images/affiche-mon-maquis-carre.webp" srcset="images/affiche-mon-maquis-carre-500.webp 500w, images/affiche-mon-maquis-carre.webp 1000w" sizes="(min-width: 64rem) 45vw, 100vw" width="1000" height="1000" alt="Affiche Mon Maquis : « Sache chaque soir si ton maquis a gagné ou perdu », trois écrans de l'application et le bouton Ventes, Pertes, Bilan" loading="lazy" decoding="async"></picture></div><figcaption class="legende"><b>Affiche carrée</b><span>1:1</span></figcaption></figure>
+        <figure class="aff-reseaux"><div class="repere"><picture><source type="image/avif" srcset="images/banniere-mon-maquis-reseaux-600.avif 600w, images/banniere-mon-maquis-reseaux.avif 1200w" sizes="(min-width: 64rem) 38vw, 100vw"><img src="images/banniere-mon-maquis-reseaux.webp" srcset="images/banniere-mon-maquis-reseaux-600.webp 600w, images/banniere-mon-maquis-reseaux.webp 1200w" sizes="(min-width: 64rem) 38vw, 100vw" width="1200" height="627" alt="Bannière Mon Maquis pour les réseaux sociaux : le message, deux écrans du bilan et le bouton Paiement unique" loading="lazy" decoding="async"></picture></div><figcaption class="legende"><b>Bannière réseaux</b><span>1200 × 627</span></figcaption></figure>
+        <figure class="aff-large"><div class="repere"><picture><source type="image/avif" srcset="images/banniere-mon-maquis-large-700.avif 700w, images/banniere-mon-maquis-large.avif 1404w" sizes="(min-width: 64rem) 45vw, 100vw"><img src="images/banniere-mon-maquis-large.webp" srcset="images/banniere-mon-maquis-large-700.webp 700w, images/banniere-mon-maquis-large.webp 1404w" sizes="(min-width: 64rem) 45vw, 100vw" width="1404" height="520" alt="Bannière large Mon Maquis : le message, deux écrans du bilan et le bouton Mon Maquis, paiement unique" loading="lazy" decoding="async"></picture></div><figcaption class="legende"><b>Bannière boutique</b><span>1404 × 520</span></figcaption></figure>
+      </div>
+      <p class="texte-doux" style="margin-top:var(--e4)">Le message tient en une phrase : savoir chaque soir si le maquis a gagné ou perdu. Les couleurs chaudes (brun, orange, crème) reprennent celles de l'application, et la mention « fonctionne sans internet » répond à un vrai besoin du terrain. Voir le projet côté <a href="web.html#projet">Web</a>.</p>
+    </div>
+  </section>
 
-  <section class="about-sec" id="apropos">
-    <div class="wrap">
-      <div class="about">
-        <!-- PHOTO : mets ta photo dans images/jardel.webp (carrée, 600×600) puis remplace le <svg> ci-dessous par :
+  <section class="section" id="apropos" aria-labelledby="t-apropos">
+    <div class="cadre grille">
+      <p class="etiquette"><span class="planche">Pl. 5</span> À propos</p>
+      <h2 class="titre masque apropos-titre" id="t-apropos">Derrière DELYART, Jardel.</h2>
+      <div class="apropos-texte">
+        <!-- PHOTO : mets ta photo dans images/jardel.webp (carrée, 600×600) et ajoute ici :
              <img src="images/jardel.webp" width="600" height="600" alt="Jardel, fondateur de DELYART" loading="lazy"> -->
-        <div class="about-mark rv"><svg viewBox="72 19 125 178" aria-hidden="true"><use href="#pD"/></svg></div>
-        <div class="rv">
-          <span class="kicker">À propos</span>
-          <h2>Derrière DELYART, Jardel.</h2>
-          <p>Je suis graphiste et web designer indépendant à Abidjan. Je dessine des logos, des identités visuelles et des flyers, et je crée des applications simples, pensées d'abord pour le téléphone.</p>
-          <p>Mon fil rouge : un travail propre, lisible, fait pour l'usage réel, celui d'un commerçant, d'un maquis ou d'un mariage.</p>
-          <a class="btn btn-line" href="#contact">Me parler de votre projet</a>
-        </div>
+        <p>Je suis graphiste et web designer indépendant à Abidjan. Je dessine des logos, des identités visuelles et des flyers, et je crée des applications simples, pensées d'abord pour le téléphone.</p>
+          <p>Mon fil rouge : un travail propre, lisible, fait pour l'usage réel, celui d'un commerçant, d'un maquis ou d'un mariage.</p>
+        <p class="actions"><a class="btn btn-trait" href="#contact">Me parler de votre projet<svg class="ico" aria-hidden="true" focusable="false"><use href="#i-fleche"/></svg></a></p>
       </div>
+      <dl class="demarche">
+        <div><dt>Ma démarche</dt><dd>Je pars d'une idée simple, je la croque à la main, puis je la redessine à la plume. Chaque courbe est choisie.</dd></div>
+        <div><dt>Mes outils</dt><dd>Illustrator et Photoshop pour l'image, Premiere Pro pour le mouvement, Canva pour livrer vite quand il le faut.</dd></div>
+        <div><dt>Où j'en suis</dt><dd>Je débute, et je l'assume : projets personnels, marques fictives et études, tous étiquetés honnêtement.</dd></div>
+      </dl>
     </div>
   </section>
 
-  <section class="end" id="contact">
-    <div class="wrap">
-      <h2 class="rv">Des identités qui ont du caractère. Construisons la vôtre.</h2>
-      <p class="rv">Un logo, une identité ou un flyer à créer ? Écrivez-moi, je réponds vite.</p>
-      <a class="mail rv" href="mailto:contact.delyart@gmail.com">contact.delyart@gmail.com</a>
-      <div class="links rv">
-        <a class="btn btn-main" href="https://wa.me/2250757887372?text=Bonjour%2C%20j%27ai%20vu%20votre%20portfolio%20DELYART%20%28Graphisme%29.%20J%27aimerais%20discuter%20d%27un%20projet%20%3A%20logo%2C%20identit%C3%A9%20visuelle%20ou%20flyer.%20Voici%20mon%20besoin%20%3A%20" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
-        <a class="btn btn-line" href="https://instagram.com/delyart" target="_blank" rel="noopener">Instagram</a>
-        <a class="btn btn-line" href="https://behance.net/delyart" target="_blank" rel="noopener">Behance</a>
-      </div>
+  <section class="section contact" id="contact" aria-labelledby="t-contact">
+    <div class="cadre grille">
+      <p class="etiquette"><span class="planche">Pl. 6</span> Contact</p>
+      <h2 class="titre masque" id="t-contact">Des identités qui ont du caractère. Construisons la vôtre.</h2>
+      <p class="chapo">Un logo, une identité ou un flyer à créer ? <span style="white-space:nowrap">Écrivez-moi</span>, je réponds vite.</p>
+      <p><a class="courriel" href="mailto:jardelehouman5@gmail.com">contact.<wbr>delyart<wbr>@gmail.com</a></p>
+      <ul class="actions">
+        <li><a class="btn btn-plein" href="https://wa.me/2250757887372?text=Bonjour%2C%20j%27ai%20vu%20votre%20portfolio%20DELYART%20%28Graphisme%29.%20J%27aimerais%20discuter%20d%27un%20projet%20%3A%20logo%2C%20identit%C3%A9%20visuelle%20ou%20flyer.%20Voici%20mon%20besoin%20%3A%20" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>Écrire sur WhatsApp</a></li>
+        <li><a class="btn btn-trait" href="https://instagram.com/delyart" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-insta"/></svg>Instagram</a></li>
+        <li><a class="btn btn-trait" href="https://behance.net/delyart" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-be"/></svg>Behance</a></li>
+      </ul>
     </div>
   </section>
 </main>
-
-<div class="wrap"><div class="foot">
-  <span>© <span id="year">2026</span> DELYART</span>
-  <span><a href="index.html">Accueil</a> · <a href="web.html">Web</a> · Abidjan, Côte d'Ivoire</span>
-</div></div>
-
-<a class="wa-float" href="https://wa.me/2250757887372?text=Bonjour%2C%20j%27ai%20vu%20votre%20portfolio%20DELYART%20%28Graphisme%29.%20J%27aimerais%20discuter%20d%27un%20projet%20%3A%20logo%2C%20identit%C3%A9%20visuelle%20ou%20flyer.%20Voici%20mon%20besoin%20%3A%20" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5C6.8 2.5 2.6 6.2 2.6 10.8c0 2.4 1.1 4.5 2.9 6L4.8 21.5l4.6-2c.8.2 1.7.3 2.6.3 5.2 0 9.4-3.7 9.4-8.3S17.2 2.5 12 2.5z"/></svg><span>WhatsApp</span></a>
-
-<script src="motion/motion.js"></script>
-<script src="assets/site.js" defer></script>
-<script>
-(()=>{
-const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
-$('#year').textContent=new Date().getFullYear();
-const prog=$('#prog');
-const upd=()=>{const d=document.documentElement.scrollHeight-innerHeight;prog.style.transform='scaleX('+(d>0?Math.min(1,scrollY/d):0)+')'};
-addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-$$('.rv').forEach(el=>io.observe(el));
-})();
-</script>
+<footer class="pied">
+  <div class="cadre pied-in">
+    <p>© <span data-annee>2026</span> DELYART · Abidjan, Côte d'Ivoire</p>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="web.html">Univers Web</a></li>
+      <li><a href="https://instagram.com/delyart" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="https://behance.net/delyart" target="_blank" rel="noopener">Behance</a></li>
+    </ul>
+  </div>
+</footer>
 </body>
 </html>

@@ -2,352 +2,180 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Web | DELYART</title>
-<meta name="description" content="DELYART, web designer à Abidjan : sites et applications simples, pensés pour le téléphone. Projets : Mon Maquis et une invitation de mariage.">
-<meta name="theme-color" content="#06061a">
+<meta name="description" content="DELYART, web designer à Abidjan : sites et applications simples, rapides, pensés pour le téléphone. Études de cas : Mon Maquis et une invitation de mariage.">
+<meta name="theme-color" content="#1A1833">
 <link rel="canonical" href="https://delyart.jardelehouman.workers.dev/web.html">
 <meta property="og:url" content="https://delyart.jardelehouman.workers.dev/web.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Web | DELYART">
-<meta property="og:description" content="Sites et applications simples, pensés pour le téléphone. Projets : Mon Maquis et une invitation de mariage.">
+<meta property="og:description" content="DELYART, web designer à Abidjan : sites et applications simples, rapides, pensés pour le téléphone. Études de cas : Mon Maquis et une invitation de mariage.">
 <meta property="og:image" content="https://delyart.jardelehouman.workers.dev/images/og-delyart.png">
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='72 19 125 178'%3E%3Cpath d='M102.07,73.11c12.36,13.34,24.79,26.56,36.85,40.17,3.7,4.18,8.59,7.4,8.88,13.95.49,10.96-11.99,16.38-19.38,9.33-13.54-16.47-30.19-31.14-43.66-47.47-2.96-3.59-4.96-6.02-5.36-11.09-1.07-13.63.85-28.84,0-42.63.72-6.32,5.83-9.79,11.35-10.4,16.41.7,33.51-.96,49.84-.03,24.06,1.37,47.76,30.69,50.43,55.71-.77,17.91,1.03,36.8.02,54.59-1.56,27.35-20.86,43.92-43.16,52.45-8.4,3.21-12.7,4.06-19.68-2.54-12.37-11.68-24.84-26.94-36.43-39.73-3.64-4.02-11.79-10.46-12.68-16.07-1.78-11.22,10.56-18.16,18.74-11.79,13.24,14.41,26.76,28.51,40.07,42.93.82.89,2.07,3.17,2.88,3.57,1.63.8,6.78-2.28,8.5-3.25,9.05-5.08,18.07-13.41,19.07-25.15,1.47-17.24-.99-36.95-.11-54.45-.77-10.3-17.38-31.85-26.86-31.85h-39.33v23.74Z' fill='%23F59A06'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="assets/fonts.css">
-<link rel="stylesheet" href="assets/site.css">
-<script>document.documentElement.classList.add('js')</script>
-<style>
-:root{
-  --bg:#06061a; --surface:#0d0d26; --surface-hi:#14143a; --line:#25254a;
-  --text:#f2f0f5; --muted:#a3a1b8;
-  --amber:#F59E0B; --orange:#F7931E; --mauve:#8B5A7C; --indigo:#3B3490; --indigo-hi:#8c85f0;
-  --grad:linear-gradient(100deg,var(--amber),var(--orange) 40%,var(--mauve) 75%,var(--indigo));
-  --grad-web:linear-gradient(100deg,#5a50d8,var(--indigo));
-  --display:"Space Grotesk","Segoe UI",system-ui,sans-serif;
-  --body:"Inter","Segoe UI",system-ui,sans-serif;
-  --pad:clamp(1.25rem,5vw,4rem);
-  --ease:cubic-bezier(.16,1,.3,1);
-}
-*{box-sizing:border-box;margin:0}
-html{font-size:16px;scroll-behavior:smooth;scroll-padding-top:5rem;background:var(--bg)}
-body{background:var(--bg);color:var(--text);font:400 1rem/1.7 var(--body);-webkit-font-smoothing:antialiased;overflow-x:clip}
-body::after{content:"";position:fixed;inset:0;z-index:90;pointer-events:none;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
-a{color:inherit}
-:focus-visible{outline:2px solid var(--amber);outline-offset:4px;border-radius:4px}
-::selection{background:var(--amber);color:#120a02}
-.wrap{max-width:74rem;margin-inline:auto;padding-inline:var(--pad)}
-h1,h2,h3{font-family:var(--display);line-height:1.08;letter-spacing:-.025em}
-h2{font-size:clamp(1.9rem,4vw,3rem);font-weight:700;max-width:22ch}
-section{padding-block:clamp(4rem,9vw,7rem)}
-.kicker{font:500 .8rem var(--display);letter-spacing:.18em;text-transform:uppercase;color:var(--indigo-hi)}
-
-/* Barre du haut */
-.top{position:fixed;inset:0 0 auto 0;z-index:60;display:flex;justify-content:space-between;align-items:center;padding:clamp(14px,2.5vw,26px) var(--pad);background:linear-gradient(var(--bg),transparent)}
-.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;font:700 1.05rem var(--display);letter-spacing:.06em}
-.brand svg{width:1.6rem;height:1.6rem}
-.nav{display:flex;align-items:center;gap:.4rem;font-size:.92rem}
-.nav a{text-decoration:none;color:var(--muted);padding:.45rem .8rem;border-radius:999px;transition:color .2s,background .2s}
-.nav a:hover{color:var(--text);background:var(--surface-hi)}
-.nav .sw{border:1px solid var(--line);color:var(--text)}
-#prog{position:fixed;top:0;left:0;right:0;height:2px;z-index:80;background:var(--grad);transform:scaleX(0);transform-origin:left;pointer-events:none}
-
-/* Hero */
-.hero{min-height:88svh;display:flex;align-items:center;padding-top:7rem;position:relative;overflow:hidden;background:radial-gradient(90% 80% at 100% 100%,rgba(59,52,144,.65),rgba(139,90,124,.12) 48%,transparent 75%)}
-.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(140,133,240,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(140,133,240,.07) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(80% 80% at 100% 100%,#000,transparent 75%);mask-image:radial-gradient(80% 80% at 100% 100%,#000,transparent 75%)}
-.hero .wrap{width:100%;position:relative;display:flex;flex-direction:column;gap:1.4rem}
-.hero h1{font-size:clamp(2.6rem,7vw,5.6rem);font-weight:700;max-width:14ch}
-@media (max-width:30rem){.hero h1{font-size:min(2.6rem,9.5vw)}} /* petit écran : « simples, faites pour » tient sur une ligne */
-.hero .lead{max-width:34rem;color:var(--muted);font-size:1.1rem}
-.cta{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:.6rem}
-.btn{display:inline-block;padding:.85rem 1.6rem;border-radius:999px;text-decoration:none;font-weight:500;font-size:.95rem;border:1px solid transparent;transition:box-shadow .25s,border-color .25s,background .25s}
-.btn-main{background:var(--grad-web);color:#fff}
-.btn-main:hover{box-shadow:0 10px 30px rgba(90,80,216,.45)}
-.btn-line{border-color:var(--line)}
-.btn-line:hover{border-color:var(--indigo-hi);background:var(--surface-hi)}
-.btn-amber{background:var(--grad);color:#120a02}
-.btn-amber:hover{box-shadow:0 10px 30px rgba(245,158,11,.28)}
-
-/* Étude de cas */
-.case{border-top:1px solid var(--line)}
-.case-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:1.5rem;margin-bottom:3rem}
-.case-head .meta{display:flex;flex-wrap:wrap;gap:.5rem}
-.tag{font-size:.8rem;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:.15rem .8rem;white-space:nowrap}
-.tag.live{color:var(--amber);border-color:rgba(245,158,11,.4)}
-.fact{padding:1.4rem 1.5rem;border-radius:.9rem;background:var(--surface);border:1px solid var(--line);transition:background .3s,border-color .3s}
-.fact:hover{background:var(--surface-hi);border-color:#3a3a6e}
-.fact h3{font-size:1.05rem;margin-bottom:.4rem;color:var(--indigo-hi)}
-.fact p{color:var(--muted);font-size:.97rem}
-.stack{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.7rem}
-.gallery{display:flex;gap:clamp(.8rem,1.6vw,1.2rem);overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--pad);padding:.5rem var(--pad) 1.2rem;margin:0 calc(var(--pad)*-1) 3rem;scrollbar-width:thin;scrollbar-color:#3a3a6e transparent}
-.ph{flex:1 0 170px;max-width:240px;scroll-snap-align:start;display:flex;flex-direction:column;gap:.8rem}
-.phone{aspect-ratio:520/886;border-radius:24px;border:1.5px solid rgba(140,133,240,.5);background:#120e0a;padding:6px;box-shadow:0 24px 60px rgba(59,52,144,.3);transition:transform .5s var(--ease),box-shadow .5s}
-.ph:hover .phone{transform:translateY(-6px);box-shadow:0 30px 70px rgba(90,80,216,.5)}
-.phone img{display:block;width:100%;height:100%;object-fit:cover;border-radius:18px}
-.ph figcaption{text-align:center;font-size:.85rem;color:var(--muted);line-height:1.35}
-.ph figcaption b{display:block;color:var(--text);font:500 .95rem var(--display)}
-.hero-shot{border-radius:.9rem;overflow:hidden;border:1px solid var(--line);margin-bottom:2.5rem;background:#2a1814;box-shadow:0 24px 60px rgba(181,83,60,.18)}
-.hero-shot img{display:block;width:100%;height:auto}
-.ads{display:grid;grid-template-columns:.93fr 1fr;gap:1.25rem;align-items:start;margin-bottom:3rem}
-.ads .col{display:flex;flex-direction:column;gap:1.25rem}
-.ads figure{display:flex;flex-direction:column;gap:.7rem;transition:transform .5s var(--ease)}
-.ads figure:hover{transform:translateY(-4px)}
-.ads img{display:block;width:100%;height:auto;border-radius:.9rem;border:1px solid var(--line);box-shadow:0 24px 60px rgba(59,52,144,.25)}
-.ads figcaption{font-size:.85rem;color:var(--muted);line-height:1.35}
-.ads figcaption b{display:block;color:var(--text);font:500 .95rem var(--display)}
-@media (max-width:52rem){.ads{grid-template-columns:1fr}}
-.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1rem}
-.case-cta{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:.9rem;margin-top:1rem}
-
-/* À venir */
-
-/* Contact */
-.end{border-top:1px solid var(--line);text-align:center;background:radial-gradient(70% 90% at 50% 100%,rgba(59,52,144,.45),transparent 70%)}
-.end .wrap{display:flex;flex-direction:column;align-items:center;gap:1.5rem}
-.end h2{max-width:18ch;font-size:clamp(2rem,6vw,4.4rem);line-height:1}
-.end p{color:var(--muted);max-width:38ch}
-.mail{font:700 clamp(1.3rem,4.6vw,3rem)/1 var(--display);letter-spacing:-.03em;text-decoration:none;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;word-break:break-word}
-.mail:hover{filter:brightness(1.25)}
-.links{display:flex;flex-wrap:wrap;justify-content:center;gap:.9rem}
-.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-block:1.5rem 2rem;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
-.foot a{text-decoration:none}.foot a:hover{color:var(--amber)}
-
-/* Apparition au défilement */
-.js .rv{opacity:0;transform:translateY(22px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
-.js .rv.in{opacity:1;transform:none}
-@keyframes lineUp{from{transform:translateY(112%)}to{transform:none}}
-.ln{display:block;overflow:hidden;padding-bottom:.08em}
-.ln>span{display:block;animation:lineUp .95s var(--ease) both}
-.ln:nth-child(2)>span{animation-delay:.12s}
-
-@media (max-width:52rem){
-  .nav .hide-s{display:none}
-  .ph figcaption{font-size:.75rem}
-}
-@media (prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important}
-  .js .rv{opacity:1;transform:none}
-  html{scroll-behavior:auto}
-}
-</style>
-<link rel="stylesheet" href="motion/motion.css">
-<style>.svc-list,.about,.price-note{--price-c:var(--indigo-hi)}</style>
+<link rel="preload" href="assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/atkinson-hyperlegible-next-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/delyart.css">
+<!-- « js » = JavaScript actif ; « anim » = le visiteur accepte le mouvement. Sans eux, tout reste visible et statique. -->
+<script>document.documentElement.classList.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('anim')</script>
+<script src="assets/delyart.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Web", "url": "https://delyart.jardelehouman.workers.dev/web.html", "inLanguage": "fr", "isPartOf": {"@type": "WebSite", "name": "DELYART", "url": "https://delyart.jardelehouman.workers.dev/"}, "about": {"@type": "ProfessionalService", "name": "DELYART", "email": "jardelehouman5@gmail.com", "address": {"@type": "PostalAddress", "addressLocality": "Abidjan", "addressCountry": "CI"}}, "breadcrumb": {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://delyart.jardelehouman.workers.dev/"}, {"@type": "ListItem", "position": 2, "name": "Web", "item": "https://delyart.jardelehouman.workers.dev/web.html"}]}}</script>
 </head>
-<body>
-<a class="skip" href="#contenu" style="--skip-bg:#5a50d8;--skip-fg:#fff">Aller au contenu</a>
-
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<body class="theme-encre web">
+<a class="evitement" href="#contenu">Aller au contenu</a>
+<svg class="sprite" aria-hidden="true" focusable="false">
   <defs>
     <linearGradient id="g" gradientUnits="userSpaceOnUse" x1="185" y1="45" x2="100" y2="185">
       <stop offset="0" stop-color="#f59a06"/><stop offset=".5" stop-color="#8a5560"/><stop offset="1" stop-color="#342b78"/>
     </linearGradient>
     <path id="pD" fill="url(#g)" d="M102.07,73.11c12.36,13.34,24.79,26.56,36.85,40.17,3.7,4.18,8.59,7.4,8.88,13.95.49,10.96-11.99,16.38-19.38,9.33-13.54-16.47-30.19-31.14-43.66-47.47-2.96-3.59-4.96-6.02-5.36-11.09-1.07-13.63.85-28.84,0-42.63.72-6.32,5.83-9.79,11.35-10.4,16.41.7,33.51-.96,49.84-.03,24.06,1.37,47.76,30.69,50.43,55.71-.77,17.91,1.03,36.8.02,54.59-1.56,27.35-20.86,43.92-43.16,52.45-8.4,3.21-12.7,4.06-19.68-2.54-12.37-11.68-24.84-26.94-36.43-39.73-3.64-4.02-11.79-10.46-12.68-16.07-1.78-11.22,10.56-18.16,18.74-11.79,13.24,14.41,26.76,28.51,40.07,42.93.82.89,2.07,3.17,2.88,3.57,1.63.8,6.78-2.28,8.5-3.25,9.05-5.08,18.07-13.41,19.07-25.15,1.47-17.24-.99-36.95-.11-54.45-.77-10.3-17.38-31.85-26.86-31.85h-39.33v23.74Z"/>
+    <g id="pNib">
+      <path fill="url(#g)" d="M51.86,104.36c1.7-9.09,1.52-17.34-1.26-26.14.98-.2,1.34.11,2.08.64,1.08.78,9.54,11.58,10.46,13.14,1.22,2.08-.98,4.6,1.31,6.56,5.69,4.89,9.6-8.39.76-7l-11.73-15.34c.35-1.76,4.32,1.06,5.24,1.44,4.13,1.71,8.73,3.45,13.13,4.04,1.46.2,4.91-.38,5.73.49l5.14,21.08c-.08.84-1.09,1.66-1.65,2.23-1.03,1.05-9.55,8.47-10.19,8.58-1.32.22-3.21-2.11-4.52-2.95-4.47-2.86-9.43-5.48-14.51-6.77Z"/>
+      <path fill="#f59a06" d="M72.25,117.52c3.87-4.44,9.41-8.05,13.65-12.17,1.71-.55,2.18,1.89,3.38,2.87.22,1.32-13.19,12.75-15.19,14.19-1.01.59-3.05-3.38-2.88-4,.22-.46.73-.56,1.03-.9Z"/>
+      <path fill="#f59a06" d="M51.71,75.86c-3.41,2.97-6.85-3.26-3.82-5.22,3.44-2.22,6.36,3.01,3.82,5.22Z"/>
+    </g>
+    <path id="pCurve" fill="#f29100" d="M39.99,134.46c1.19,1.22,5.12.07,5.65,4.36.75,6.1-7.19,6.86-8.45,1.97-.67-2.59,1.18-3.73,1-5.01-.11-.8-2.11-3.66-2.63-4.75-6.12-12.86-8.64-26.35-2.41-39.89l4.27-7.6-25.03,20.28-.77,4.16c-3.2,2.03-6.36-2.65-3.43-5.13,1.41-1.19,1.95-.17,3.1-.2,1.76-.05,24.54-19.58,28.22-22.39.83-.64,5.51-4.25,5.94-4.26,3.6,1.6-.81,3.64-2.28,5.1-12.31,12.27-14.33,27.85-7.76,44.31.68,1.7,3.57,8.03,4.57,9.05Z"/>
+    <symbol id="i-fleche" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol>
+    <symbol id="i-bas" viewBox="0 0 24 24"><path d="M12 4.5v15M6 13.5l6 6 6-6"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M20.25 11.75a8.25 8.25 0 0 1-12.2 7.24L3.75 20.25l1.3-4.1a8.25 8.25 0 1 1 15.2-4.4z"/><path d="M9 8.25c.2 3.4 3.35 6.55 6.75 6.75l.9-1.8-2.1-1.05-.9.9a3.9 3.9 0 0 1-2.7-2.7l.9-.9L10.8 7.35z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3.75 6h16.5v12H3.75z"/><path d="M3.75 6.75 12 12.75l8.25-6"/></symbol>
+    <symbol id="i-insta" viewBox="0 0 24 24"><path d="M8.25 3.75h7.5a4.5 4.5 0 0 1 4.5 4.5v7.5a4.5 4.5 0 0 1-4.5 4.5h-7.5a4.5 4.5 0 0 1-4.5-4.5v-7.5a4.5 4.5 0 0 1 4.5-4.5z"/><path d="M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0zM17.25 6.75v0"/></symbol>
+    <symbol id="i-be" viewBox="0 0 24 24"><path d="M3.75 6.75h4.5a2.63 2.63 0 0 1 0 5.25h-4.5zM3.75 12h5.25a2.63 2.63 0 0 1 0 5.25H3.75zM14.25 14.25h6a3 3 0 1 0-.9 2.15M15 8.25h4.5"/></symbol>
   </defs>
 </svg>
-
-<div id="prog"></div>
-
-<header class="top">
-  <a class="brand" href="index.html" aria-label="DELYART, retour à l'accueil"><svg viewBox="72 19 125 178" aria-hidden="true"><use href="#pD"/></svg><span>DELYART</span></a>
-  <nav class="nav" aria-label="Navigation">
-    <a class="hide-s" href="#services">Services</a>
-    <a class="hide-s" href="#projet">Mon Maquis</a>
-    <a class="hide-s" href="#mariage">Mariage</a>
-    <a class="hide-s" href="#apropos">À propos</a>
-    <a class="hide-s" href="#contact">Contact</a>
-    <a class="sw" href="graphisme.html">Graphisme →</a>
-  </nav>
-</header>
-
-<main id="contenu" tabindex="-1">
-  <section class="hero" id="accueil">
-    <div class="wrap">
-      <span class="kicker">Univers Web</span>
-      <h1><span class="ln"><span>Des applications</span></span><span class="ln"><span>simples, faites pour</span></span><span class="ln"><span>le terrain.</span></span></h1>
-      <p class="lead">Web designer à Abidjan. Je conçois des sites et des applications faciles à utiliser, rapides, pensés d'abord pour le téléphone.</p>
-      <div class="cta">
-        <a class="btn btn-main" href="#projet">Voir les projets</a>
-        <a class="btn btn-line" href="#contact">Me contacter</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="svc-sec" id="services">
-    <div class="wrap">
-      <h2 class="rv">Ce que je crée</h2>
-      <ul class="svc-list rv">
-        <li><h3>Page vitrine</h3><div><p>Une page claire pour présenter votre activité, avec un bouton WhatsApp. Rapide sur téléphone.</p><span class="price">À partir de 70 000 FCFA</span></div></li>
-        <li><h3>Site vitrine</h3><div><p>Plusieurs pages (activités, réalisations, contact), claires et rapides sur téléphone.</p><span class="price">À partir de 150 000 FCFA</span></div></li>
-        <li><h3>Application sur mesure</h3><div><p>Un outil simple pour gérer votre activité, comme Mon Maquis pour les maquis.</p><span class="price">Sur devis</span></div></li>
+<header class="entete">
+  <div class="cadre entete-in">
+    <a class="marque" href="index.html" aria-label="DELYART, retour à l'accueil"><svg viewBox="72 19 125 178" aria-hidden="true" focusable="false"><use href="#pD"/></svg><span>DELYART</span></a>
+    <nav aria-label="Navigation principale">
+      <ul class="nav">
+        <li><a class="nav-sec" href="#services">Services</a></li><li><a class="nav-sec" href="#projet">Mon Maquis</a></li><li><a class="nav-sec" href="#mariage">Mariage</a></li><li><a class="nav-sec" href="#contact">Contact</a></li>
+        <li><a class="nav-wa" href="https://wa.me/2250757887372?text=Bonjour%2C%20j%27ai%20vu%20votre%20portfolio%20DELYART%20%28Web%29.%20J%27aimerais%20discuter%20d%27un%20projet%20d%27application%20ou%20de%20site.%20Voici%20mon%20besoin%20%3A%20" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg><span>WhatsApp</span></a></li>
+        <li><a class="bascule" href="graphisme.html">Graphisme<svg class="ico" aria-hidden="true" focusable="false"><use href="#i-fleche"/></svg></a></li>
       </ul>
-      <p class="price-note rv">Prix de départ en FCFA, selon le besoin. Pour un devis précis, écrivez-moi sur WhatsApp.</p>
+    </nav>
+  </div>
+</header>
+<main id="contenu" tabindex="-1">
+  <section class="hero-web" id="accueil" aria-labelledby="t-h1">
+    <div class="cadre grille">
+      <p class="etiquette">Web · Abidjan</p>
+      <h1 class="titre-h1" id="t-h1">Des applications simples, faites pour le terrain.</h1>
+      <p class="chapo">Web designer à Abidjan. Je conçois des sites et des applications faciles à utiliser, rapides, pensés d'abord pour le téléphone.</p>
+      <p class="actions"><a class="btn btn-plein" href="#contact">Me contacter</a><a class="btn btn-trait" href="#projet">Voir les projets</a></p>
     </div>
   </section>
 
-  <section class="case" id="projet">
-    <div class="wrap">
-      <div class="case-head rv">
-        <div>
-          <span class="kicker">Étude de cas</span>
-          <h2>Mon Maquis</h2>
-        </div>
-        <div class="meta">
-          <span class="tag live">En cours</span>
-          <span class="tag">Projet personnel</span>
-          <span class="tag">Application mobile</span>
-        </div>
-      </div>
-
-      <!-- Pour changer un visuel : remplace le fichier dans images/ (même nom) -->
-      <div class="ads rv" role="group" aria-label="Visuels de lancement de Mon Maquis">
-        <figure>
-          <img src="images/affiche-mon-maquis-carre.webp" width="1000" height="1000" alt="Affiche Mon Maquis : « Sache chaque soir si ton maquis a gagné ou perdu », trois écrans de l'application et le bouton Ventes, Pertes, Bilan" loading="lazy">
-        </figure>
-        <div class="col">
-          <figure>
-            <img src="images/banniere-mon-maquis-reseaux.webp" width="1200" height="627" alt="Bannière Mon Maquis pour les réseaux sociaux : le message, deux écrans du bilan et le bouton Paiement unique" loading="lazy">
-          </figure>
-          <figure>
-            <img src="images/banniere-mon-maquis-large.webp" width="1404" height="520" alt="Bannière large Mon Maquis : le message, deux écrans du bilan et le bouton Mon Maquis, paiement unique" loading="lazy">
-          </figure>
-        </div>
-      </div>
-
-      <div class="facts">
-          <article class="fact rv">
-            <h3>Le problème</h3>
-            <p>Pour beaucoup de gérants de maquis et de bars, un fichier Excel est trop compliqué. Le stock, la caisse et les pertes se suivent mal, et le bénéfice reste flou.</p>
-          </article>
-          <article class="fact rv">
-            <h3>Ma solution</h3>
-            <p>Une application très simple, pensée pour des utilisateurs peu à l'aise avec l'écrit. Au premier lancement, le gérant donne le nom de son maquis et choisit ses boissons. Ensuite, tout tient en cinq écrans : vendre (un appui = une vente), les arrivages de casiers, les pertes (casse, offerts), les crédits des clients et le bilan du jour.</p>
-            <div class="stack"><span class="tag">Vendre</span><span class="tag">Arrivage</span><span class="tag">Pertes</span><span class="tag">Crédits</span><span class="tag">Bilan</span></div>
-          </article>
-          <article class="fact rv">
-            <h3>Le design</h3>
-            <p>Des stickers de boissons dessinés par moi servent d'icônes : on reconnaît une boisson au premier coup d'œil, sans lire.</p>
-          </article>
-          <article class="fact rv">
-            <h3>Sous le capot</h3>
-            <p>Un seul fichier HTML, installable sur l'écran d'accueil du téléphone, qui fonctionne sans connexion. Chaque achat est protégé par un code d'activation (2 téléphones par code), vérifié par un petit serveur de licences.</p>
-            <div class="stack"><span class="tag">HTML · CSS · JS</span><span class="tag">PWA</span><span class="tag">Hors connexion</span><span class="tag">Cloudflare</span></div>
-          </article>
-          <article class="fact rv">
-            <h3>Où j'en suis</h3>
-            <p>L'application est en ligne et le produit est créé sur Chariow. Les tests auprès de vrais gérants sont la prochaine étape.</p>
-          </article>
-          <div class="case-cta rv">
-            <a class="btn btn-main" href="https://xlzrpfoi.mychariow.store/mon-maquis" target="_blank" rel="noopener">Voir Mon Maquis</a>
-            <a class="btn btn-line" href="#contact">Une idée d'application ?</a>
-          </div>
-        </div>
-
+  <section class="section" id="services" aria-labelledby="t-services">
+    <div class="cadre grille">
+      <p class="etiquette">Services</p>
+      <h2 class="titre masque" id="t-services">Ce que je crée</h2>
+      <ul class="tarifs">
+        <li><h3>Page vitrine</h3><p>Une page claire pour présenter votre activité, avec un bouton WhatsApp. Rapide sur téléphone.</p><span class="prix">À partir de 70 000 FCFA</span></li>
+        <li><h3>Site vitrine</h3><p>Plusieurs pages (activités, réalisations, contact), claires et rapides sur téléphone.</p><span class="prix">À partir de 150 000 FCFA</span></li>
+        <li><h3>Application sur mesure</h3><p>Un outil simple pour gérer votre activité, comme Mon Maquis pour les maquis.</p><span class="prix">Sur devis</span></li>
+      </ul>
+      <p class="note-prix">Prix de départ en FCFA, selon le besoin. Pour un devis précis, <a href="https://wa.me/2250757887372?text=Bonjour%2C%20j%27ai%20vu%20votre%20portfolio%20DELYART%20%28Web%29.%20J%27aimerais%20discuter%20d%27un%20projet%20d%27application%20ou%20de%20site.%20Voici%20mon%20besoin%20%3A%20" target="_blank" rel="noopener">écrivez-moi sur WhatsApp</a>.</p>
     </div>
   </section>
 
-  <section class="case" id="mariage">
-    <div class="wrap">
-      <div class="case-head rv">
-        <div>
-          <span class="kicker">Étude de cas</span>
-          <h2>Invitation de mariage</h2>
-        </div>
-        <div class="meta">
-          <span class="tag live">Démo en ligne</span>
-          <span class="tag">Projet personnel</span>
-          <span class="tag">Site web</span>
-        </div>
-      </div>
+  <section class="section" id="projet" aria-labelledby="t-projet">
+    <div class="cadre grille">
+      <p class="etiquette">Étude de cas</p>
+      <h2 class="titre masque" id="t-projet">Mon Maquis</h2>
+      <div class="mentions"><span class="mention mention-forte">En cours</span><span class="mention mention-forte">Projet personnel</span><span class="mention">Application mobile</span></div>
+      <dl class="fiche">
+        <div><dt>Le problème</dt><dd><p>Pour beaucoup de gérants de maquis et de bars, un fichier Excel est trop compliqué. Le stock, la caisse et les pertes se suivent mal, et le bénéfice reste flou.</p></dd></div>
+        <div><dt>Ma solution</dt><dd><p>Une application très simple, pensée pour des utilisateurs peu à l'aise avec l'écrit. Tout tient en quelques écrans : vendre, les arrivages de casiers, les pertes, les crédits des clients et le bilan du jour.</p></dd></div>
+      </dl>
+    </div>
 
-      <figure class="hero-shot rv"><img src="images/invitation-apercu.webp" width="1200" height="630" alt="Invitation de mariage DELYART : une enveloppe terracotta fermée par un sceau, avec le message « Vous êtes invité(e) »" loading="lazy"></figure>
-
-      <div class="facts">
-        <article class="fact rv">
-          <h3>Le besoin</h3>
-          <p>Les faire-part papier coûtent cher et se perdent, et les cartes envoyées en photo sur WhatsApp ne donnent aucune information pratique. Les mariés veulent une invitation qui se partage d'un clic.</p>
-        </article>
-        <article class="fact rv">
-          <h3>Ma solution</h3>
-          <p>Une invitation animée : l'invité ouvre l'enveloppe et découvre l'histoire du couple, le programme, le lieu sur la carte, la tenue conseillée et un bouton « Je serai là » qui ouvre WhatsApp avec un message prêt à envoyer.</p>
-          <div class="stack"><span class="tag">Enveloppe animée</span><span class="tag">Programme</span><span class="tag">RSVP WhatsApp</span><span class="tag">Musique</span></div>
-        </article>
-        <article class="fact rv">
-          <h3>Un lien par invité</h3>
-          <p>En ajoutant le nom de l'invité à la fin du lien, son nom s'affiche au-dessus de l'enveloppe. Sur un vieux téléphone, le site passe tout seul en mode léger, sans animation.</p>
-        </article>
-        <article class="fact rv">
-          <h3>Sous le capot</h3>
-          <p>Du HTML, du CSS et du JavaScript simples, sans framework. Tout se personnalise dans un seul fichier : prénoms, date, lieu, couleurs et numéro WhatsApp.</p>
-          <div class="stack"><span class="tag">HTML · CSS · JS</span><span class="tag">Vercel</span><span class="tag">Un seul fichier de réglages</span></div>
-        </article>
-        <article class="fact rv">
-          <h3>Le formulaire client</h3>
-          <p>Pour une invitation sur mesure, le client remplit un formulaire de 10 questions. Ses réponses m'arrivent directement sur WhatsApp, prêtes à servir pour créer son invitation.</p>
-        </article>
-        <article class="fact rv">
-          <h3>Où j'en suis</h3>
-          <p>Le modèle est terminé et la démo est en ligne. Son bouton « Je serai là » m'envoie un message : les prochains tests seront de vrais futurs mariés.</p>
-        </article>
-        <div class="case-cta rv">
-          <a class="btn btn-main" href="https://invitation-mariage-demo.vercel.app/" target="_blank" rel="noopener">Voir la démo</a>
-          <a class="btn btn-line" href="#contact">Je veux la mienne</a>
-        </div>
+    <!-- SCÈNE : le téléphone reste fixe, les écrans défilent avec le scroll (5 paliers).
+         Pour changer un écran : remplace images/mon-maquis-N.* (mêmes noms). -->
+    <div class="scene scene-ecrans" data-scene data-paliers="5">
+      <div class="scene-stage cadre grille">
+        <div class="ecrans-texte" aria-hidden="true"><ol><li data-n="0"><p class="etiquette"><span class="planche compteur">1/5</span> Écran 1</p><h3>Premier lancement</h3><p class="texte-doux">Le gérant donne le nom de son maquis et choisit ses boissons.</p></li><li data-n="1"><p class="etiquette"><span class="planche compteur">2/5</span> Écran 2</p><h3>Vendre</h3><p class="texte-doux">Un appui = une vente. Chaque boisson est reconnue par son sticker, sans lire.</p></li><li data-n="2"><p class="etiquette"><span class="planche compteur">3/5</span> Écran 3</p><h3>Arrivage</h3><p class="texte-doux">Les arrivages de casiers : on entre le nombre, le stock monte.</p></li><li data-n="3"><p class="etiquette"><span class="planche compteur">4/5</span> Écran 4</p><h3>Pertes</h3><p class="texte-doux">Les pertes : la casse et les offerts, comptés au prix d'achat.</p></li><li data-n="4"><p class="etiquette"><span class="planche compteur">5/5</span> Écran 5</p><h3>Bilan</h3><p class="texte-doux">Le bilan du jour : bénéfice estimé, crédits à récupérer, stock à commander.</p></li></ol></div>
+        <div class="telephone"><div class="vitre"><div class="vitre-in"><ol class="bande" aria-label="Les écrans de Mon Maquis"><li><figure><picture><source type="image/avif" srcset="images/mon-maquis-1-260.avif 260w, images/mon-maquis-1.avif 520w" sizes="(min-width: 64rem) 22rem, 60vw"><img src="images/mon-maquis-1.webp" srcset="images/mon-maquis-1-260.webp 260w, images/mon-maquis-1.webp 520w" sizes="(min-width: 64rem) 22rem, 60vw" width="520" height="886" alt="Écran Bienvenue de Mon Maquis : le gérant touche les boissons qu'il vend (Castel, Beaufort, Bock, Guinness, Heineken, Bud)" loading="lazy" decoding="async"></picture><figcaption><b>Premier lancement</b>Le gérant donne le nom de son maquis et choisit ses boissons.</figcaption></figure></li><li><figure><picture><source type="image/avif" srcset="images/mon-maquis-2-260.avif 260w, images/mon-maquis-2.avif 520w" sizes="(min-width: 64rem) 22rem, 60vw"><img src="images/mon-maquis-2.webp" srcset="images/mon-maquis-2-260.webp 260w, images/mon-maquis-2.webp 520w" sizes="(min-width: 64rem) 22rem, 60vw" width="520" height="886" alt="Écran Vendre : la recette du jour en haut, et pour chaque boisson un compteur avec les boutons moins et plus" loading="lazy" decoding="async"></picture><figcaption><b>Vendre</b>Un appui = une vente. Chaque boisson est reconnue par son sticker, sans lire.</figcaption></figure></li><li><figure><picture><source type="image/avif" srcset="images/mon-maquis-3-260.avif 260w, images/mon-maquis-3.avif 520w" sizes="(min-width: 64rem) 22rem, 60vw"><img src="images/mon-maquis-3.webp" srcset="images/mon-maquis-3-260.webp 260w, images/mon-maquis-3.webp 520w" sizes="(min-width: 64rem) 22rem, 60vw" width="520" height="886" alt="Écran Arrivage : pour chaque boisson, le stock, les casiers à rendre et les boutons Reçu et Rendu" loading="lazy" decoding="async"></picture><figcaption><b>Arrivage</b>Les arrivages de casiers : on entre le nombre, le stock monte.</figcaption></figure></li><li><figure><picture><source type="image/avif" srcset="images/mon-maquis-4-260.avif 260w, images/mon-maquis-4.avif 520w" sizes="(min-width: 64rem) 22rem, 60vw"><img src="images/mon-maquis-4.webp" srcset="images/mon-maquis-4-260.webp 260w, images/mon-maquis-4.webp 520w" sizes="(min-width: 64rem) 22rem, 60vw" width="520" height="886" alt="Écran Pertes : les boutons Casse et Offert / Patron, puis la liste des boissons avec le bouton Ajouter" loading="lazy" decoding="async"></picture><figcaption><b>Pertes</b>Les pertes : la casse et les offerts, comptés au prix d'achat.</figcaption></figure></li><li><figure><picture><source type="image/avif" srcset="images/mon-maquis-5-260.avif 260w, images/mon-maquis-5.avif 520w" sizes="(min-width: 64rem) 22rem, 60vw"><img src="images/mon-maquis-5.webp" srcset="images/mon-maquis-5-260.webp 260w, images/mon-maquis-5.webp 520w" sizes="(min-width: 64rem) 22rem, 60vw" width="520" height="886" alt="Écran Bilan : bénéfice estimé après dépenses, total du mois, crédits clients à récupérer et alertes de stock" loading="lazy" decoding="async"></picture><figcaption><b>Bilan</b>Le bilan du jour : bénéfice estimé, crédits à récupérer, stock à commander.</figcaption></figure></li></ol></div></div></div>
       </div>
+    </div>
+    <div class="cadre grille">
+      <p class="demo-note">Captures de l'application avec des données de démonstration.</p>
+      <dl class="fiche">
+        <div><dt>Le design</dt><dd><p>Des stickers de boissons dessinés par moi servent d'icônes : on reconnaît une boisson au premier coup d'œil, sans lire.</p></dd></div>
+        <div><dt>Sous le capot</dt><dd><p>Un seul fichier HTML, installable sur l'écran d'accueil du téléphone, qui fonctionne sans connexion. Chaque achat est protégé par un code d'activation (2 téléphones par code), vérifié par un petit serveur de licences.</p><div class="mentions"><span class="mention">HTML · CSS · JS</span><span class="mention">PWA</span><span class="mention">Hors connexion</span><span class="mention">Cloudflare</span></div></dd></div>
+        <div><dt>Où j'en suis</dt><dd><p>L'application est en ligne et le produit est créé sur Chariow. Les tests auprès de vrais gérants sont la prochaine étape.</p></dd></div>
+      </dl>
+      <p class="actions" style="margin-top:var(--e4)"><a class="btn btn-plein" href="https://xlzrpfoi.mychariow.store/mon-maquis" target="_blank" rel="noopener">Voir Mon Maquis<svg class="ico" aria-hidden="true" focusable="false"><use href="#i-fleche"/></svg></a><a class="btn btn-trait" href="#contact">Une idée d'application ?</a></p>
+      <p class="texte-doux" style="margin-top:var(--e3)">Les visuels de lancement sont présentés côté <a href="graphisme.html#affiches">Graphisme</a>.</p>
     </div>
   </section>
 
+  <section class="section" id="mariage" aria-labelledby="t-mariage">
+    <div class="cadre grille">
+      <p class="etiquette">Étude de cas</p>
+      <h2 class="titre masque" id="t-mariage">Invitation de mariage</h2>
+      <div class="mentions"><span class="mention mention-forte">Démo en ligne</span><span class="mention mention-forte">Projet personnel</span><span class="mention">Site web</span></div>
+      <figure class="repere" style="margin-top:var(--e5)"><picture><source type="image/avif" srcset="images/invitation-apercu-600.avif 600w, images/invitation-apercu.avif 1200w" sizes="(min-width: 90rem) 82rem, 92vw"><img src="images/invitation-apercu.webp" srcset="images/invitation-apercu-600.webp 600w, images/invitation-apercu.webp 1200w" sizes="(min-width: 90rem) 82rem, 92vw" width="1200" height="630" alt="Invitation de mariage DELYART : une enveloppe terracotta fermée par un sceau, avec le message « Vous êtes invité(e) »" loading="lazy" decoding="async"></picture></figure>
+      <dl class="fiche">
+        <div><dt>Le besoin</dt><dd><p>Les faire-part papier coûtent cher et se perdent, et les cartes envoyées en photo sur WhatsApp ne donnent aucune information pratique. Les mariés veulent une invitation qui se partage d'un clic.</p></dd></div>
+        <div><dt>Ma solution</dt><dd><p>Une invitation animée : l'invité ouvre l'enveloppe et découvre l'histoire du couple, le programme, le lieu sur la carte, la tenue conseillée et un bouton « Je serai là » qui ouvre WhatsApp avec un message prêt à envoyer.</p><div class="mentions"><span class="mention">Enveloppe animée</span><span class="mention">Programme</span><span class="mention">RSVP WhatsApp</span><span class="mention">Musique</span></div></dd></div>
+        <div><dt>Un lien par invité</dt><dd><p>En ajoutant le nom de l'invité à la fin du lien, son nom s'affiche au-dessus de l'enveloppe. Sur un vieux téléphone, le site passe tout seul en mode léger, sans animation.</p></dd></div>
+        <div><dt>Sous le capot</dt><dd><p>Du HTML, du CSS et du JavaScript simples, sans framework. Tout se personnalise dans un seul fichier : prénoms, date, lieu, couleurs et numéro WhatsApp.</p><div class="mentions"><span class="mention">HTML · CSS · JS</span><span class="mention">Vercel</span><span class="mention">Un seul fichier de réglages</span></div></dd></div>
+        <div><dt>Le formulaire client</dt><dd><p>Pour une invitation sur mesure, le client remplit un formulaire de 10 questions. Ses réponses m'arrivent directement sur WhatsApp, prêtes à servir pour créer son invitation.</p></dd></div>
+        <div><dt>Où j'en suis</dt><dd><p>Le modèle est terminé et la démo est en ligne. Son bouton « Je serai là » m'envoie un message : les prochains tests seront de vrais futurs mariés.</p></dd></div>
+      </dl>
+      <p class="actions" style="margin-top:var(--e4)"><a class="btn btn-plein" href="https://invitation-mariage-demo.vercel.app/" target="_blank" rel="noopener">Voir la démo<svg class="ico" aria-hidden="true" focusable="false"><use href="#i-fleche"/></svg></a><a class="btn btn-trait" href="#contact">Je veux la mienne</a></p>
+    </div>
+  </section>
 
-  <section class="about-sec" id="apropos">
-    <div class="wrap">
-      <div class="about">
-        <!-- PHOTO : mets ta photo dans images/jardel.webp (carrée, 600×600) puis remplace le <svg> ci-dessous par :
+  <section class="section" id="apropos" aria-labelledby="t-apropos">
+    <div class="cadre grille">
+      <p class="etiquette">À propos</p>
+      <h2 class="titre masque apropos-titre" id="t-apropos">Derrière DELYART, Jardel.</h2>
+      <div class="apropos-texte">
+        <!-- PHOTO : mets ta photo dans images/jardel.webp (carrée, 600×600) et ajoute ici :
              <img src="images/jardel.webp" width="600" height="600" alt="Jardel, fondateur de DELYART" loading="lazy"> -->
-        <div class="about-mark rv"><svg viewBox="72 19 125 178" aria-hidden="true"><use href="#pD"/></svg></div>
-        <div class="rv">
-          <span class="kicker">À propos</span>
-          <h2>Derrière DELYART, Jardel.</h2>
-          <p>Je suis graphiste et web designer indépendant à Abidjan. Je dessine des logos, des identités visuelles et des flyers, et je crée des applications simples, pensées d'abord pour le téléphone.</p>
-          <p>Mon fil rouge : un travail propre, lisible, fait pour l'usage réel, celui d'un commerçant, d'un maquis ou d'un mariage.</p>
-          <a class="btn btn-line" href="#contact">Me parler de votre projet</a>
-        </div>
+        <p>Je suis graphiste et web designer indépendant à Abidjan. Je dessine des logos, des identités visuelles et des flyers, et je crée des applications simples, pensées d'abord pour le téléphone.</p>
+          <p>Mon fil rouge : un travail propre, lisible, fait pour l'usage réel, celui d'un commerçant, d'un maquis ou d'un mariage.</p>
+        <p class="actions"><a class="btn btn-trait" href="#contact">Me parler de votre projet<svg class="ico" aria-hidden="true" focusable="false"><use href="#i-fleche"/></svg></a></p>
       </div>
+      <figure class="logo-jeu" aria-hidden="true">
+        <svg viewBox="-8 0 224 216" focusable="false">
+          <g class="glisse"><rect x="58" y="10" width="152" height="196" fill="transparent"/><use href="#pD"/></g>
+          <g class="glisse"><rect x="38" y="60" width="62" height="76" fill="transparent"/><use href="#pNib"/></g>
+          <g class="glisse"><rect x="-4" y="68" width="62" height="92" fill="transparent"/><use href="#pCurve"/></g>
+        </svg>
+        <figcaption>Attrape les morceaux</figcaption>
+      </figure>
+      
     </div>
   </section>
 
-  <section class="end" id="contact">
-    <div class="wrap">
-      <h2 class="rv">Une application ou un site à créer ?</h2>
-      <p class="rv">Écrivez-moi, je réponds vite.</p>
-      <a class="mail rv" href="mailto:contact.delyart@gmail.com">contact.delyart@gmail.com</a>
-      <div class="links rv">
-        <a class="btn btn-amber" href="https://wa.me/2250757887372?text=Bonjour%2C%20j%27ai%20vu%20votre%20portfolio%20DELYART%20%28Web%29.%20J%27aimerais%20discuter%20d%27un%20projet%20d%27application%20ou%20de%20site.%20Voici%20mon%20besoin%20%3A%20" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
-        <a class="btn btn-line" href="https://instagram.com/delyart" target="_blank" rel="noopener">Instagram</a>
-        <a class="btn btn-line" href="https://behance.net/delyart" target="_blank" rel="noopener">Behance</a>
-      </div>
+  <section class="section contact" id="contact" aria-labelledby="t-contact">
+    <div class="cadre grille">
+      <p class="etiquette">Contact</p>
+      <h2 class="titre masque" id="t-contact">Une application ou un site à créer ?</h2>
+      <p class="chapo"><span style="white-space:nowrap">Écrivez-moi</span>, je réponds vite.</p>
+      <p><a class="courriel" href="mailto:jardelehouman5@gmail.com">contact.<wbr>delyart<wbr>@gmail.com</a></p>
+      <ul class="actions">
+        <li><a class="btn btn-plein" href="https://wa.me/2250757887372?text=Bonjour%2C%20j%27ai%20vu%20votre%20portfolio%20DELYART%20%28Web%29.%20J%27aimerais%20discuter%20d%27un%20projet%20d%27application%20ou%20de%20site.%20Voici%20mon%20besoin%20%3A%20" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>Écrire sur WhatsApp</a></li>
+        <li><a class="btn btn-trait" href="https://instagram.com/delyart" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-insta"/></svg>Instagram</a></li>
+        <li><a class="btn btn-trait" href="https://behance.net/delyart" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-be"/></svg>Behance</a></li>
+      </ul>
     </div>
   </section>
 </main>
-
-<div class="wrap"><div class="foot">
-  <span>© <span id="year">2026</span> DELYART</span>
-  <span><a href="index.html">Accueil</a> · Abidjan, Côte d'Ivoire</span>
-</div></div>
-
-<a class="wa-float" href="https://wa.me/2250757887372?text=Bonjour%2C%20j%27ai%20vu%20votre%20portfolio%20DELYART%20%28Web%29.%20J%27aimerais%20discuter%20d%27un%20projet%20d%27application%20ou%20de%20site.%20Voici%20mon%20besoin%20%3A%20" target="_blank" rel="noopener" style="--wa-bg:#5a50d8;--wa-fg:#fff"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5C6.8 2.5 2.6 6.2 2.6 10.8c0 2.4 1.1 4.5 2.9 6L4.8 21.5l4.6-2c.8.2 1.7.3 2.6.3 5.2 0 9.4-3.7 9.4-8.3S17.2 2.5 12 2.5z"/></svg><span>WhatsApp</span></a>
-
-<script src="motion/motion.js"></script>
-<script src="assets/site.js" defer></script>
-<script>
-(()=>{
-const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
-$('#year').textContent=new Date().getFullYear();
-const prog=$('#prog');
-const upd=()=>{const d=document.documentElement.scrollHeight-innerHeight;prog.style.transform='scaleX('+(d>0?Math.min(1,scrollY/d):0)+')'};
-addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-$$('.rv').forEach(el=>io.observe(el));
-})();
-</script>
+<footer class="pied">
+  <div class="cadre pied-in">
+    <p>© <span data-annee>2026</span> DELYART · Abidjan, Côte d'Ivoire</p>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="graphisme.html">Univers Graphisme</a></li>
+      <li><a href="https://instagram.com/delyart" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="https://behance.net/delyart" target="_blank" rel="noopener">Behance</a></li>
+    </ul>
+  </div>
+</footer>
 </body>
 </html>
