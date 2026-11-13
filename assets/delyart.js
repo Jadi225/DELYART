@@ -117,6 +117,125 @@
     });
   });
 
+  /* d. V14 · La courbe de Bézier de l'accueil se joue : on attrape un point, la courbe suit,
+        et au lâcher tout revient avec un ressort. Chaque point a son propre ressort. */
+  const bez = document.querySelector('.bez-index');
+  if (bez) {
+    const NS = 'http://www.w3.org/2000/svg';
+    const RAIDEUR_B = 90, FREIN_B = 5; // ressort : moins de FREIN_B = plus de rebond
+    const base = { p0: [20, 230], c1: [120, 40], c2: [190, 60], p1: [260, 150], c4: [350, 230], p2: [380, 70] };
+    const dec = { p0: [0, 0], c1: [0, 0], c2: [0, 0], p1: [0, 0], p2: [0, 0] };           // décalages
+    const vit = { p0: [0, 0], c1: [0, 0], c2: [0, 0], p1: [0, 0], p2: [0, 0] };           // vitesses
+    const tenu = { p0: false, c1: false, c2: false, p1: false, p2: false };
+    const noms = ['p0', 'c1', 'c2', 'p1', 'p2'];
+    const courbe = bez.querySelector('.courbe');
+    const poignees = bez.querySelectorAll('.poignee');
+    const ancres = bez.querySelectorAll('.ancre');   // p0, p1, p2 dans l'ordre du dessin
+    const bouts = bez.querySelectorAll('.bout');     // c1, c2
+    const forme = { p0: ancres[0], p1: ancres[1], p2: ancres[2], c1: bouts[0], c2: bouts[1] };
+    const pt = n => [base[n][0] + dec[n][0], base[n][1] + dec[n][1]];
+    // la poignée suit son point d'ancrage, comme avec l'outil Plume
+    const eff = n => n === 'c1' ? [pt('c1')[0] + dec.p0[0], pt('c1')[1] + dec.p0[1]]
+                   : n === 'c2' ? [pt('c2')[0] + dec.p1[0], pt('c2')[1] + dec.p1[1]] : pt(n);
+    const f = v => v.toFixed(1);
+    function dessiner() {
+      const P0 = eff('p0'), C1 = eff('c1'), C2 = eff('c2'), P1 = eff('p1'), P2 = eff('p2'), C4 = base.c4;
+      courbe.setAttribute('d', `M${f(P0[0])} ${f(P0[1])} C ${f(C1[0])} ${f(C1[1])}, ${f(C2[0])} ${f(C2[1])}, ${f(P1[0])} ${f(P1[1])} S ${C4[0]} ${C4[1]}, ${f(P2[0])} ${f(P2[1])}`);
+      poignees[0].setAttribute('x1', f(P0[0])); poignees[0].setAttribute('y1', f(P0[1])); poignees[0].setAttribute('x2', f(C1[0])); poignees[0].setAttribute('y2', f(C1[1]));
+      poignees[1].setAttribute('x1', f(P1[0])); poignees[1].setAttribute('y1', f(P1[1])); poignees[1].setAttribute('x2', f(C2[0])); poignees[1].setAttribute('y2', f(C2[1]));
+      for (const n of ['p0', 'p1', 'p2']) { const p = eff(n); forme[n].setAttribute('x', f(p[0] - 6)); forme[n].setAttribute('y', f(p[1] - 6)); }
+      for (const n of ['c1', 'c2']) { const p = eff(n); forme[n].setAttribute('cx', f(p[0])); forme[n].setAttribute('cy', f(p[1])); }
+      zones.forEach(z => { const p = eff(z.n); z.el.setAttribute('cx', f(p[0])); z.el.setAttribute('cy', f(p[1])); });
+    }
+    // zones de saisie invisibles et larges (doigt compris) posées sur chaque point
+    const zones = noms.map(n => {
+      const el = document.createElementNS(NS, 'circle');
+      el.setAttribute('r', '22'); el.setAttribute('class', 'zone-saisie'); el.dataset.n = n;
+      bez.appendChild(el); return { n, el };
+    });
+    let rafB = 0, avantB = 0, aBouge = false;
+    function pasB(t) {
+      rafB = 0;
+      const dt = Math.min(0.033, (t - avantB) / 1000 || 0.016); avantB = t;
+      let vivant = false;
+      for (const n of noms) {
+        if (tenu[n]) { vivant = true; continue; }
+        for (let k = 0; k < 2; k++) {
+          vit[n][k] += (-RAIDEUR_B * dec[n][k] - FREIN_B * vit[n][k]) * dt;
+          dec[n][k] += vit[n][k] * dt;
+        }
+        if (Math.abs(dec[n][0]) + Math.abs(dec[n][1]) + Math.abs(vit[n][0]) + Math.abs(vit[n][1]) < 0.05) { dec[n][0] = dec[n][1] = vit[n][0] = vit[n][1] = 0; }
+        else vivant = true;
+      }
+      dessiner();
+      if (vivant) rafB = requestAnimationFrame(pasB);
+    }
+    const lancerB = () => { if (!rafB) { avantB = performance.now(); rafB = requestAnimationFrame(pasB); } };
+    const indice = document.createElement('span');
+    indice.className = 'astuce-bez'; indice.setAttribute('aria-hidden', 'true'); indice.textContent = 'Essaie : attrape un point';
+    bez.parentNode.appendChild(indice);
+    zones.forEach(({ n, el }) => {
+      let px = 0, py = 0;
+      el.addEventListener('pointerdown', e => {
+        e.preventDefault(); e.stopPropagation(); el.setPointerCapture(e.pointerId);
+        tenu[n] = true; px = e.clientX; py = e.clientY; vit[n][0] = vit[n][1] = 0; aBouge = false;
+        el.classList.add('saisi'); indice.classList.add('cache'); lancerB();
+      });
+      el.addEventListener('pointermove', e => {
+        if (!tenu[n]) return;
+        const k = bez.viewBox.baseVal.width / bez.getBoundingClientRect().width;
+        const dx = (e.clientX - px) * k, dy = (e.clientY - py) * k;
+        if (Math.abs(e.clientX - px) + Math.abs(e.clientY - py) > 0) aBouge = true;
+        dec[n][0] = borne(dec[n][0] + dx, -150, 150); dec[n][1] = borne(dec[n][1] + dy, -150, 150);
+        px = e.clientX; py = e.clientY; dessiner();
+      });
+      const lacher = () => { if (!tenu[n]) return; tenu[n] = false; el.classList.remove('saisi'); lancerB(); };
+      el.addEventListener('pointerup', lacher); el.addEventListener('pointercancel', lacher);
+      el.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); }); // un point attrapé n'ouvre jamais la page
+    });
+  }
+
+  /* e. V14 · Le téléphone de l'accueil fait défiler les 5 écrans de Mon Maquis (fondu enchaîné).
+        Il s'arrête quand il est hors écran ou quand l'onglet est caché. */
+  const miniTel = document.querySelector('.mini-tel');
+  if (miniTel) {
+    const imgA = miniTel.querySelector('img');
+    if (imgA) {
+      const imgB = imgA.cloneNode(); imgB.className = 'tel-2'; imgB.alt = ''; imgB.setAttribute('aria-hidden', 'true');
+      miniTel.appendChild(imgB);
+      const ecrans = [2, 3, 4, 5, 1].map(n => `images/mon-maquis-${n}-260.webp`); // l'image 2 est celle déjà affichée
+      let i = 0, devant = 'A', visible = false, minuteur = 0;
+      const suivant = () => {
+        i = (i + 1) % ecrans.length;
+        const cache = devant === 'A' ? imgB : imgA;
+        const montre = devant === 'A' ? imgA : imgB;
+        cache.src = ecrans[i];
+        const bascule = () => { cache.classList.add('on'); montre.classList.remove('on'); devant = devant === 'A' ? 'B' : 'A'; };
+        cache.decode ? cache.decode().then(bascule, bascule) : bascule();
+      };
+      miniTel.classList.add('vivant'); imgA.classList.add('on');
+      const regler = () => {
+        clearInterval(minuteur); minuteur = 0;
+        if (visible && !document.hidden) minuteur = setInterval(suivant, 3200);
+      };
+      new IntersectionObserver(es => es.forEach(e => { visible = e.isIntersecting; regler(); })).observe(miniTel);
+      document.addEventListener('visibilitychange', regler);
+    }
+  }
+
+  /* f. V14 · Le tampon « Bon à tirer » claque quand l'image arrive à l'écran (une seule fois) */
+  const tampons = [...document.querySelectorAll('.tampon')];
+  if (tampons.length) {
+    // on surveille l'image (le parent) et non le tampon, qui bouge pendant l'animation
+    const parentVersTampon = new Map(tampons.map(t => [t.parentNode, t]));
+    const ioTampon = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      parentVersTampon.get(e.target).classList.add('pose');
+      ioTampon.unobserve(e.target);
+    }), { threshold: 0.6 });
+    parentVersTampon.forEach((t, p) => ioTampon.observe(p));
+  }
+
   /* c. Boutons attirés par la souris (propriété « translate » : ne gêne aucune autre animation) */
   if (souris) {
     const aimants = [...document.querySelectorAll('.btn')].map(el => ({ el, tx: 0, ty: 0, cx: 0, cy: 0 }));

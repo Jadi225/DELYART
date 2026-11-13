@@ -19,9 +19,9 @@
 <link rel="preload" href="assets/fonts/atkinson-hyperlegible-next-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/delyart.css">
 <!-- « js » = JavaScript actif ; « anim » = le visiteur accepte le mouvement. Sans eux, tout reste visible et statique. -->
-<script>document.documentElement.classList.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('anim')</script>
+<script src="assets/boot.js"></script>
 <script src="assets/delyart.js" defer></script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Graphisme", "url": "https://delyart.jardelehouman.workers.dev/graphisme.html", "inLanguage": "fr", "isPartOf": {"@type": "WebSite", "name": "DELYART", "url": "https://delyart.jardelehouman.workers.dev/"}, "about": {"@type": "ProfessionalService", "name": "DELYART", "email": "jardelehouman5@gmail.com", "address": {"@type": "PostalAddress", "addressLocality": "Abidjan", "addressCountry": "CI"}}, "breadcrumb": {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://delyart.jardelehouman.workers.dev/"}, {"@type": "ListItem", "position": 2, "name": "Graphisme", "item": "https://delyart.jardelehouman.workers.dev/graphisme.html"}]}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Graphisme", "url": "https://delyart.jardelehouman.workers.dev/graphisme.html", "inLanguage": "fr", "isPartOf": {"@type": "WebSite", "name": "DELYART", "url": "https://delyart.jardelehouman.workers.dev/"}, "about": {"@type": "ProfessionalService", "name": "DELYART", "email": "contact.delyart@gmail.com", "address": {"@type": "PostalAddress", "addressLocality": "Abidjan", "addressCountry": "CI"}}, "breadcrumb": {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://delyart.jardelehouman.workers.dev/"}, {"@type": "ListItem", "position": 2, "name": "Graphisme", "item": "https://delyart.jardelehouman.workers.dev/graphisme.html"}]}}</script>
 </head>
 <body class="theme-papier graphisme">
 <a class="evitement" href="#contenu">Aller au contenu</a>
@@ -111,7 +111,7 @@
       <p class="etiquette"><span class="planche">Pl. 2</span> Étude de cas · Livrables</p>
       <h2 class="titre masque" id="t-projet">DELYART, mon propre logo</h2>
       <div class="mentions"><span class="mention mention-forte">Projet personnel</span><span class="mention">Logo</span><span class="mention">Identité</span></div>
-      <div class="grille livrables" style="padding:0">
+      <div class="grille livrables u-p0">
         <!-- Pour changer l'image 3D : remplace images/delyart-logo-3d.* (mêmes noms) -->
         <figure class="livre-3d">
           <div class="repere"><picture><source type="image/avif" srcset="images/delyart-logo-3d-550.avif 550w, images/delyart-logo-3d.avif 1100w" sizes="(min-width: 64rem) 55vw, 100vw"><img src="images/delyart-logo-3d.webp" srcset="images/delyart-logo-3d-550.webp 550w, images/delyart-logo-3d.webp 1100w" sizes="(min-width: 64rem) 55vw, 100vw" width="1100" height="886" alt="Logo DELYART en version 3D : un D aux dégradés d'ambre, de mauve et d'indigo, avec une plume à encre et une courbe de Bézier" loading="lazy" decoding="async"></picture></div>
@@ -122,12 +122,12 @@
           <figcaption class="legende"><b>Version plate</b><span>Vectoriel</span></figcaption>
         </figure>
         <div class="livre-nuances">
-          <h3 class="sous-titre" style="margin-top:0">Palette</h3>
+          <h3 class="sous-titre u-mt0">Palette</h3>
           <ul class="nuances">
-            <li><i style="background:#F59E0B"></i><span><b>Ambre</b><small>#F59E0B</small></span></li>
-            <li><i style="background:#F7931E"></i><span><b>Orange</b><small>#F7931E</small></span></li>
-            <li><i style="background:#8B5A7C"></i><span><b>Mauve</b><small>#8B5A7C</small></span></li>
-            <li><i style="background:#3B3490"></i><span><b>Indigo</b><small>#3B3490</small></span></li>
+            <li><i class="sw-ambre"></i><span><b>Ambre</b><small>#F59E0B</small></span></li>
+            <li><i class="sw-orange"></i><span><b>Orange</b><small>#F7931E</small></span></li>
+            <li><i class="sw-mauve"></i><span><b>Mauve</b><small>#8B5A7C</small></span></li>
+            <li><i class="sw-indigo"></i><span><b>Indigo</b><small>#3B3490</small></span></li>
           </ul>
         </div>
       </div>
@@ -153,13 +153,13 @@
       <p class="etiquette"><span class="planche">Pl. 4</span> Affiches</p>
       <h2 class="titre masque" id="t-affiches">Mon Maquis, visuels de lancement</h2>
       <div class="mentions"><span class="mention mention-forte">Projet personnel</span><span class="mention">Affiche</span><span class="mention">Réseaux sociaux</span></div>
-      <p class="chapo" style="margin-top:var(--e3)">Trois formats pour présenter mon application de gestion de maquis : une affiche carrée, une bannière pour les réseaux et une bannière large pour la boutique.</p>
-      <div class="grille affiches" style="padding:0">
-        <figure class="aff-carre"><div class="repere"><picture><source type="image/avif" srcset="images/affiche-mon-maquis-carre-500.avif 500w, images/affiche-mon-maquis-carre.avif 1000w" sizes="(min-width: 64rem) 45vw, 100vw"><img src="images/affiche-mon-maquis-carre.webp" srcset="images/affiche-mon-maquis-carre-500.webp 500w, images/affiche-mon-maquis-carre.webp 1000w" sizes="(min-width: 64rem) 45vw, 100vw" width="1000" height="1000" alt="Affiche Mon Maquis : « Sache chaque soir si ton maquis a gagné ou perdu », trois écrans de l'application et le bouton Ventes, Pertes, Bilan" loading="lazy" decoding="async"></picture></div><figcaption class="legende"><b>Affiche carrée</b><span>1:1</span></figcaption></figure>
+      <p class="chapo u-mt3">Trois formats pour présenter mon application de gestion de maquis : une affiche carrée, une bannière pour les réseaux et une bannière large pour la boutique.</p>
+      <div class="grille affiches u-p0">
+        <figure class="aff-carre"><div class="repere"><picture><source type="image/avif" srcset="images/affiche-mon-maquis-carre-500.avif 500w, images/affiche-mon-maquis-carre.avif 1000w" sizes="(min-width: 64rem) 45vw, 100vw"><img src="images/affiche-mon-maquis-carre.webp" srcset="images/affiche-mon-maquis-carre-500.webp 500w, images/affiche-mon-maquis-carre.webp 1000w" sizes="(min-width: 64rem) 45vw, 100vw" width="1000" height="1000" alt="Affiche Mon Maquis : « Sache chaque soir si ton maquis a gagné ou perdu », trois écrans de l'application et le bouton Ventes, Pertes, Bilan" loading="lazy" decoding="async"></picture><span class="tampon" aria-hidden="true"><b>Bon à tirer</b></span></div><figcaption class="legende"><b>Affiche carrée</b><span>1:1</span></figcaption></figure>
         <figure class="aff-reseaux"><div class="repere"><picture><source type="image/avif" srcset="images/banniere-mon-maquis-reseaux-600.avif 600w, images/banniere-mon-maquis-reseaux.avif 1200w" sizes="(min-width: 64rem) 38vw, 100vw"><img src="images/banniere-mon-maquis-reseaux.webp" srcset="images/banniere-mon-maquis-reseaux-600.webp 600w, images/banniere-mon-maquis-reseaux.webp 1200w" sizes="(min-width: 64rem) 38vw, 100vw" width="1200" height="627" alt="Bannière Mon Maquis pour les réseaux sociaux : le message, deux écrans du bilan et le bouton Paiement unique" loading="lazy" decoding="async"></picture></div><figcaption class="legende"><b>Bannière réseaux</b><span>1200 × 627</span></figcaption></figure>
         <figure class="aff-large"><div class="repere"><picture><source type="image/avif" srcset="images/banniere-mon-maquis-large-700.avif 700w, images/banniere-mon-maquis-large.avif 1404w" sizes="(min-width: 64rem) 45vw, 100vw"><img src="images/banniere-mon-maquis-large.webp" srcset="images/banniere-mon-maquis-large-700.webp 700w, images/banniere-mon-maquis-large.webp 1404w" sizes="(min-width: 64rem) 45vw, 100vw" width="1404" height="520" alt="Bannière large Mon Maquis : le message, deux écrans du bilan et le bouton Mon Maquis, paiement unique" loading="lazy" decoding="async"></picture></div><figcaption class="legende"><b>Bannière boutique</b><span>1404 × 520</span></figcaption></figure>
       </div>
-      <p class="texte-doux" style="margin-top:var(--e4)">Le message tient en une phrase : savoir chaque soir si le maquis a gagné ou perdu. Les couleurs chaudes (brun, orange, crème) reprennent celles de l'application, et la mention « fonctionne sans internet » répond à un vrai besoin du terrain. Voir le projet côté <a href="web.html#projet">Web</a>.</p>
+      <p class="texte-doux u-mt4">Le message tient en une phrase : savoir chaque soir si le maquis a gagné ou perdu. Les couleurs chaudes (brun, orange, crème) reprennent celles de l'application, et la mention « fonctionne sans internet » répond à un vrai besoin du terrain. Voir le projet côté <a href="web.html#projet">Web</a>.</p>
     </div>
   </section>
 
@@ -186,8 +186,8 @@
     <div class="cadre grille">
       <p class="etiquette"><span class="planche">Pl. 6</span> Contact</p>
       <h2 class="titre masque" id="t-contact">Des identités qui ont du caractère. Construisons la vôtre.</h2>
-      <p class="chapo">Un logo, une identité ou un flyer à créer ? <span style="white-space:nowrap">Écrivez-moi</span>, je réponds vite.</p>
-      <p><a class="courriel" href="mailto:jardelehouman5@gmail.com">contact.<wbr>delyart<wbr>@gmail.com</a></p>
+      <p class="chapo">Un logo, une identité ou un flyer à créer ? <span class="u-nw">Écrivez-moi</span>, je réponds vite.</p>
+      <p><a class="courriel" href="mailto:contact.delyart@gmail.com">contact.<wbr>delyart<wbr>@gmail.com</a></p>
       <ul class="actions">
         <li><a class="btn btn-plein" href="https://wa.me/2250757887372?text=Bonjour%2C%20j%27ai%20vu%20votre%20portfolio%20DELYART%20%28Graphisme%29.%20J%27aimerais%20discuter%20d%27un%20projet%20%3A%20logo%2C%20identit%C3%A9%20visuelle%20ou%20flyer.%20Voici%20mon%20besoin%20%3A%20" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>Écrire sur WhatsApp</a></li>
         <li><a class="btn btn-trait" href="https://instagram.com/delyart" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-insta"/></svg>Instagram</a></li>

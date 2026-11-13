@@ -433,6 +433,45 @@ main:focus{outline:none}
 .js.anim .logo-jeu .glisse.saisi{cursor:grabbing}
 @media (min-width:64rem){.logo-jeu{grid-column:8/13;grid-row:2/4;margin-top:0;max-width:none;justify-self:start;width:min(100%,20rem)}}
 
+/* ---------- 11 bis. V14 · Trois petits jeux : la courbe, le téléphone, le tampon ---------- */
+/* Courbe de Bézier de l'accueil : zones de saisie invisibles, curseur « main » */
+.bez-index .zone-saisie{fill:transparent;stroke:none;display:none}
+.js.anim .bez-index .zone-saisie{display:block;cursor:grab;touch-action:none}
+.js.anim .bez-index .zone-saisie.saisi{cursor:grabbing}
+.astuce-bez{display:none;margin-top:var(--e2);font:700 var(--t1)/1.4 var(--f-texte);letter-spacing:.08em;text-transform:uppercase;color:var(--note);transition:opacity var(--d-2)}
+.js.anim .astuce-bez{display:block}
+.astuce-bez.cache{opacity:0}
+
+/* Téléphone de l'accueil : deux images superposées, fondu enchaîné */
+.mini-tel{position:relative}
+.mini-tel .tel-2{position:absolute;inset:6px;width:calc(100% - 12px);height:calc(100% - 12px)}
+.mini-tel.vivant img{opacity:0;transition:opacity var(--d-3) var(--c-trace)}   /* classe ajoutée par le script : sans lui, l'image reste visible */
+.mini-tel.vivant img.on{opacity:1}
+
+/* Tampon « Bon à tirer » : posé sur l'image, comme sur une épreuve approuvée */
+.tampon{position:absolute;right:6%;bottom:7%;z-index:2;pointer-events:none;transform:rotate(-8deg);transform-origin:60% 60%}
+.tampon b{display:block;padding:.35em .8em .3em;border:3px solid var(--indigo);outline:2px solid var(--indigo);outline-offset:3px;border-radius:4px;
+  font:800 clamp(.95rem,.7rem + 1.4vw,1.75rem)/1 var(--f-titre);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;
+  color:var(--indigo);background:color-mix(in srgb,var(--papier) 90%,transparent)}
+/* Affiche carrée : le bas porte le bouton, le haut porte le titre */
+/* (la partie haute de l'affiche est pleine : le tampon déborde sur le papier, comme un vrai tampon posé de travers) */
+.aff-carre .tampon{top:-6.5%;bottom:auto;right:5%}
+@media (max-width:40rem){.aff-carre .tampon b{font-size:.8rem}}
+@media (prefers-reduced-motion:no-preference){
+  .anim .tampon{opacity:0;animation:tampon-secours 0s 4s forwards}   /* filet de sécurité si le script ne répond pas */
+  .anim .tampon.pose{opacity:1;animation:tampon-claque 650ms var(--c-pose) both}
+  .anim .tampon.pose::after{content:"";position:absolute;inset:-6px;border:2px solid var(--indigo);border-radius:8px;opacity:0;animation:tampon-onde 700ms 180ms ease-out both}
+  .anim .repere:has(.tampon.pose) img{animation:tampon-secousse 260ms 150ms ease-out both}
+}
+@keyframes tampon-secours{to{opacity:1}}
+@keyframes tampon-claque{
+  0%{opacity:0;transform:rotate(-22deg) scale(2.6)}
+  52%{opacity:1;transform:rotate(-8deg) scale(.92)}
+  72%{transform:rotate(-8deg) scale(1.04)}
+  100%{opacity:1;transform:rotate(-8deg) scale(1)}}
+@keyframes tampon-onde{0%{opacity:.7;transform:scale(1)}100%{opacity:0;transform:scale(1.35)}}
+@keyframes tampon-secousse{0%,100%{transform:none}35%{transform:translateY(3px)}70%{transform:translateY(-1px)}}
+
 /* ---------- 12. Transitions entre pages, mouvement réduit ---------- */
 @view-transition{navigation:auto}
 ::view-transition-old(root),::view-transition-new(root){animation-duration:var(--d-2);animation-timing-function:var(--c-pose)}
@@ -446,3 +485,7 @@ main:focus{outline:none}
 .page-404 main{display:grid;align-content:center;padding-block:var(--e7)}
 .page-404 .titre-h1{font-size:var(--t6)}
 .page-404 .actions{margin-top:var(--e4)}
+
+/* Classes utilitaires (remplacent les style="" pour respecter la CSP stricte) */
+.u-p0{padding:0}.u-mt0{margin-top:0}.u-mt3{margin-top:var(--e3)}.u-mt4{margin-top:var(--e4)}.u-mt5{margin-top:var(--e5)}.u-nw{white-space:nowrap}
+.sw-ambre{background:#F59E0B}.sw-orange{background:#F7931E}.sw-mauve{background:#8B5A7C}.sw-indigo{background:#3B3490}
