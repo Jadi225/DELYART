@@ -50,7 +50,7 @@
     <a class="marque" href="index.html" aria-label="DELYART, retour à l'accueil"><svg viewBox="72 19 125 178" aria-hidden="true" focusable="false"><use href="#pD"/></svg><span>DELYART</span></a>
     <nav aria-label="Navigation principale">
       <ul class="nav">
-        <li><a class="nav-sec" href="#services">Services</a></li><li><a class="nav-sec" href="#affiches">Affiches</a></li><li><a class="nav-sec" href="#apropos">À propos</a></li><li><a class="nav-sec" href="#contact">Contact</a></li>
+        <li><a class="nav-sec" href="#services">Services</a></li><li><a class="nav-sec" href="#affiches">Affiches</a></li><li><a class="nav-sec" href="#etiquettes">Étiquettes</a></li><li><a class="nav-sec" href="#apropos">À propos</a></li><li><a class="nav-sec" href="#contact">Contact</a></li>
         <li><a class="nav-wa" href="https://wa.me/2250757887372?text=Bonjour%2C%20j%27ai%20vu%20votre%20portfolio%20DELYART%20%28Graphisme%29.%20J%27aimerais%20discuter%20d%27un%20projet%20%3A%20logo%2C%20identit%C3%A9%20visuelle%20ou%20flyer.%20Voici%20mon%20besoin%20%3A%20" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg><span>WhatsApp</span></a></li>
         <li><a class="bascule" href="web.html">Web<svg class="ico" aria-hidden="true" focusable="false"><use href="#i-fleche"/></svg></a></li>
       </ul>
@@ -97,8 +97,8 @@
             </g>
           </g>
           <g class="nuancier">
-            <rect x="214" y="44" width="16" height="16" fill="#F59E0B"/><rect x="214" y="70" width="16" height="16" fill="#F7931E"/>
-            <rect x="214" y="96" width="16" height="16" fill="#8B5A7C"/><rect x="214" y="122" width="16" height="16" fill="#3B3490"/>
+            <rect x="214" y="44" width="16" height="16" class="f-ambre"/><rect x="214" y="70" width="16" height="16" class="f-orange"/>
+            <rect x="214" y="96" width="16" height="16" class="f-mauve"/><rect x="214" y="122" width="16" height="16" class="f-indigo"/>
           </g>
         </svg>
         <figcaption><span class="mention mention-forte">Étude de cas · Projet personnel</span></figcaption>
@@ -112,13 +112,25 @@
       <h2 class="titre masque" id="t-projet">DELYART, mon propre logo</h2>
       <div class="mentions"><span class="mention mention-forte">Projet personnel</span><span class="mention">Logo</span><span class="mention">Identité</span></div>
       <div class="grille livrables u-p0">
-        <!-- Pour changer l'image 3D : remplace images/delyart-logo-3d.* (mêmes noms) -->
         <figure class="livre-3d">
-          <div class="repere"><picture><source type="image/avif" srcset="images/delyart-logo-3d-550.avif 550w, images/delyart-logo-3d.avif 1100w" sizes="(min-width: 64rem) 55vw, 100vw"><img src="images/delyart-logo-3d.webp" srcset="images/delyart-logo-3d-550.webp 550w, images/delyart-logo-3d.webp 1100w" sizes="(min-width: 64rem) 55vw, 100vw" width="1100" height="886" alt="Logo DELYART en version 3D : un D aux dégradés d'ambre, de mauve et d'indigo, avec une plume à encre et une courbe de Bézier" loading="lazy" decoding="async"></picture></div>
-          <figcaption class="legende"><b>Version volume</b><span>Rendu 3D</span></figcaption>
+          <!-- Version volume : le même dessin que la version plate (mêmes tracés), avec ombre et relief calculés en SVG. -->
+          <div class="repere livre-volume"><svg viewBox="-62 -20 318 256" role="img" aria-labelledby="t-vol" focusable="false">
+            <title id="t-vol">Logo DELYART en version volume : le D, la plume et la courbe avec ombre portée et relief</title>
+            <defs>
+              <filter id="relief" x="-20%" y="-20%" width="140%" height="150%" color-interpolation-filters="sRGB">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="2.2" result="b"/>
+                <feSpecularLighting in="b" surfaceScale="5" specularConstant=".85" specularExponent="22" lighting-color="#fff6e0" result="s"><fePointLight x="-40" y="-60" z="130"/></feSpecularLighting>
+                <feComposite in="s" in2="SourceAlpha" operator="in" result="s2"/>
+                <feComposite in="SourceGraphic" in2="s2" operator="arithmetic" k1="0" k2="1" k3=".75" k4="0" result="lit"/>
+                <feDropShadow in="lit" dx="5" dy="9" stdDeviation="6" flood-color="#000" flood-opacity=".55"/>
+              </filter>
+            </defs>
+            <g filter="url(#relief)"><use href="#pD"/><use href="#pNib"/><use href="#pCurve"/></g>
+          </svg></div>
+          <figcaption class="legende"><b>Version volume</b><span>Relief vectoriel</span></figcaption>
         </figure>
         <figure class="livre-plat-fig">
-          <div class="repere livre-plat"><svg viewBox="0 18 198 180" aria-hidden="true" focusable="false"><use href="#pD"/><use href="#pNib"/><use href="#pCurve"/></svg></div>
+          <div class="repere livre-plat"><svg viewBox="-4 8 206 206" aria-hidden="true" focusable="false"><use href="#pD"/><use href="#pNib"/><use href="#pCurve"/></svg></div>
           <figcaption class="legende"><b>Version plate</b><span>Vectoriel</span></figcaption>
         </figure>
         <div class="livre-nuances">
@@ -163,9 +175,27 @@
     </div>
   </section>
 
+  <section class="section" id="etiquettes" aria-labelledby="t-etiquettes">
+    <div class="cadre grille">
+      <p class="etiquette"><span class="planche">Pl. 5</span> Étiquettes</p>
+      <h2 class="titre masque" id="t-etiquettes">Les Délices d'Adélaïde, étiquettes de jus</h2>
+      <div class="mentions"><span class="mention mention-forte">Travail pour une cliente · service gratuit</span><span class="mention">Étiquette</span><span class="mention">Packaging</span></div>
+      <p class="chapo u-mt3">Cinq étiquettes ovales, noir et or, pour les jus naturels d'une vendeuse d'Abidjan : passion, gnamankou, tamarin, citron et bissap. Chaque jus garde sa couleur pour qu'on le reconnaisse d'un coup d'œil, sur des bouteilles de récupération de 1 L et 50 cl.</p>
+      <div class="etiquettes-rang u-p0">
+        <figure><div class="repere"><img src="images/etiquette-passion.webp" width="600" height="908" alt="Étiquette noir et or du jus Passion pour Les Délices d'Adélaïde : nom du jus, fruit sur une éclaboussure de couleur, sceau 100 % naturel" loading="lazy" decoding="async"></div><figcaption class="legende"><b>Passion</b></figcaption></figure>
+        <figure><div class="repere"><img src="images/etiquette-gnamankou.webp" width="600" height="908" alt="Étiquette noir et or du jus Gnamankou pour Les Délices d'Adélaïde : nom du jus, fruit sur une éclaboussure de couleur, sceau 100 % naturel" loading="lazy" decoding="async"></div><figcaption class="legende"><b>Gnamankou</b></figcaption></figure>
+        <figure><div class="repere"><img src="images/etiquette-tamarin.webp" width="600" height="908" alt="Étiquette noir et or du jus Tamarin pour Les Délices d'Adélaïde : nom du jus, fruit sur une éclaboussure de couleur, sceau 100 % naturel" loading="lazy" decoding="async"></div><figcaption class="legende"><b>Tamarin</b></figcaption></figure>
+        <figure><div class="repere"><img src="images/etiquette-citron.webp" width="600" height="908" alt="Étiquette noir et or du jus Citron pour Les Délices d'Adélaïde : nom du jus, fruit sur une éclaboussure de couleur, sceau 100 % naturel" loading="lazy" decoding="async"></div><figcaption class="legende"><b>Citron</b></figcaption></figure>
+        <figure><div class="repere"><img src="images/etiquette-bissap.webp" width="600" height="908" alt="Étiquette noir et or du jus Bissap pour Les Délices d'Adélaïde : nom du jus, fruit sur une éclaboussure de couleur, sceau 100 % naturel" loading="lazy" decoding="async"></div><figcaption class="legende"><b>Bissap</b></figcaption></figure>
+      </div>
+      <p class="texte-doux u-mt4">La cliente avait déjà son affiche et son nom, « Adélaïde ». J'ai gardé son logo tel quel, avec sa police et sa couronne, et j'ai ajouté « Les Délices d' » au-dessus pour en faire une vraie marque. Le fichier est prêt à imprimer en deux tailles (90 × 136 mm et 63 × 95 mm), avec les textes et les formes en vectoriel pour rester nets.</p>
+      <p class="demo-note">Mises en page prêtes pour l'imprimeur, pas encore testées sur bouteille : un essai sur une seule étiquette reste à faire avant la série.</p>
+    </div>
+  </section>
+
   <section class="section" id="apropos" aria-labelledby="t-apropos">
     <div class="cadre grille">
-      <p class="etiquette"><span class="planche">Pl. 5</span> À propos</p>
+      <p class="etiquette"><span class="planche">Pl. 6</span> À propos</p>
       <h2 class="titre masque apropos-titre" id="t-apropos">Derrière DELYART, Jardel.</h2>
       <div class="apropos-texte">
         <!-- PHOTO : mets ta photo dans images/jardel.webp (carrée, 600×600) et ajoute ici :
@@ -184,7 +214,7 @@
 
   <section class="section contact" id="contact" aria-labelledby="t-contact">
     <div class="cadre grille">
-      <p class="etiquette"><span class="planche">Pl. 6</span> Contact</p>
+      <p class="etiquette"><span class="planche">Pl. 7</span> Contact</p>
       <h2 class="titre masque" id="t-contact">Des identités qui ont du caractère. Construisons la vôtre.</h2>
       <p class="chapo">Un logo, une identité ou un flyer à créer ? <span class="u-nw">Écrivez-moi</span>, je réponds vite.</p>
       <p><a class="courriel" href="mailto:contact.delyart@gmail.com">contact.<wbr>delyart<wbr>@gmail.com</a></p>

@@ -28,7 +28,7 @@
   --encre:#1A1833;    /* encre indigo profond, tirée du #3B3490 du logo */
   --orange:#F7931E;   /* orange uni : le travail fini, réservé aux actions */
   --mauve:#7E5170;    /* mauve du logo, assombri pour le contraste : annotations */
-  --indigo:#3B3490;   /* indigo du logo : liens visités, détails de l'univers Web */
+  --indigo:#3B3490;   /* indigo du logo : le tampon « Bon à tirer » (jamais sur fond encre : 1,7:1) */
 
   /* Typographie : 2 familles, 6 tailles fluides */
   --f-titre:"Bricolage Grotesque","Bricolage secours",Arial,sans-serif;
@@ -51,6 +51,17 @@
   --d-1:200ms; --d-2:400ms; --d-3:800ms;
   --c-trace:cubic-bezier(.65,0,.35,1);  /* « le trait de plume » : part doucement, finit doucement */
   --c-pose:cubic-bezier(.2,.8,.2,1);    /* « la pièce se pose » : rapide puis amortie */
+
+  /* Traits, cibles tactiles : une valeur, un nom */
+  --fil:1px; --fil-fort:1.5px;           /* filets : séparations / boutons et têtes de tableau */
+  --cible:44px; --h-btn:48px;            /* taille minimale d'une zone tactile / hauteur des boutons */
+
+  /* Formes : aucun arrondi sur l'interface. Exceptions : le téléphone, le tampon, les points ronds */
+  --r-tel:1.75rem; --r-tel-in:1.375rem; --r-vitre:2rem; --r-vitre-in:1.625rem;
+  --r-tampon:4px; --r-tampon-onde:8px; --r-rond:50%;
+
+  /* Palette exacte du logo : pastilles de la page Graphisme seulement (l'orange et l'indigo du logo sont --orange et --indigo) */
+  --logo-ambre:#F59E0B; --logo-mauve:#8B5A7C;
 
   /* Empilement */
   --z-scene:1; --z-entete:20; --z-evitement:50;
@@ -75,7 +86,7 @@ p{max-width:62ch}
 ul,ol{padding:0;list-style:none}
 :focus-visible{outline:3px solid var(--texte);outline-offset:3px}
 .sr-only{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
-.evitement{position:absolute;left:var(--marge);top:var(--e1);z-index:var(--z-evitement);min-height:44px;display:inline-flex;align-items:center;padding:0 var(--e2);background:var(--texte);color:var(--fond);font-weight:700;transform:translateY(-200%)}
+.evitement{position:absolute;left:var(--marge);top:var(--e1);z-index:var(--z-evitement);min-height:var(--cible);display:inline-flex;align-items:center;padding:0 var(--e2);background:var(--texte);color:var(--fond);font-weight:700;transform:translateY(-200%)}
 .evitement:focus{transform:none}
 main:focus{outline:none}
 .sprite{position:absolute;width:0;height:0;overflow:hidden}
@@ -89,28 +100,28 @@ main:focus{outline:none}
 /* ---------- 5. En-tête et pied ---------- */
 .entete{position:absolute;inset:0 0 auto;z-index:var(--z-entete);height:var(--h-entete)}
 .entete-in{height:100%;display:flex;align-items:center;justify-content:space-between;gap:var(--e2)}
-.marque{display:inline-flex;align-items:center;gap:var(--e1);min-height:44px;min-width:44px;text-decoration:none;font:700 var(--t2)/1 var(--f-titre);letter-spacing:.08em;view-transition-name:marque}
+.marque{display:inline-flex;align-items:center;gap:var(--e1);min-height:var(--cible);min-width:var(--cible);text-decoration:none;font:700 var(--t2)/1 var(--f-titre);letter-spacing:.08em;view-transition-name:marque}
 .marque svg{width:1.75rem;height:2.5rem}
 .nav{display:flex;align-items:center;gap:var(--e1)}
-.nav a{display:inline-flex;align-items:center;gap:var(--e1);min-height:44px;padding:0 var(--e1);text-decoration:none;font-size:var(--t1);font-weight:700;letter-spacing:.04em}
+.nav a{display:inline-flex;align-items:center;gap:var(--e1);min-height:var(--cible);padding:0 var(--e1);text-decoration:none;font-size:var(--t1);font-weight:700;letter-spacing:.04em}
 .nav a:hover{text-decoration:underline}
 .nav .nav-sec{display:none}
-.nav .nav-wa{min-width:44px;justify-content:center}
+.nav .nav-wa{min-width:var(--cible);justify-content:center}
 .nav .nav-wa span{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-.nav .bascule{border:1.5px solid currentColor;padding:0 var(--e2)}
+.nav .bascule{border:var(--fil-fort) solid currentColor;padding:0 var(--e2)}
 .nav .bascule .ico{width:1.125rem;height:1.125rem}
 @media (min-width:64rem){.nav .nav-sec{display:inline-flex}.nav .nav-wa span{position:static;width:auto;height:auto;overflow:visible;clip-path:none}}
 @media (max-width:23.74rem){.marque span{display:none}}
-.pied{border-top:1px solid var(--trait);margin-top:var(--e7)}
+.pied{border-top:var(--fil) solid var(--trait);margin-top:var(--e7)}
 .pied-in{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:var(--e2);padding-block:var(--e3)}
 .pied p{font-size:var(--t1);color:var(--doux)}
 .pied ul{display:flex;flex-wrap:wrap;gap:0 var(--e2)}
-.pied a{display:inline-flex;align-items:center;min-height:44px;font-size:var(--t1)}
+.pied a{display:inline-flex;align-items:center;min-height:var(--cible);font-size:var(--t1)}
 
 
 /* ---------- 6. Boutons : rectangles d'imprimeur, jamais de pilule ---------- */
 .actions{display:flex;flex-wrap:wrap;gap:var(--e1);max-width:none}
-.btn{position:relative;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;gap:var(--e1);min-height:48px;padding:0 var(--e3);border:1.5px solid var(--texte);font:700 var(--t2)/1.2 var(--f-texte);text-decoration:none;overflow:hidden}
+.btn{position:relative;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;gap:var(--e1);min-height:var(--h-btn);padding:0 var(--e3);border:var(--fil-fort) solid var(--texte);font:700 var(--t2)/1.2 var(--f-texte);text-decoration:none;overflow:hidden}
 .btn .ico{width:1.25rem;height:1.25rem;transition:transform var(--d-1) var(--c-pose)}
 .btn-plein{background:var(--orange);color:var(--encre);border-color:var(--encre)}
 .theme-encre .btn-plein{border-color:var(--orange)}
@@ -145,8 +156,8 @@ main:focus{outline:none}
 .bez-index .poignee{stroke:var(--mauve);stroke-width:1.25}
 .bez-index .ancre{fill:var(--papier);stroke:var(--encre);stroke-width:1.5}
 .bez-index .bout{fill:var(--mauve)}
-.mini-tel{display:block;width:clamp(8rem,22vw,13rem);aspect-ratio:520/886;border:2px solid var(--papier);border-radius:1.75rem;padding:6px;margin-inline:auto 0}
-.mini-tel img{width:100%;height:100%;object-fit:cover;border-radius:1.375rem}
+.mini-tel{display:block;width:clamp(8rem,22vw,13rem);aspect-ratio:520/886;border:2px solid var(--papier);border-radius:var(--r-tel);padding:6px;margin-inline:auto 0}
+.mini-tel img{width:100%;height:100%;object-fit:cover;border-radius:var(--r-tel-in)}
 @media (min-width:48rem){
   .univers{grid-template-columns:1fr 1fr}
   .cote,.cote+.cote{min-height:100svh;padding:calc(var(--h-entete) + var(--e4)) var(--marge) var(--e6)}
@@ -157,10 +168,10 @@ main:focus{outline:none}
 
 /* ---------- 8. Sections et composants ---------- */
 .section{padding-block:var(--e7)}
-.section+.section{border-top:1px solid var(--trait)}
+.section+.section{border-top:var(--fil) solid var(--trait)}
 @media (min-width:64rem){.section{padding-block:var(--e8)}}
 .etiquette{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 var(--e1);margin-bottom:var(--e3);font:700 var(--t1)/1.5rem var(--f-texte);letter-spacing:.08em;text-transform:uppercase;color:var(--note)}
-.planche{font-variant-numeric:tabular-nums;color:var(--texte);padding-right:var(--e1);border-right:1.5px solid var(--trait)}
+.planche{font-variant-numeric:tabular-nums;color:var(--texte);padding-right:var(--e1);border-right:var(--fil-fort) solid var(--trait)}
 .titre{font-size:var(--t5)}
 .titre-h1{font-size:var(--t5)}
 .web .titre-h1{font-size:var(--t6)}
@@ -171,12 +182,12 @@ main:focus{outline:none}
 
 /* Mentions d'honnêteté (projet personnel, démo, étude) */
 .mentions{display:flex;flex-wrap:wrap;gap:var(--e1);margin-top:var(--e3)}
-.mention{display:inline-flex;align-items:center;min-height:2rem;padding:0 var(--e1);border:1px solid var(--trait);font-size:var(--t1);font-weight:700;letter-spacing:.02em;color:var(--doux)}
+.mention{display:inline-flex;align-items:center;min-height:2rem;padding:0 var(--e1);border:var(--fil) solid var(--trait);font-size:var(--t1);font-weight:700;letter-spacing:.02em;color:var(--doux)}
 .mention-forte{border-color:var(--texte);color:var(--texte)}
 
 /* Tarifs : une liste de prix d'imprimeur, alignée sur la grille */
-.tarifs{margin-top:var(--e5);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-columns:subgrid;border-top:1.5px solid var(--texte)}
-.tarifs li{grid-column:1/-1;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-columns:subgrid;row-gap:var(--e1);padding-block:var(--e3);border-bottom:1px solid var(--trait)}
+.tarifs{margin-top:var(--e5);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-columns:subgrid;border-top:var(--fil-fort) solid var(--texte)}
+.tarifs li{grid-column:1/-1;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-columns:subgrid;row-gap:var(--e1);padding-block:var(--e3);border-bottom:var(--fil) solid var(--trait)}
 .tarifs li>*{grid-column:1/-1}
 .tarifs p{color:var(--doux)}
 .prix{font:700 var(--t2)/1.5rem var(--f-titre);font-variant-numeric:tabular-nums}
@@ -187,7 +198,7 @@ main:focus{outline:none}
 
 /* Fiche technique (projets) : intitulé à gauche, texte à droite */
 .fiche{margin-top:var(--e5);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-columns:subgrid}
-.fiche>div{grid-column:1/-1;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-columns:subgrid;row-gap:var(--e1);padding-block:var(--e3);border-top:1px solid var(--trait)}
+.fiche>div{grid-column:1/-1;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-columns:subgrid;row-gap:var(--e1);padding-block:var(--e3);border-top:var(--fil) solid var(--trait)}
 .fiche dt{grid-column:1/-1;font:700 var(--t3)/1.15 var(--f-titre)}
 .fiche dd{grid-column:1/-1;color:var(--doux);max-width:62ch}
 .fiche dd p+p,.fiche dd p+.mentions{margin-top:var(--e2)}
@@ -214,10 +225,12 @@ main:focus{outline:none}
 /* Livrables du logo */
 .livrables{row-gap:var(--e5);margin-top:var(--e5)}
 .livre-plat{display:grid;place-items:center;aspect-ratio:1;background:var(--encre)}
-.livre-plat svg{width:56%;height:auto}
+.livre-plat svg{width:78%;height:auto}
+.livre-volume{background:var(--encre);aspect-ratio:1100/886}
+.livre-volume svg{display:block;width:100%;height:100%}
 .nuances{display:grid;gap:var(--e1)}
 .nuances li{display:grid;grid-template-columns:3rem 1fr;align-items:center;gap:var(--e2);min-height:3rem}
-.nuances i{display:block;width:3rem;height:3rem;border:1px solid var(--trait)}
+.nuances i{display:block;width:3rem;height:3rem;border:var(--fil) solid var(--trait)}
 .nuances b{display:block;font-family:var(--f-titre);font-size:var(--t3);line-height:1.15}
 .nuances small{font-size:var(--t1);color:var(--doux);font-variant-numeric:tabular-nums}
 @media (min-width:64rem){
@@ -235,18 +248,23 @@ main:focus{outline:none}
   .aff-large{grid-column:7/13}
 }
 
+/* Étiquettes : cinq ovales côte à côte, deux colonnes sur téléphone */
+.etiquettes-rang{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--e5) var(--e4);margin-top:var(--e5)}
+@media (min-width:40rem){.etiquettes-rang{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:64rem){.etiquettes-rang{grid-template-columns:repeat(5,minmax(0,1fr))}}
+
 /* À propos */
 .apropos-texte>*+*{margin-top:var(--e2)}
 .demarche{margin-top:var(--e5)}
 @media (min-width:64rem){.apropos-titre{grid-column:1/8}.apropos-texte{grid-column:1/7}.demarche{grid-column:8/13;margin-top:0;grid-row:2/4}}
-.demarche div{padding-block:var(--e2);border-top:1px solid var(--trait)}
+.demarche div{padding-block:var(--e2);border-top:var(--fil) solid var(--trait)}
 .demarche dt{font:700 var(--t3)/1.15 var(--f-titre);margin-bottom:var(--e1)}
 .demarche dd{color:var(--doux)}
 
 /* Contact */
 .contact .titre{max-width:16ch}
 .contact .chapo{margin-top:var(--e3)}
-.courriel{display:inline-block;margin-block:var(--e4);font:700 var(--t4)/1.15 var(--f-titre);letter-spacing:-.01em;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.15em;overflow-wrap:anywhere;min-height:44px}
+.courriel{display:inline-block;margin-block:var(--e4);font:700 var(--t4)/1.15 var(--f-titre);letter-spacing:-.01em;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.15em;overflow-wrap:anywhere;min-height:var(--cible)}
 .contact .actions{margin-top:var(--e2)}
 
 /* Hero Web (pas de scène : le titre seul, très grand) */
@@ -265,7 +283,7 @@ main:focus{outline:none}
 .intro .etiquette{margin-bottom:0}
 .indice{display:none}
 .etapes{margin-top:var(--e5);display:grid;gap:0}
-.etapes li{padding-block:var(--e3);border-top:1px solid var(--trait)}
+.etapes li{padding-block:var(--e3);border-top:var(--fil) solid var(--trait)}
 .etapes li p+p{margin-top:var(--e1)}
 .etapes li p:not(.etiquette):not(.texte-doux){font-size:var(--t3);line-height:2rem}
 .etapes .etiquette{margin-bottom:var(--e1)}
@@ -357,7 +375,7 @@ main:focus{outline:none}
 .ecrans-texte{display:none}
 .bande{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,9.5rem),1fr));gap:var(--e3)}
 .bande figure{display:grid;gap:var(--e1)}
-.bande img{width:100%;aspect-ratio:520/886;object-fit:cover;border:1.5px solid var(--trait)}
+.bande img{width:100%;aspect-ratio:520/886;object-fit:cover;border:var(--fil-fort) solid var(--trait)}
 .bande figcaption{font-size:var(--t1);color:var(--doux)}
 .bande figcaption b{display:block;color:var(--texte);font-size:var(--t2)}
 .demo-note{margin-top:var(--e3);font-size:var(--t1);color:var(--doux)}
@@ -374,8 +392,8 @@ main:focus{outline:none}
   .anim .ecrans-texte ol{display:grid}
   .anim .scene-ecrans[data-etape="0"] li[data-n="0"],.anim .scene-ecrans[data-etape="1"] li[data-n="1"],.anim .scene-ecrans[data-etape="2"] li[data-n="2"],.anim .scene-ecrans[data-etape="3"] li[data-n="3"],.anim .scene-ecrans[data-etape="4"] li[data-n="4"]{opacity:1;transform:none}
   .anim .telephone{grid-row:1;height:100%;min-height:0;display:grid;grid-template-rows:minmax(0,1fr);justify-items:center;align-items:center}
-  .anim .vitre{height:100%;width:auto;max-height:44rem;aspect-ratio:520/886;contain:size layout;border:2px solid var(--texte);border-radius:2rem;padding:6px;overflow:hidden;position:relative}
-  .anim .vitre-in{width:100%;height:100%;overflow:hidden;border-radius:1.625rem}
+  .anim .vitre{height:100%;width:auto;max-height:44rem;aspect-ratio:520/886;contain:size layout;border:2px solid var(--texte);border-radius:var(--r-vitre);padding:6px;overflow:hidden;position:relative}
+  .anim .vitre-in{width:100%;height:100%;overflow:hidden;border-radius:var(--r-vitre-in)}
   .anim .bande{display:flex;gap:0;width:500%;height:100%;transform:translateX(calc(var(--x,0) * -80%))}
   .anim .scene-ecrans.active .bande{will-change:transform}
   .anim .bande li{flex:0 0 20%;height:100%}
@@ -416,7 +434,7 @@ main:focus{outline:none}
 .hero-web{position:relative;overflow:hidden}
 .hero-web .cadre{position:relative;z-index:1}
 .champ-points{position:absolute;inset:0;z-index:0;display:grid;grid-template-columns:repeat(var(--nc,16),1fr);grid-template-rows:repeat(var(--nr,7),1fr);place-items:center;pointer-events:none;-webkit-mask-image:radial-gradient(ellipse 85% 95% at 72% 72%,#000 15%,transparent 85%);mask-image:radial-gradient(ellipse 85% 95% at 72% 72%,#000 15%,transparent 85%)}
-.champ-points i{width:.5rem;height:.5rem;border-radius:50%;background:var(--texte);opacity:.16;transform:scale(.6)}
+.champ-points i{width:.5rem;height:.5rem;border-radius:var(--r-rond);background:var(--texte);opacity:.16;transform:scale(.6)}
 @media (prefers-reduced-motion:no-preference){
   .anim .champ-points i{animation:onde 3.2s var(--c-pose) infinite;animation-delay:calc(var(--d,0) * 70ms)}
   .anim .champ-points.en-pause i{animation-play-state:paused}
@@ -450,7 +468,7 @@ main:focus{outline:none}
 
 /* Tampon « Bon à tirer » : posé sur l'image, comme sur une épreuve approuvée */
 .tampon{position:absolute;right:6%;bottom:7%;z-index:2;pointer-events:none;transform:rotate(-8deg);transform-origin:60% 60%}
-.tampon b{display:block;padding:.35em .8em .3em;border:3px solid var(--indigo);outline:2px solid var(--indigo);outline-offset:3px;border-radius:4px;
+.tampon b{display:block;padding:.35em .8em .3em;border:3px solid var(--indigo);outline:2px solid var(--indigo);outline-offset:3px;border-radius:var(--r-tampon);
   font:800 clamp(.95rem,.7rem + 1.4vw,1.75rem)/1 var(--f-titre);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;
   color:var(--indigo);background:color-mix(in srgb,var(--papier) 90%,transparent)}
 /* Affiche carrée : le bas porte le bouton, le haut porte le titre */
@@ -460,7 +478,7 @@ main:focus{outline:none}
 @media (prefers-reduced-motion:no-preference){
   .anim .tampon{opacity:0;animation:tampon-secours 0s 4s forwards}   /* filet de sécurité si le script ne répond pas */
   .anim .tampon.pose{opacity:1;animation:tampon-claque 650ms var(--c-pose) both}
-  .anim .tampon.pose::after{content:"";position:absolute;inset:-6px;border:2px solid var(--indigo);border-radius:8px;opacity:0;animation:tampon-onde 700ms 180ms ease-out both}
+  .anim .tampon.pose::after{content:"";position:absolute;inset:-6px;border:2px solid var(--indigo);border-radius:var(--r-tampon-onde);opacity:0;animation:tampon-onde 700ms 180ms ease-out both}
   .anim .repere:has(.tampon.pose) img{animation:tampon-secousse 260ms 150ms ease-out both}
 }
 @keyframes tampon-secours{to{opacity:1}}
@@ -488,4 +506,5 @@ main:focus{outline:none}
 
 /* Classes utilitaires (remplacent les style="" pour respecter la CSP stricte) */
 .u-p0{padding:0}.u-mt0{margin-top:0}.u-mt3{margin-top:var(--e3)}.u-mt4{margin-top:var(--e4)}.u-mt5{margin-top:var(--e5)}.u-nw{white-space:nowrap}
-.sw-ambre{background:#F59E0B}.sw-orange{background:#F7931E}.sw-mauve{background:#8B5A7C}.sw-indigo{background:#3B3490}
+.f-ambre{fill:var(--logo-ambre)}.f-orange{fill:var(--orange)}.f-mauve{fill:var(--logo-mauve)}.f-indigo{fill:var(--indigo)}
+.sw-ambre{background:var(--logo-ambre)}.sw-orange{background:var(--orange)}.sw-mauve{background:var(--logo-mauve)}.sw-indigo{background:var(--indigo)}
